@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "675435683020",
+    "project_id": "shareday-1628535459047",
+    "storage_bucket": "shareday-1628535459047.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:675435683020:android:4b562befc5f4404f0af669",
+        "android_client_info": {
+          "package_name": "com.example.shareday"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "675435683020-vtvvactea9qv3osgmu6b6dbsbk16it6j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.shareday",
+            "certificate_hash": "58300aa9fbeace50f65341b0fecc5b751b3f225c"
+          }
+        },
+        {
+          "client_id": "675435683020-c5jpbgf0dtsuomitv7f7g0p6pj71ohai.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAyEyax5Y9TyiRwgslChVK7I2lHMFZetgI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "675435683020-8b1duf9v1u4mhqcednc39cos2ir2vin2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "675435683020-0pteq0ckrl8bpk1lf5ihr7dhm1qfv9di.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.shareday"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
