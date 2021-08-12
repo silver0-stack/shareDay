@@ -6,7 +6,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.viewpager.widget.ViewPager
 import com.example.shareDay.adapters.MainPageAdapter
+import com.example.shareDay.chats.UserInfo
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import java.util.ArrayList
 
 
 class MainActivity : AppCompatActivity() {
