@@ -1,4 +1,6 @@
 package com.example.shareDay.fragments
 
-class HelpMeFragment {
+import androidx.fragment.app.Fragment
+
+class HelpMeFragment : Fragment()  {
 }
