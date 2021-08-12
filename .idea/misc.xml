@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/shareDay/app/src/main/res/layout/activity_main.xml" value="0.223731884057971" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/shareDay/app/src/main/res/layout/activity_map.xml" value="0.223731884057971" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/shareDay/app/src/main/res/layout/activity_sign_in.xml" value="0.223731884057971" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/shareDay/app/src/main/res/layout/activity_sign_up.xml" value="0.223731884057971" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/shareDay/app/src/main/res/layout/item_point.xml" value="0.223731884057971" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/shareDay/app/src/main/res/layout/my_area.xml" value="0.223731884057971" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/shareDay/app/src/main/res/layout/splash_screen.xml" value="0.223731884057971" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/shareDay/app/src/main/res/menu/main_menu.xml" value="0.3041025641025641" />
+      </map>
+    </option>
+  </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="ProjectRootManager" version="2" languageLevel="JDK_X" default="true" project-jdk-name="16" project-jdk-type="JavaSDK" />
 </project>
