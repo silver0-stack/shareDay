@@ -11,7 +11,7 @@ import com.example.shareDay.fragments.*
 class MainPageAdapter(fm: FragmentManager, private var tabCount: Int) : FragmentStatePagerAdapter(fm) {
     override fun getItem(position: Int): Fragment{
      return when (position) {
-            0 -> MapFragment()
+            0 -> ChatFragment()
             1 -> MapFragment()
             2 -> MapFragment()
             3 -> MapFragment()
