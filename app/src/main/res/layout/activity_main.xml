@@ -18,13 +18,23 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_mainNav"
         android:layout_width="410dp"
-        android:layout_height="51dp"
+        android:layout_height="55dp"
         app:itemTextColor="#4C4C4C"
         app:labelVisibilityMode="labeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/main_menu">
 
+        <!--지도 화면으로 넘어가는 버튼 -->
+        <ImageView
+            android:id="@+id/mapBtn"
+            android:scaleType="fitXY"
+            android:layout_width="75dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="170dp"
+            android:layout_marginTop="7dp"
+            android:background="#00ff0000"
+            android:src="@drawable/map_button_color_icon" />
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
