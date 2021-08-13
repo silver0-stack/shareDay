@@ -40,7 +40,7 @@
                     android:layout_height="100dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginEnd="30dp"
-                    android:src="@drawable/sday" />
+                    android:src="@drawable/shareday_logo" />
             </LinearLayout>
 
             <LinearLayout

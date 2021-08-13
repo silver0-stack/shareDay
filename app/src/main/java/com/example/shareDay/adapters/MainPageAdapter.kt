@@ -12,10 +12,10 @@ class MainPageAdapter(fm: FragmentManager, private var tabCount: Int) : Fragment
     override fun getItem(position: Int): Fragment{
      return when (position) {
             0 -> ChatFragment()
-            1 -> MapFragment()
-            2 -> MapFragment()
-            3 -> MapFragment()
-            else -> MapFragment()
+            1 -> ChatFragment()
+            2 -> ChatFragment() //지도탭 버튼때문에 임의로 채팅 연결시킴. 오류 아님.
+            3 -> ChatFragment()
+            else -> MyPageFragment() //마이페이지 탭으로 이동
         }
     }
 

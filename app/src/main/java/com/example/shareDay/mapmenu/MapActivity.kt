@@ -1,12 +1,13 @@
-package com.example.shareDay.fragments
+package com.example.shareDay.mapmenu
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.*
-import androidx.fragment.app.Fragment
+import android.widget.Button
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import com.example.shareDay.R
 import com.example.shareDay.contents.MyAreaSettingActivity
 import com.example.shareDay.markers.*
@@ -20,16 +21,15 @@ import com.naver.maps.map.overlay.Marker
 import com.naver.maps.map.overlay.Overlay
 import com.naver.maps.map.overlay.OverlayImage
 
-//지도 화면
- class MapFragment : Fragment(),OnMapReadyCallback {
+class MapActivity:AppCompatActivity(), OnMapReadyCallback {
 
-    lateinit var mView: View
     private var mapView: MapView? = null
     private var myMap: NaverMap? = null
     lateinit var btnMark1: Button
     private lateinit var btnMark2: Button
-    lateinit var myAreaSetting:ImageView
+    lateinit var myAreaSetting: ImageView
     lateinit var myArea: TextView
+
     //마커 변수 선언 및 초기화
     private val marker1 = Marker()
     private val marker2 = Marker()
@@ -40,25 +40,22 @@ import com.naver.maps.map.overlay.OverlayImage
 
     private var mInfoWindow: InfoWindow? = null
 
-    override fun onCreateView(
-    inflater: LayoutInflater, container: ViewGroup?,
-    savedInstanceState: Bundle?,
-    ): View {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_map)
 
-        mView = inflater.inflate(R.layout.activity_map, container, false)
-        btnMark1 = mView.findViewById(R.id.btnMark1) //도와주세요 버튼
-        btnMark2 = mView.findViewById(R.id.btnMark2) //도와줄게요 버튼
-        myAreaSetting=mView.findViewById(R.id.myAreaSetting)//내 위치 설정 이미지뷰
-        myArea= mView.findViewById(R.id.myArea)
+        btnMark1 = findViewById(R.id.btnMark1) //도와주세요 버튼
+        btnMark2 = findViewById(R.id.btnMark2) //도와줄게요 버튼
+        myAreaSetting = findViewById(R.id.myAreaSetting)//내 위치 설정 이미지뷰
+        myArea = findViewById(R.id.myArea)
 
 
-        myAreaSetting.setOnClickListener{
-            val intent= Intent(activity,MyAreaSettingActivity::class.java)
+        myAreaSetting.setOnClickListener {
+            val intent = Intent(this, MyAreaSettingActivity::class.java)
             startActivity(intent)
         }
 
 
-        
         //도와주세요 버튼 클릭 시 마커 등장
         btnMark1.setOnClickListener {
             setMarker(marker1, 37.6204, 127.0837, R.drawable.marker, 0)
@@ -73,15 +70,10 @@ import com.naver.maps.map.overlay.OverlayImage
             val listener = Overlay.OnClickListener { overlay ->
                 val marker = overlay as Marker
 
-                val rootView = mView.findViewById<View>(R.id.map_main) as ViewGroup
-                val adapter = context?.let { it1 ->
-                    MarkerAdapter(
-                        it1,
-                        rootView
-                    )
-                }
+                val rootView = findViewById<View>(R.id.map_main) as ViewGroup
+                val adapter = MarkerAdapter(this, rootView)
 
-                if (adapter != null) infoWindow.adapter = adapter
+                infoWindow.adapter = adapter
 
                 //인포창의 우선순위
                 infoWindow.zIndex = 10
@@ -102,12 +94,10 @@ import com.naver.maps.map.overlay.OverlayImage
             val listener2 = Overlay.OnClickListener { overlay ->
                 val marker = overlay as Marker
 
-                val rootView = mView.findViewById<View>(R.id.map_main) as ViewGroup
-                val adapter = context?.let { it1 -> MarkerAdapter2(it1, rootView) }
+                val rootView = findViewById<View>(R.id.map_main) as ViewGroup
+                val adapter = MarkerAdapter(this, rootView)
 
-                if (adapter != null) {
-                    infoWindow.adapter = adapter
-                }
+                infoWindow.adapter = adapter
                 infoWindow.zIndex = 10
                 infoWindow.alpha = 0.9f
                 if (marker2.infoWindow == null) {
@@ -121,12 +111,10 @@ import com.naver.maps.map.overlay.OverlayImage
             val listener3 = Overlay.OnClickListener { overlay ->
                 val marker = overlay as Marker
 
-                val rootView = mView.findViewById<View>(R.id.map_main) as ViewGroup
-                val adapter = context?.let { it1 -> MarkerAdapter3(it1, rootView) }
+                val rootView = findViewById<View>(R.id.map_main) as ViewGroup
+                val adapter = MarkerAdapter(this, rootView)
 
-                if (adapter != null) {
-                    infoWindow.adapter = adapter
-                }
+                infoWindow.adapter = adapter
                 infoWindow.zIndex = 10
                 infoWindow.alpha = 0.9f
                 if (marker2.infoWindow == null) {
@@ -151,12 +139,10 @@ import com.naver.maps.map.overlay.OverlayImage
             //도와줄게요 첫번째 마커
             val listener = Overlay.OnClickListener { overlay ->
                 val marker = overlay as Marker
-                val rootView = mView.findViewById<View>(R.id.map_main) as ViewGroup
-                val adapter = context?.let { it1 -> MarkerAdapter4(it1, rootView) }
+                val rootView = findViewById<View>(R.id.map_main) as ViewGroup
+                val adapter = MarkerAdapter(this, rootView)
 
-                if (adapter != null) {
-                    infoWindow.adapter = adapter
-                }
+                infoWindow.adapter = adapter
                 infoWindow.zIndex = 10
                 infoWindow.alpha = 0.9f
 
@@ -170,12 +156,10 @@ import com.naver.maps.map.overlay.OverlayImage
             //도와줄게요 두번째 마커
             val listener2 = Overlay.OnClickListener { overlay ->
                 val marker = overlay as Marker
-                val rootView = mView.findViewById<View>(R.id.map_main) as ViewGroup
-                val adapter = context?.let { it1 -> MarkerAdapter5(it1, rootView) }
+                val rootView = findViewById<View>(R.id.map_main) as ViewGroup
+                val adapter = MarkerAdapter(this, rootView)
 
-                if (adapter != null) {
-                    infoWindow.adapter = adapter
-                }
+                infoWindow.adapter = adapter
                 infoWindow.zIndex = 10
                 infoWindow.alpha = 0.9f
 
@@ -189,12 +173,10 @@ import com.naver.maps.map.overlay.OverlayImage
             //도와줄게요 세번째 마커
             val listener3 = Overlay.OnClickListener { overlay ->
                 val marker = overlay as Marker
-                val rootView = mView.findViewById<View>(R.id.map_main) as ViewGroup
-                val adapter = context?.let { it1 -> MarkerAdapter6(it1, rootView) }
+                val rootView = findViewById<View>(R.id.map_main) as ViewGroup
+                val adapter = MarkerAdapter(this, rootView)
 
-                if (adapter != null) {
-                    infoWindow.adapter = adapter
-                }
+                infoWindow.adapter = adapter
                 infoWindow.zIndex = 10
                 infoWindow.alpha = 0.9f
 
@@ -211,12 +193,11 @@ import com.naver.maps.map.overlay.OverlayImage
 
         }
 
-        //네이버 지도
-    mapView = mView.findViewById(R.id.map_main) as MapView
-    mapView!!.onCreate(savedInstanceState)
-    mapView!!.getMapAsync(this)
 
-        return mView
+        //네이버 지도
+        mapView = findViewById(R.id.map_main) as MapView
+        mapView!!.onCreate(savedInstanceState)
+        mapView!!.getMapAsync(this)
     }
 
 
@@ -292,5 +273,4 @@ import com.naver.maps.map.overlay.OverlayImage
         super.onLowMemory()
         mapView!!.onLowMemory()
     }
-
 }

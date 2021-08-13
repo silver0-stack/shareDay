@@ -14,7 +14,7 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.example.shareDay.R
-import com.example.shareDay.fragments.MapFragment
+import com.example.shareDay.mapmenu.MapActivity
 import com.pedro.library.AutoPermissionsListener
 import com.pedro.library.AutoPermissions
 import com.pedro.library.AutoPermissions.Companion.parsePermissions
@@ -50,7 +50,7 @@ open class MyAreaSettingActivity : AppCompatActivity(), AutoPermissionsListener 
         }
 
         AreaSettingButton.setOnClickListener {
-            startActivity(Intent(applicationContext, MapFragment::class.java))
+            startActivity(Intent(applicationContext, MapActivity::class.java))
         }
         //뒤로 가기 버튼 이벤트
         backBtn.setOnClickListener {
