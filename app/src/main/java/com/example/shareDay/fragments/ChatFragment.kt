@@ -41,6 +41,7 @@ class ChatFragment : Fragment() {
         userList=chatView.findViewById(R.id.list)
         userList.layoutManager = LinearLayoutManager(context)
 //        userList.setHasFixedSize(true)
+        //xddssssssss
         getUserUpdate()
 
         return chatView
