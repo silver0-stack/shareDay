@@ -3,8 +3,9 @@ package com.example.shareDay.chats
 import android.graphics.drawable.Drawable
 
 
-class UserInfo {
-    var name: String? = null
+data class UserInfo(val name: String?) {
+
+    /*var name: String? = null
     var profile: Drawable? = null
     var about: String? = null
 
@@ -13,5 +14,5 @@ class UserInfo {
         this.name = name
         this.profile = profile
         this.about = about
-    }
+    }*/
 }

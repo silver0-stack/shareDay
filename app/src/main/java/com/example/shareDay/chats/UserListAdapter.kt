@@ -1,4 +1,4 @@
-package com.example.shareDay.chats
+package com.example.shareDay
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,42 +7,39 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.shareDay.R
+import com.example.shareDay.chats.UserInfo
 import java.util.ArrayList
 
 
-class UserListAdapter(items: RecyclerView?) :
-    RecyclerView.Adapter<UserListAdapter.Holder>() {
-    var items = ArrayList<UserInfo>()
+class UserListAdapter(val listData: List<UserInfo>, val clickListener: ClickListener):RecyclerView.Adapter<UserListAdapter.MyViewHoler>() {
 
-    //View holder 생성하는 부분
-    //inflate된 view에 listener 설정 가능
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
-        val v: View = LayoutInflater.from(parent.context).inflate(R.layout.chat_list_item, parent, false)
-        return Holder(v)
-    }
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHoler {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.chat_list_item, parent, false)
 
-    //생성된 View holder를 데이터 바인딩 될 때마다 호출
-    override fun onBindViewHolder(holder: Holder, position: Int) {
-        val item = items[position]
-        holder.profileImg.setImageDrawable(item.profile)
-        holder.nameAge.setText(item.name)
-        holder.about.setText(item.about)
+        return MyViewHoler(view)
     }
 
     override fun getItemCount(): Int {
-        return items.size
+        return listData.size
     }
 
-    inner class Holder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val profileImg: ImageView
-        val nameAge: TextView
-        val about: TextView
+    class MyViewHoler(view: View): RecyclerView.ViewHolder(view){
+        var name_text: TextView
 
-        init {
-            profileImg = itemView.findViewById(R.id.profile_img)
-            nameAge = itemView.findViewById(R.id.name_age)
-            about = itemView.findViewById(R.id.about)
+        init{
+            name_text = view.findViewById(R.id.name_text)
         }
+    }
+
+    override fun onBindViewHolder(holder: MyViewHoler, position: Int) {
+        holder.name_text.text = listData.get(position).name
+        holder.itemView.setOnClickListener({
+            clickListener.onItemClick(listData.get(position))
+        })
+    }
+
+    interface ClickListener{
+        fun onItemClick(dataModel: UserInfo)
     }
 
 }

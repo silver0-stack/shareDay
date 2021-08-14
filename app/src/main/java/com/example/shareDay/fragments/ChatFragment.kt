@@ -1,4 +1,4 @@
-package com.example.shareDay.fragments
+package com.example.shareDay
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,36 +8,58 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.shareDay.R
+import com.example.shareDay.UserListAdapter
 import com.example.shareDay.chats.UserInfo
-import com.example.shareDay.chats.UserListAdapter
 import java.util.ArrayList
 
-class ChatFragment : Fragment() {
+class ChatFragment : Fragment(R.layout.chat_fragment), UserListAdapter.ClickListener {
 
-    var userList: RecyclerView? = null
-    var adapter: UserListAdapter? = null
-    var items: ArrayList<UserInfo> = ArrayList<UserInfo>()
+    private lateinit var adapter: UserListAdapter
+    val listData: ArrayList<UserInfo> = ArrayList()
 
-    private var linearLayoutManager: RecyclerView.LayoutManager? = null
-    private var recyclerAdapter: RecyclerView.Adapter<UserListAdapter.Holder>? = null
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        arguments?.let{
 
+        }
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        val view = inflater!!.inflate(R.layout.chat_fragment, container, false)
-        val recyclerView: RecyclerView = view.findViewById(R.id.list)
+        val view = inflater.inflate(R.layout.chat_fragment, container, false)
 
-        recyclerAdapter = UserListAdapter(userList)
-        linearLayoutManager = LinearLayoutManager(activity)
-
-        recyclerView.layoutManager = linearLayoutManager
-        recyclerView.adapter = recyclerAdapter
+        initRecyclerView(view)
         return view
+    }
+
+    private fun initRecyclerView(view: View){
+        val recyclerView = view.findViewById<RecyclerView>(R.id.list)
+        recyclerView.layoutManager = LinearLayoutManager(activity)
+        adapter = UserListAdapter(listData, this)
+        recyclerView.adapter = adapter
+
+        buildDisplayData()
+    }
+
+    private fun buildDisplayData(){
+        listData.add(UserInfo("test1"))
+        listData.add(UserInfo("test2"))
+        listData.add(UserInfo("test3"))
+    }
+
+    override fun onItemClick(dataModel: UserInfo) {
+        //val fragment: Fragment = DetailFragment.newInstance(UserInfo.name!!)
+        val transaction = activity?.supportFragmentManager!!.beginTransaction()
+        //transaction.hide(activity?.supportFragmentManager!!.findFragmentByTag(""))
 
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-    }
+    companion object{
+        fun newInstance() =
+            ChatFragment().apply{
+                arguments = Bundle().apply{
 
+                }
+            }
+    }
 }

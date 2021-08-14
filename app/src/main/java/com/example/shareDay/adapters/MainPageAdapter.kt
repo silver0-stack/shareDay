@@ -3,6 +3,7 @@ package com.example.shareDay.adapters
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
+import com.example.shareDay.ChatFragment
 import com.example.shareDay.fragments.*
 
 
@@ -22,4 +23,5 @@ class MainPageAdapter(fm: FragmentManager, private var tabCount: Int) : Fragment
     override fun getCount(): Int {
         return tabCount
     }
+
 }

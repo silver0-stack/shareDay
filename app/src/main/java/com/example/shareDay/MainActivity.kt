@@ -7,12 +7,16 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import com.example.shareDay.adapters.MainPageAdapter
 import com.example.shareDay.chats.UserInfo
 import com.example.shareDay.mapmenu.MapActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import java.lang.reflect.Array.newInstance
+import java.net.URLClassLoader.newInstance
 import java.util.ArrayList
+import javax.xml.datatype.DatatypeFactory.newInstance
 
 
 class MainActivity : AppCompatActivity()  {
