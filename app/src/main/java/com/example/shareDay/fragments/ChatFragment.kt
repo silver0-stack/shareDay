@@ -13,7 +13,7 @@ import com.example.shareDay.chats.UserInfo
 import java.util.ArrayList
 
 class ChatFragment : Fragment(R.layout.chat_fragment), UserListAdapter.ClickListener {
-
+//ㅅㄷㄴㅅ
     private lateinit var adapter: UserListAdapter
     val listData: ArrayList<UserInfo> = ArrayList()
 
