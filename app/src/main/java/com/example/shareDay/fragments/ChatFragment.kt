@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -45,8 +46,10 @@ class ChatFragment : Fragment(R.layout.chat_fragment), UserListAdapter.ClickList
         chatBtn = view.findViewById(R.id.chatBtn)
         chatBtn.setOnClickListener{ view->
             //Log.d("btn", "click")
+            Toast.makeText(context, "버튼 : database에 test 입력됨!", Toast.LENGTH_SHORT).show()
             FirebaseDatabase.getInstance().getReference("chatRoom").push().setValue("test")
         }
+
         return view
     }
 
@@ -83,7 +86,7 @@ class ChatFragment : Fragment(R.layout.chat_fragment), UserListAdapter.ClickList
 
     override fun onItemClick(dataModel: UserInfo) {
         val transaction = activity?.supportFragmentManager!!.beginTransaction()
-        
+
 
     }
 

@@ -1,10 +1,12 @@
 package com.example.shareDay
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.shareDay.R
 import com.example.shareDay.chats.UserInfo
@@ -33,10 +35,13 @@ class UserListAdapter(val listData: List<UserInfo>, val clickListener: ClickList
 
     override fun onBindViewHolder(holder: MyViewHoler, position: Int) {
         holder.name_text.text = listData.get(position).name
-        holder.itemView.setOnClickListener({
-            clickListener.onItemClick(listData.get(position))
-        })
+        /*holder.itemView.setOnClickListener {
+            val intent = Intent(this, ChatActivity::class.java)
+            startActivity(Intent)
+        }*/
+
     }
+
 
     interface ClickListener{
         fun onItemClick(dataModel: UserInfo)
