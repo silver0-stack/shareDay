@@ -1,10 +1,13 @@
 package com.example.shareDay
 
+import android.media.Image
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -21,7 +24,7 @@ class ChatFragment : Fragment(R.layout.chat_fragment), UserListAdapter.ClickList
     private lateinit var adapter: UserListAdapter
     val listData: ArrayList<UserInfo> = ArrayList()
 
-    private val sendButton: Button? = null
+    private lateinit var chatBtn: ImageButton
 
     private lateinit var db: DatabaseReference
 
@@ -30,8 +33,6 @@ class ChatFragment : Fragment(R.layout.chat_fragment), UserListAdapter.ClickList
         arguments?.let{
 
         }
-
-
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -39,6 +40,11 @@ class ChatFragment : Fragment(R.layout.chat_fragment), UserListAdapter.ClickList
         val view = inflater.inflate(R.layout.chat_fragment, container, false)
 
         initRecyclerView(view)
+
+        chatBtn = view.findViewById(R.id.chatBtn)
+        chatBtn.setOnClickListener{ view->
+            Log.d("btn", "click")
+        }
         return view
     }
 
@@ -67,7 +73,7 @@ class ChatFragment : Fragment(R.layout.chat_fragment), UserListAdapter.ClickList
         })
 
 
-
+        //예시 데이터
         listData.add(UserInfo("test1", "","ttttttt"))
         listData.add(UserInfo("test2", "", "eeeeeeeeeee"))
         listData.add(UserInfo("test3", "","sssssssssst" ))
