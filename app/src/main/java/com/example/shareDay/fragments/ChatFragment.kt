@@ -1,5 +1,6 @@
 package com.example.shareDay
 
+import android.content.Intent
 import android.media.Image
 import android.os.Bundle
 import android.util.Log
@@ -43,7 +44,8 @@ class ChatFragment : Fragment(R.layout.chat_fragment), UserListAdapter.ClickList
 
         chatBtn = view.findViewById(R.id.chatBtn)
         chatBtn.setOnClickListener{ view->
-            Log.d("btn", "click")
+            //Log.d("btn", "click")
+            FirebaseDatabase.getInstance().getReference("chatRoom").push().setValue("test")
         }
         return view
     }
@@ -80,9 +82,8 @@ class ChatFragment : Fragment(R.layout.chat_fragment), UserListAdapter.ClickList
     }
 
     override fun onItemClick(dataModel: UserInfo) {
-        //val fragment: Fragment = DetailFragment.newInstance(UserInfo.name!!)
         val transaction = activity?.supportFragmentManager!!.beginTransaction()
-        //transaction.hide(activity?.supportFragmentManager!!.findFragmentByTag(""))
+        
 
     }
 
