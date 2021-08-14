@@ -1,7 +1,7 @@
 package com.example.shareDay.chats
 
 import android.graphics.drawable.Drawable
-
+//test
 
 data class UserInfo(val name: String?) {
 
