@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -20,6 +21,8 @@ class ChatFragment : Fragment(R.layout.chat_fragment), UserListAdapter.ClickList
     private lateinit var adapter: UserListAdapter
     val listData: ArrayList<UserInfo> = ArrayList()
 
+    private val sendButton: Button? = null
+
     private lateinit var db: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,6 +30,7 @@ class ChatFragment : Fragment(R.layout.chat_fragment), UserListAdapter.ClickList
         arguments?.let{
 
         }
+
 
     }
 
