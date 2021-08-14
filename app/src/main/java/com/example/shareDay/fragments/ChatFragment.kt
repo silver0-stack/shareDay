@@ -47,7 +47,7 @@ class ChatFragment : Fragment(R.layout.chat_fragment), UserListAdapter.ClickList
         listData.add(UserInfo("test3"))
     }
 
-    //커밋테스트~~~~~~~~
+    //커밋테스트~
     override fun onItemClick(dataModel: UserInfo) {
         //val fragment: Fragment = DetailFragment.newInstance(UserInfo.name!!)
         val transaction = activity?.supportFragmentManager!!.beginTransaction()
