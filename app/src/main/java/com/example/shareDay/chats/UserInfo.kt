@@ -1,17 +1,3 @@
 package com.example.shareDay.chats
-
-import android.graphics.drawable.Drawable
-
-
-class UserInfo {
-    var name: String? = null
-    var profile: Drawable? = null
-    var about: String? = null
-
-    constructor() {}
-    constructor(name: String?, profile: Drawable, about: String?) {
-        this.name = name
-        this.profile = profile
-        this.about = about
-    }
+class UserInfo(var name: String?,  var profile: String? , var about: String?) {
 }

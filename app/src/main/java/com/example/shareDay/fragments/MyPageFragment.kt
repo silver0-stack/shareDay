@@ -18,21 +18,26 @@ import com.example.shareDay.R
 import com.example.shareDay.mypage.*
 import com.example.shareDay.user.SignInActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import java.text.SimpleDateFormat
 import java.util.*
 
 class MyPageFragment  : Fragment() {
-    private var mAuth: FirebaseAuth? = null
-    private var PICK_IMAGE_FROM_ALBUM = 0 //앨범 픽 변수
-    private var storage: FirebaseStorage? = null
-    var photoUri: Uri? = null
-    lateinit var myPageView: View
-
     //로그아웃 버튼, 회원탈퇴 버튼
     //lateinit var signOut: Button
     //lateinit var removeUser: Button
-
+    private var mAuth: FirebaseAuth? = null
+    private lateinit var database: DatabaseReference
+    private var PICK_IMAGE_FROM_ALBUM = 0 //앨범 픽 변수
+    private lateinit var storage: FirebaseStorage
+    var photoUri: Uri? = null
+    lateinit var myPageView: View
+    lateinit var uid : String
+    lateinit var userName : String
+    lateinit var image1 : String //이미지 이름
     lateinit var alarmIcon:ImageView
     lateinit var myPhoto:ImageView
     lateinit var myPhotoChange:ImageView
@@ -72,7 +77,10 @@ class MyPageFragment  : Fragment() {
               startActivity(intent)
           }*/
 
-
+        //firebase
+        database = Firebase.database.reference
+        //저장소 가져오기
+        storage = FirebaseStorage.getInstance()
         //알람 리스너
         alarmIcon=myPageView.findViewById(R.id.alarmIcon)
         alarmIcon.setOnClickListener {  } //여기 알람 내역 액티비티로 인텐트
@@ -142,12 +150,23 @@ class MyPageFragment  : Fragment() {
                 //선택된 이미지 path
                 photoUri = data?.data
                 myPhoto.setImageURI(photoUri)
-
+                myPhoto.setOnClickListener{
+                    setPerImgPlus(photoUri)
+                }
                 val timestamp = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
                 val imageFileName = "IMAGE_" + timestamp + "_.png"
-                val storageRef = storage?.reference?.child("images")?.child(imageFileName)
+                image1 = imageFileName //설정한 이미지 이름을 넣어줌(url 만들 때 필요함)
+                val storageRef = storage.reference.child("images").child(imageFileName)
                 //파일업로드
-                storageRef?.putFile(photoUri!!)?.addOnSuccessListener {
+                storageRef.putFile(photoUri!!).addOnSuccessListener {
+                    //누가 올렸는지 식별하기 위해 글 쓴 회원정보 갖고오기
+                    mAuth = FirebaseAuth.getInstance()
+                    val user = mAuth!!.currentUser
+                    if (user != null) {
+                        userName = user.email.toString()
+                        uid = user.uid }
+//                    val userName = userName
+//                    val uid = uid
                     Toast.makeText(activity, "프로필 사진 설정이 완료되었습니다.", Toast.LENGTH_SHORT).show()
                 }
             } else {
@@ -155,6 +174,10 @@ class MyPageFragment  : Fragment() {
             }
         }
 
+    }
+
+    private fun setPerImgPlus(uri: Uri?) {
+        myPhoto.setImageURI(uri)
     }
 
     //로그아웃
