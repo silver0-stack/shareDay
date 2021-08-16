@@ -39,7 +39,7 @@ public class WriteActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.write_activity);
+        setContentView(R.layout.helpme_write_activity);
 
         database = FirebaseDatabase.getInstance(); //파이어 베이스 데이터 베이스 연동
         mStore = database.getInstance().getReference();//데이터베이스 테이블 연

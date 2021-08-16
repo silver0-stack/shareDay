@@ -3,7 +3,7 @@ package com.example.shareDay.board;
 public class Board {
 
     private String id;
-    //private String profile;  //프로필 사진
+    private String profile;  //프로필 사진
     private String contents;
     private String name;
 
@@ -33,9 +33,9 @@ public class Board {
         this.id = id;
     }
 
-   // public String getProfile() {
-   //     return profile;
-   // }
+    //public String getProfile() {
+     //   return profile;
+    //}
 
     public String getName() {
         return name;
@@ -45,10 +45,7 @@ public class Board {
     }
 
 
-
-
-
-   // public void setProfile(String profile) {
-   //     this.profile = profile;
+    //public void setProfile(String profile) {
+     //  this.profile = profile;
    // }
 }

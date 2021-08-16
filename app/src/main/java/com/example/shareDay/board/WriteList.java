@@ -34,7 +34,7 @@ public class WriteList extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.write_list);
+        setContentView(R.layout.helpme_write_list);
 
         main_write = findViewById(R.id.main_write);
 
