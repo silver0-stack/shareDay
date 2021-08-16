@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".board.WriteActivity">
+
+
+
+    <ImageView
+        android:id="@+id/item_profile"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="24dp"
+        android:src="@drawable/ic_person4" />
+    <EditText
+        android:id="@+id/write_name_text"
+        android:layout_toEndOf="@id/item_profile"
+        android:layout_alignBottom="@+id/item_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:hint="Name"
+        android:textSize="24dp"
+        android:textColor="@color/black"
+        android:background="@null"
+        tools:ignore="HardcodedText"
+        />
+
+    <ImageButton
+        android:layout_width="157dp"
+        android:layout_height="36dp"
+        android:background="@drawable/my_position"
+        android:layout_alignBottom="@+id/item_profile"
+        android:layout_marginRight="24dp"
+        android:layout_alignParentRight="true"
+        />
+
+
+        />
+    <ImageView
+        android:id="@+id/write_contents_image"
+        android:layout_width="wrap_content"
+        android:layout_height="160dp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/item_profile"
+        android:src="@drawable/content_image"/>
+
+
+    <EditText
+        android:id="@+id/write_contents_text"
+        android:layout_below="@+id/item_profile"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="54dp"
+        android:layout_marginRight="54dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="content"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        tools:ignore="HardcodedText"
+        android:background="@null"
+        />
+
+
+    <ImageButton
+        android:id="@+id/write_upload_button"
+        android:layout_width="78dp"
+        android:layout_height="36dp"
+        android:layout_below="@+id/write_contents_image"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="35dp"
+        android:layout_marginRight="24dp"
+        android:background="@drawable/compelete_button"
+
+        />
+
+
+</RelativeLayout>
