@@ -47,7 +47,6 @@ class ChatActivity : AppCompatActivity() {
                 myRef!!.push().setValue(chat)
                 chatText?.setText("")
             }
-            Log.d("버튼", "눌렸다")
         })
         //리사이클러뷰에 어댑터 적용
         recyclerView = findViewById(R.id.recyclerView)
