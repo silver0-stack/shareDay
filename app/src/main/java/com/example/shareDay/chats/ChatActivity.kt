@@ -9,6 +9,8 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Button
+import android.widget.ImageButton
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ChildEventListener
@@ -25,6 +27,9 @@ class ChatActivity : AppCompatActivity() {
     private var chatText: EditText? = null
     private var sendButton: Button? = null
     private var myRef: DatabaseReference? = null
+
+    private lateinit var chatBackBtn: ImageButton
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chat)
@@ -69,6 +74,12 @@ class ChatActivity : AppCompatActivity() {
             override fun onChildMoved(snapshot: DataSnapshot, previousChildName: String?) {}
             override fun onCancelled(error: DatabaseError) {}
         })
+
+
+        chatBackBtn = findViewById(R.id.chatBackBtn)
+        chatBackBtn.setOnClickListener{ view->
+            //뒤로가기 버튼 : 여기 ChatActivity에서 Chatfragment로 이동
+        }
     }
 
 }
