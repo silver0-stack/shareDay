@@ -18,6 +18,7 @@
         <activity android:name=".user.SignInActivity"/>
         <activity android:name=".user.SignUpActivity"/>
         <activity android:name=".MainActivity"/>
+        <activity android:name=".ChatActivity"/>
         <activity android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>

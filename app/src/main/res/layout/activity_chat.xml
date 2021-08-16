@@ -26,6 +26,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:hint="메세지를 입력하세요"
             tools:ignore="NestedWeights" />
 
         <Button
@@ -33,6 +34,6 @@
             android:layout_width="60dp"
             android:layout_height="match_parent"
             android:background="@android:drawable/ic_menu_send"
-            app:backgroundTint="@android:color/holo_orange_light" />
+            app:backgroundTint="@android:color/holo_purple" />
     </LinearLayout>
 </LinearLayout>

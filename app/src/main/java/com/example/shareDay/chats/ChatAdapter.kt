@@ -1,4 +1,4 @@
-package com.example.shareDay.chats
+package com.example.shareDay
 
 import android.os.Build
 import android.view.Gravity
@@ -9,13 +9,13 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
-import com.example.shareDay.R
+import com.example.shareDay.chats.Chat
 
 
 class ChatAdapter(chatData: MutableList<Chat>?, name: String) :
     RecyclerView.Adapter<ChatAdapter.MyViewHolder>() {
-    private val chatList: MutableList<Chat>?
-    private val name: String
+    private val chatList = chatData
+    private val name: String = name
 
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var nameText: TextView
@@ -73,7 +73,14 @@ class ChatAdapter(chatData: MutableList<Chat>?, name: String) :
 
     init {
         //MainActivity.java에서 받은 데이터들을 저장
-        chatList = chatData
-        this.name = name
+    }
+
+    interface ClickListener{
+        //fun onItemClick(dataModel: UserInfo)
+        fun onItemClick()
+    }
+    private var listener : ClickListener? = null
+    fun setOnItemClickListener(listener : ClickListener) {
+        this.listener = listener
     }
 }

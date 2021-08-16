@@ -6,11 +6,10 @@ import com.example.shareDay.chats.Chat
 import android.widget.EditText
 import com.google.firebase.database.DatabaseReference
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
-import com.example.shareDay.R
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.shareDay.chats.ChatAdapter
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ChildEventListener
 import com.google.firebase.database.DataSnapshot
@@ -23,17 +22,17 @@ class ChatActivity : AppCompatActivity() {
     private var layoutManager: RecyclerView.LayoutManager? = null
     private var chatList: List<Chat>? = null
     private val nickname = "익명1"
-    private val chatText: EditText? = null
-    private val sendButton: Button? = null
+    private var chatText: EditText? = null
+    private var sendButton: Button? = null
     private var myRef: DatabaseReference? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chat)
-        //chatText = findViewById(R.id.chatText)
-        //sendButton = findViewById(R.id.sendButton)
+        chatText = findViewById<EditText>(R.id.chatText)
+        sendButton = findViewById<Button>(R.id.sendButton)
         sendButton?.setOnClickListener(View.OnClickListener {
             //입력창에 메시지를 입력 후 버튼클릭했을 때
-            val msg = this.chatText?.getText().toString()
+            val msg = this.chatText?.text.toString()
             if (msg != null) {
                 val chat = Chat()
                 chat.name = nickname
@@ -43,9 +42,10 @@ class ChatActivity : AppCompatActivity() {
                 myRef!!.push().setValue(chat)
                 chatText?.setText("")
             }
+            Log.d("버튼", "눌렸다")
         })
         //리사이클러뷰에 어댑터 적용
-        //recyclerView = findViewById(R.id.recyclerView)
+        recyclerView = findViewById(R.id.recyclerView)
         recyclerView?.setHasFixedSize(true)
         layoutManager = LinearLayoutManager(this)
         recyclerView?.setLayoutManager(layoutManager)
@@ -70,4 +70,5 @@ class ChatActivity : AppCompatActivity() {
             override fun onCancelled(error: DatabaseError) {}
         })
     }
+
 }

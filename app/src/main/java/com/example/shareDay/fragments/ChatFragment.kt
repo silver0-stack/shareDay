@@ -1,5 +1,6 @@
 package com.example.shareDay
 
+import android.content.Context
 import android.content.Intent
 import android.media.Image
 import android.os.Bundle
@@ -48,6 +49,11 @@ class ChatFragment : Fragment(R.layout.chat_fragment), UserListAdapter.ClickList
             //Log.d("btn", "click")
             Toast.makeText(context, "버튼 : database에 test 입력됨!", Toast.LENGTH_SHORT).show()
             FirebaseDatabase.getInstance().getReference("chatRoom").push().setValue("test")
+
+            //아래는 fragment에서 activity로 넘어가는 코드
+            //val intent = Intent(activity, ChatActivity::class.java)
+            //intent.putExtra("", value)
+            //startActivity(intent)
         }
 
         return view
@@ -84,10 +90,21 @@ class ChatFragment : Fragment(R.layout.chat_fragment), UserListAdapter.ClickList
         listData.add(UserInfo("test3", "","sssssssssst" ))
     }
 
-    override fun onItemClick(dataModel: UserInfo) {
+    /*override fun onItemClick(dataModel: UserInfo) {
         val transaction = activity?.supportFragmentManager!!.beginTransaction()
 
+        val intent = Intent(context, ChatActivity::class.java)
+        //intent.putExtra("", value)
+        startActivity(intent)
 
+    }*/
+
+    override fun onItemClick() {
+        //val transaction = activity?.supportFragmentManager!!.beginTransaction()
+
+        //val intent = Intent(activity, ChatActivity::class.java)
+        //intent.putExtra("", value)
+        //startActivity(intent)
     }
 
     companion object{

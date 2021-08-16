@@ -1,11 +1,15 @@
 package com.example.shareDay
 
+import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
+import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.createDeviceProtectedStorageContext
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.shareDay.R
@@ -35,16 +39,24 @@ class UserListAdapter(val listData: List<UserInfo>, val clickListener: ClickList
 
     override fun onBindViewHolder(holder: MyViewHoler, position: Int) {
         holder.name_text.text = listData.get(position).name
-        /*holder.itemView.setOnClickListener {
-            val intent = Intent(this, ChatActivity::class.java)
-            startActivity(Intent)
-        }*/
+
+        holder.itemView.setOnClickListener {
+            listener?.onItemClick()
+
+            val intent = Intent(holder.itemView?.context, ChatActivity::class.java)
+            ContextCompat.startActivity(holder.itemView.context, intent, null)
+            //intent.putExtra("", value)
+            //startActivity(intent)
+        }
 
     }
-
 
     interface ClickListener{
-        fun onItemClick(dataModel: UserInfo)
+        //fun onItemClick(dataModel: UserInfo)
+        fun onItemClick()
     }
-
+    private var listener : ClickListener? = null
+    fun setOnItemClickListener(listener : ClickListener) {
+        this.listener = listener
+    }
 }
