@@ -1,15 +1,18 @@
 package com.example.shareDay
 
+import android.graphics.Color
 import android.os.Build
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
 import com.example.shareDay.chats.Chat
+import org.w3c.dom.Text
 
 
 class ChatAdapter(chatData: MutableList<Chat>?, name: String) :
@@ -21,12 +24,16 @@ class ChatAdapter(chatData: MutableList<Chat>?, name: String) :
         var nameText: TextView
         var msgText: TextView
         var msgLinear: LinearLayout
+        var msgTime: TextView
         var rootView: View
+
+        lateinit var chatTextBox: TextView
 
         init {
             nameText = itemView.findViewById(R.id.nameText)
             msgText = itemView.findViewById(R.id.msgText)
             msgLinear = itemView.findViewById(R.id.msgLinear)
+            msgTime = itemView.findViewById(R.id.msgTime)
             rootView = itemView
             itemView.isEnabled = true
             itemView.isClickable = true
@@ -51,12 +58,25 @@ class ChatAdapter(chatData: MutableList<Chat>?, name: String) :
             //사용자가 저장된 이름과 같을 시 오른쪽으로 정렬
             holder.nameText.textAlignment = View.TEXT_ALIGNMENT_VIEW_END
             holder.msgText.textAlignment = View.TEXT_ALIGNMENT_VIEW_END
+            holder.msgTime.textAlignment = View.TEXT_ALIGNMENT_VIEW_END
+
             holder.msgLinear.gravity = Gravity.RIGHT
+            //holder.msgTime.gravity = Gravity.RIGHT
+
+            holder.msgText.setBackgroundResource(R.drawable.edit_textbox_me)
+            holder.msgText.setTextColor(Color.parseColor("#000000"))
+
         } else {
             //아닐 시 왼쪽 정렬
             holder.nameText.textAlignment = View.TEXT_ALIGNMENT_VIEW_START
             holder.msgText.textAlignment = View.TEXT_ALIGNMENT_VIEW_START
+            holder.msgTime.textAlignment = View.TEXT_ALIGNMENT_VIEW_START
+
             holder.msgLinear.gravity = Gravity.LEFT
+            //holder.msgTime.gravity = Gravity.LEFT
+
+            holder.msgText.setBackgroundResource(R.drawable.edit_textbox_you)
+            holder.msgText.setTextColor(Color.parseColor("#ffffff"))
         }
     }
 

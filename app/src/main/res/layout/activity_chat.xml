@@ -16,7 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:background="#ffffff"
-        android:elevation="10dp">
+        android:elevation="5dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -47,22 +47,28 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:orientation="horizontal">
+        android:paddingHorizontal="20dp"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:elevation="10dp"
+        android:gravity="center_vertical">
 
         <EditText
             android:id="@+id/chatText"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:hint="메세지를 입력하세요"
-            android:layout_weight="1"
-            tools:ignore="NestedWeights" />
+            android:layout_weight="10"
+            android:textSize="15dp"
+            android:background="@android:color/transparent"
+            tools:ignore="NestedWeights"/>
 
         <Button
             android:id="@+id/sendButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="10dp"
+            android:layout_height="30dp"
             android:layout_weight="1"
-            android:background="@android:drawable/ic_menu_send"
+            android:background="@drawable/paper_plane_right"
             app:backgroundTint="@android:color/holo_purple" />
     </LinearLayout>
 </LinearLayout>
