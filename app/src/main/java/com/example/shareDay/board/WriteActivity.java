@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -30,7 +31,7 @@ public class WriteActivity extends AppCompatActivity {
     private DatabaseReference mStore;
 
     private ImageButton wrtie_upload_button;
-    private EditText write_name_text;
+    private TextView write_name_text;
     private EditText write_contents_text;
 
 
@@ -49,6 +50,8 @@ public class WriteActivity extends AppCompatActivity {
         write_contents_text=findViewById(R.id.write_contents_text);
         write_name_text=findViewById(R.id.write_name_text);
 
+       ///write_name_text.setText();
+
 
 
         wrtie_upload_button.setOnClickListener(new View.OnClickListener() {
@@ -59,10 +62,10 @@ public class WriteActivity extends AppCompatActivity {
 
                 HashMap result=new HashMap<>();
                 result.put("contents",getContents);
-                result.put("name",getName);
+               result.put("name",getName);
 
 
-                writeNewUser(getName,getContents);
+               writeNewUser(getName,getContents);
 
                 Intent intent2=new Intent(WriteActivity.this, WriteList.class);
                 startActivity(intent2);
