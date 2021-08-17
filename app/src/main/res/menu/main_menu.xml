@@ -5,35 +5,35 @@
     <item
         android:id="@+id/menu_chat"
         android:enabled="true"
-        android:icon="@drawable/ic_baseline_chat_bubble_outline_24"
+        android:icon="@drawable/chatting_icon"
         android:title="@string/menu_chat"
         app:cnb_iconColor="@color/navigation_color_mood"
         app:showAsAction="always" />
     <item
         android:id="@+id/menu_helpMe"
         android:enabled="true"
-        android:icon="@drawable/helpme"
+        android:icon="@drawable/helpme_icon"
         android:title="@string/menu_helpMe"
         app:cnb_iconColor="@color/navigation_color_habit"
         app:showAsAction="always" />
     <item
         android:id="@+id/menu_map"
         android:enabled="true"
-        android:icon="@drawable/ic_baseline_location_on_24"
+        android:icon="@drawable/help_location_icon"
         android:title="@string/menu_map"
         app:cnb_iconColor="@color/navigation_color_add"
         app:showAsAction="always" />
     <item
         android:id="@+id/menu_helpYou"
         android:enabled="true"
-        android:icon="@drawable/helpyou"
+        android:icon="@drawable/helpyou_icon"
         android:title="@string/menu_helpYou"
         app:cnb_iconColor="@color/navigation_color_chart"
         app:showAsAction="always" />
     <item
         android:id="@+id/menu_myPage"
         android:enabled="true"
-        android:icon="@drawable/ic_baseline_people_alt_24"
+        android:icon="@drawable/mypage_icon"
         android:title="@string/menu_myPage"
         app:cnb_iconColor="@color/navigation_color_profile"
         app:showAsAction="always" />
