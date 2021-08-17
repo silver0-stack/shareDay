@@ -1,17 +1,16 @@
 package com.example.shareDay
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.shareDay.chats.Chat
-import android.widget.EditText
 import com.google.firebase.database.DatabaseReference
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.Button
-import android.widget.ImageButton
-import android.widget.Toast
+import android.widget.*
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.shareDay.chats.ProfilePopUp
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ChildEventListener
 import com.google.firebase.database.DataSnapshot
@@ -28,7 +27,7 @@ class ChatActivity : AppCompatActivity() {
     private var sendButton: Button? = null
     private var myRef: DatabaseReference? = null
 
-    private lateinit var chatBackBtn: ImageButton
+    lateinit var chatBackBtn: ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -74,11 +73,10 @@ class ChatActivity : AppCompatActivity() {
             override fun onCancelled(error: DatabaseError) {}
         })
 
-
         chatBackBtn = findViewById(R.id.chatBackBtn)
-        chatBackBtn.setOnClickListener{ view->
+        chatBackBtn.setOnClickListener{
             //뒤로가기 버튼 : 여기 ChatActivity에서 Chatfragment로 이동
         }
-    }
 
+    }
 }

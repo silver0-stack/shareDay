@@ -68,7 +68,6 @@
             android:layout_width="10dp"
             android:layout_height="30dp"
             android:layout_weight="1"
-            android:background="@drawable/paper_plane_right"
-            app:backgroundTint="@android:color/holo_purple" />
+            android:background="@drawable/paper_plane_right" />
     </LinearLayout>
 </LinearLayout>

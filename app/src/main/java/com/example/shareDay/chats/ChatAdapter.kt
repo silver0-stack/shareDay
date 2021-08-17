@@ -1,5 +1,6 @@
 package com.example.shareDay
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Build
 import android.view.Gravity
@@ -9,9 +10,12 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.shareDay.chats.Chat
+import com.example.shareDay.chats.ProfilePopUp
 import org.w3c.dom.Text
 
 
@@ -78,6 +82,11 @@ class ChatAdapter(chatData: MutableList<Chat>?, name: String) :
             holder.msgText.setBackgroundResource(R.drawable.edit_textbox_you)
             holder.msgText.setTextColor(Color.parseColor("#ffffff"))
         }
+
+        holder.nameText.setOnClickListener{
+            val intent = Intent(holder.itemView?.context, ProfilePopUp::class.java)
+            ContextCompat.startActivity(holder.itemView.context, intent, null)
+        }
     }
 
     //메시지아이템 갯수세기
@@ -103,4 +112,5 @@ class ChatAdapter(chatData: MutableList<Chat>?, name: String) :
     fun setOnItemClickListener(listener : ClickListener) {
         this.listener = listener
     }
+
 }
