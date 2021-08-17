@@ -74,20 +74,12 @@ public class WriteList extends AppCompatActivity {
         });
 
 
-
-
         adapter = new BoardAdapter(arrayList, this);
         recyclerView.setAdapter(adapter); //리사이클러뷰에 어댑터 연결
 
-        main_write.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(WriteList.this, WriteActivity.class);
-                startActivity(intent);
-
-
-
-            }
+        main_write.setOnClickListener(v -> {
+            Intent intent=new Intent(this, WriteActivity.class);
+            startActivity(intent);
         });
 
 

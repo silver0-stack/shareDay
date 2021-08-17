@@ -35,10 +35,9 @@
         <ImageView
             android:id="@+id/mapBtn"
             android:scaleType="fitXY"
-            android:layout_width="75dp"
+            android:layout_width="60dp"
             android:layout_height="55dp"
-            android:layout_marginStart="170dp"
-            android:layout_marginTop="7dp"
+            android:layout_marginStart="180dp"
             android:background="#00ff0000"
             android:src="@drawable/map_button_color_icon" />
 

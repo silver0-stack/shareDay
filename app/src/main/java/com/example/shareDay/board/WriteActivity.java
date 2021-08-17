@@ -42,7 +42,7 @@ public class WriteActivity extends AppCompatActivity {
         setContentView(R.layout.helpme_write_activity);
 
         database = FirebaseDatabase.getInstance(); //파이어 베이스 데이터 베이스 연동
-        mStore = database.getInstance().getReference();//데이터베이스 테이블 연
+        mStore = database.getReference();//데이터베이스 테이블 연
         readBoard();
 
         wrtie_upload_button=findViewById(R.id.write_upload_button);

@@ -25,16 +25,16 @@ class GoogleSignInActivity : AppCompatActivity() {
     private lateinit var firebaseAuth: FirebaseAuth
     //google client
     private lateinit var googleSignInClient: GoogleSignInClient
-    lateinit var btn_googleSignIn:SignInButton
+//    lateinit var btn_googleSignIn:SignInButton
     private val RC_SIGN_IN = 99
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
 
-        btn_googleSignIn=findViewById(R.id.btn_googleSignIn)
+//        btn_googleSignIn=findViewById(R.id.btn_googleSignIn)
         //btn_googleSignIn.setOnClickListener (this) // 구글 로그인 버튼
-        btn_googleSignIn.setOnClickListener {signIn()}
+        //btn_googleSignIn.setOnClickListener {signIn()}
 
         //Google 로그인 옵션 구성. requestIdToken 및 Email 요청
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)

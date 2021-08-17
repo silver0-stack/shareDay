@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.shareDay.MainActivity
 import com.example.shareDay.R
 import com.google.android.gms.common.SignInButton
+import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.auth.FirebaseAuth
 
 class SignInActivity : AppCompatActivity() {
@@ -19,8 +20,8 @@ class SignInActivity : AppCompatActivity() {
     lateinit var signUpBtn: TextView //회원가입 버튼
     lateinit var auth: FirebaseAuth
     lateinit var makeId: EditText
-    lateinit var makePw: EditText
-    lateinit var btn_googleSignIn: SignInButton
+    lateinit var makePw: TextInputEditText
+    //lateinit var btn_googleSignIn: SignInButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,7 +31,7 @@ class SignInActivity : AppCompatActivity() {
         signUpBtn = findViewById(R.id.signUpBtn)
         makeId = findViewById(R.id.userId)
         makePw = findViewById(R.id.userPw)
-        btn_googleSignIn=findViewById(R.id.btn_googleSignIn)
+       // btn_googleSignIn=findViewById(R.id.btn_googleSignIn)
         auth = FirebaseAuth.getInstance()
 
         /*회원가입 버튼으로 회원가입 화면으로 전환*/
@@ -38,11 +39,11 @@ class SignInActivity : AppCompatActivity() {
             val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
         }
-        /*googld login button click event listener*/
-        btn_googleSignIn.setOnClickListener {
-            val intent=Intent(this,GoogleSignInActivity::class.java)
-            startActivity(intent)
-        }
+        /*구글 로그인 버튼 클릭 시 이벤트 리스너*/
+//        //btn_googleSignIn.setOnClickListener {
+//            val intent=Intent(this,GoogleSignInActivity::class.java)
+//            startActivity(intent)
+//        }
         loginBtn.setOnClickListener {
             val userId = makeId.text.toString().trim()
             val userPw = makePw.text.toString().trim()

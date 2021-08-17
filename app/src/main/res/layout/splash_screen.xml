@@ -4,46 +4,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tool="http://schemas.android.com/tools"
-    android:background="#100727"
+    android:background="@drawable/login_background"
     android:orientation="vertical"
     tool:context=".SplashActivity">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:orientation="vertical"
-        android:layout_margin="30dp"
-        android:padding="40dp">
+        android:layout_marginTop="280dp"
+        android:layout_gravity="center|bottom">
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/shareday_logo" />
+            android:layout_height="match_parent"
+            android:src="@drawable/splash_jpg" />
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="나눔을 실천하는 날,"
-            android:fontFamily="@font/cafe24_ssurroundair"
-            android:textColor="@color/white"
-            android:textSize="25sp"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="쉐어데이"
-            android:textStyle="bold"
-            android:fontFamily="@font/cafe24_ssurroundair"
-            android:textColor="#A191F4"
-            android:textSize="25sp"/>
-
-    </LinearLayout>
 
 </LinearLayout>

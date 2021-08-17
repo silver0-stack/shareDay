@@ -2,14 +2,17 @@ package com.example.shareDay.user
 
 import android.content.ContentValues
 import android.content.Intent
+import android.media.Image
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.shareDay.MainActivity
 import com.example.shareDay.R
+import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
@@ -18,10 +21,12 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
 
 class SignUpActivity : AppCompatActivity() {
+    private lateinit var signupBackBtn:ImageView
+    private lateinit var makeNickname:EditText
     private lateinit var btnSignOk: Button
     private lateinit var makeId: EditText
-    private lateinit var makePw: EditText
-    private lateinit var confirmPw: EditText
+    private lateinit var makePw: TextInputEditText
+    private lateinit var confirmPw: TextInputEditText
     private lateinit var auth: FirebaseAuth
     private lateinit var refusers: DatabaseReference
     private var firebaseUserID: String = ""
@@ -31,30 +36,39 @@ class SignUpActivity : AppCompatActivity() {
         setContentView(R.layout.activity_sign_up)
 
         auth = Firebase.auth
-
+        signupBackBtn=findViewById(R.id.signupBackBtn)
+        makeNickname=findViewById(R.id.makeNickname)
         btnSignOk = findViewById(R.id.btnSignOk) //회원가입 ok 버튼
         makeId = findViewById(R.id.makeId)
         makePw = findViewById(R.id.makePw)
         confirmPw = findViewById(R.id.confirmPw)
 
 
+        signupBackBtn.setOnClickListener {
+            onBackPressed()
+        }
         btnSignOk.setOnClickListener {
+            val userNickname=makeNickname.text.toString()
             val userId = makeId.text.toString().trim()
             val userPw = makePw.text.toString().trim()
             val userConfirmPw = confirmPw.text.toString()
 
-            registerUser(userId, userPw, userConfirmPw)
+            registerUser(userNickname,userId, userPw, userConfirmPw)
 
         }
     }
 
     private fun registerUser(
+        userNickname: String,
         userId: String,
         userPw: String,
         userConfirmPw: String,
     ) {
 
         when {
+            userNickname.isEmpty() -> {
+                Toast.makeText(this, "닉네임을 작성해주세요.", Toast.LENGTH_LONG).show()
+            }
             userId.isEmpty() -> {
                 Toast.makeText(this, "아이디를 작성해주세요.", Toast.LENGTH_LONG).show()
             }
