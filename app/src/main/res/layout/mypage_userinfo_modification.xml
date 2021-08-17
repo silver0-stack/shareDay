@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:gravity="center_horizontal"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
@@ -24,7 +25,7 @@
             android:layout_gravity="center"
             android:textSize="20dp"
             android:textColor="@color/black"
-            android:text="회원정보수정"
+            android:text="개인정보수정"
             />
         <ImageButton
             android:id="@+id/mypage_userinfo_back"
@@ -42,19 +43,39 @@
     </androidx.appcompat.widget.Toolbar>
 
 
-    <Button
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:id="@+id/mypage_userinfo_modification"
-        android:layout_width="364dp"
-        android:layout_height="52dp"
-        android:backgroundTint="@color/white"
-        android:text="개인정보수정"
-        android:textAlignment="viewStart"
-        android:layout_gravity="center_horizontal"
-        android:drawableLeft="@drawable/mypage_changeinfo_icon"
-        android:textColor="@color/black"
-        android:layout_marginTop="20dp"
-        tools:ignore="RtlCompat" />
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Button
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:id="@+id/mypage_userinfo_modification"
+            android:layout_width="364dp"
+            android:layout_height="52dp"
+            android:backgroundTint="@color/white"
+            tools:ignore="RtlCompat" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@drawable/mypage_changeinfo_icon"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:text="회원정보수정"/>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
 
     <View
         android:layout_width="364dp"
@@ -63,35 +84,77 @@
         android:layout_gravity="center"/>
 
 
-    <Button
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:id="@+id/mypage_logout"
-        android:layout_width="364dp"
-        android:layout_height="52dp"
-        android:backgroundTint="@color/white"
-        android:text="로그아웃"
-        android:textAlignment="viewStart"
-        android:layout_gravity="center_horizontal"
-        android:drawableLeft="@drawable/mypage_logout_icon"
-        android:textColor="@color/black"
-        tools:ignore="RtlCompat" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Button
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:id="@+id/mypage_logout"
+            android:layout_width="364dp"
+            android:layout_height="52dp"
+            android:backgroundTint="@color/white"
+            tools:ignore="RtlCompat" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@drawable/mypage_logout_icon"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:text="로그아웃"/>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
 
     <View
         android:layout_width="364dp"
         android:layout_height="1dp"
         android:background="#DDDDDD"
         android:layout_gravity="center"/>
-    <Button
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:id="@+id/mypage_deleteuserinfo"
-        android:layout_width="364dp"
-        android:layout_height="52dp"
-        android:backgroundTint="@color/white"
-        android:drawableLeft="@drawable/mypage_leave_icon"
-        android:text="회원탈퇴"
-        android:textAlignment="viewStart"
-        android:layout_gravity="center_horizontal"
-        android:textColor="@color/black"
-        tools:ignore="RtlCompat" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Button
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:id="@+id/mypage_deleteuserinfo"
+            android:layout_width="364dp"
+            android:layout_height="52dp"
+            android:backgroundTint="@color/white"
+            tools:ignore="RtlCompat" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@drawable/mypage_leave_icon"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:text="회원탈퇴"/>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
 
 </LinearLayout>
