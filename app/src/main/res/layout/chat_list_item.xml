@@ -3,6 +3,8 @@
     android:layout_width="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
+    android:background="@drawable/border_bottom"
+    android:layout_margin="10dp"
     android:padding="10dp">
 
     <ImageView
@@ -11,19 +13,22 @@
         android:layout_margin="10dp"
         android:id="@+id/profile_img"
         android:scaleType="fitXY"
+        android:background="@drawable/background_rounding"
         android:src="@drawable/profile1_image"/>
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_marginLeft="10dp"
+        android:gravity="center_vertical"
+        android:layout_weight="10"
         android:orientation="vertical">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="QKRTODIS"
             android:id="@+id/name_text"
-            android:textColor="#A191F4"
+            android:textColor="#7D2F85"
             android:textStyle="bold"
             android:layout_marginBottom="5dp"/>
 
@@ -33,6 +38,28 @@
             android:text="저 그쪽 주변에 있어요!"
             android:id="@+id/about"
             android:textColor="#555555"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2분전"
+            android:paddingBottom="5dp"/>
+        <TextView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/background_numofchat"
+            android:text="1"
+            android:gravity="center"
+            android:textColor="@color/white"/>
 
     </LinearLayout>
 </LinearLayout>
