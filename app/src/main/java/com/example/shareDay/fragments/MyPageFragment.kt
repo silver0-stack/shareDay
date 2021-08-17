@@ -104,8 +104,8 @@ class MyPageFragment  : Fragment() {
         //개인정보수정
         userInfoModification = myPageView.findViewById(R.id.userInfoModification)
         userInfoModification.setOnClickListener {
-//            val intent = Intent(activity, userInfoModificationActivity::class.java)
-//            startActivity(intent)
+       //     val intent = Intent(activity, userInfoModificationActivity::class.java)
+        //    startActivity(intent)
         }
 
         //내가 쓴 글
@@ -115,7 +115,7 @@ class MyPageFragment  : Fragment() {
 //            startActivity(intent)
         }
 
-        //설정
+        //공지사항
         settings = myPageView.findViewById(R.id.settings)
         settings.setOnClickListener {
 //            val intent = Intent(activity, settingsActivity::class.java)

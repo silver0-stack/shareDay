@@ -210,7 +210,7 @@
                 android:layout_height="56dp"
                 android:backgroundTint="@color/white"
                 android:drawableLeft="@drawable/left_setting"
-                android:text="설정"
+                android:text="공지사항"
                 android:textAlignment="viewStart"
                 android:textColor="@color/black" />
 
