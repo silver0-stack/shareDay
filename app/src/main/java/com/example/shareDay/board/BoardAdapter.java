@@ -4,7 +4,6 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -28,7 +27,7 @@ public class BoardAdapter extends RecyclerView.Adapter<BoardAdapter.BoardViewHol
     @NonNull
     @Override
     public BoardViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) { //실제 리스트 뷰가 어댑터에 연결된 후 뷰 홀더 만들어냄
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.helpme_item_main,parent,false);
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.helpme_item_main22222,parent,false);
         BoardViewHolder holder=new BoardViewHolder(view);
 
         return holder;
