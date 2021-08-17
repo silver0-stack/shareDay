@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity()  {
         viewContainer = findViewById(R.id.view_container)
 
         bottomNav.background = null
-        bottomNav.menu.getItem(4).isEnabled = false
+        bottomNav.menu.getItem(4).isEnabled = true
 
         ActivityCompat.requestPermissions(this,
             arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE),
@@ -43,8 +43,8 @@ class MainActivity : AppCompatActivity()  {
 
         mapBtn = findViewById(R.id.mapBtn)
 
-        viewContainer.adapter = MainPageAdapter(supportFragmentManager,4)
-        viewContainer.offscreenPageLimit = 4 //뷰 계층 구조에 보관된 페이지, view/fragment 수 제어
+        viewContainer.adapter = MainPageAdapter(supportFragmentManager,5)
+        //viewContainer.offscreenPageLimit = 4 //뷰 계층 구조에 보관된 페이지, view/fragment 수 제어
 
         viewContainer.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
             override fun onPageScrollStateChanged(state: Int) {}
@@ -66,9 +66,9 @@ class MainActivity : AppCompatActivity()  {
                 // itemId에 따라 viewPager 바뀜
                 R.id.menu_chat -> viewContainer.currentItem = 0
                 R.id.menu_helpMe -> viewContainer.currentItem = 1
-                //R.id.menu_map -> viewContainer.currentItem = 2
-                R.id.menu_helpYou -> viewContainer.currentItem = 2
-                R.id.menu_myPage -> viewContainer.currentItem = 3
+                R.id.menu_map -> viewContainer.currentItem = 2
+                R.id.menu_helpYou -> viewContainer.currentItem = 3
+                R.id.menu_myPage -> viewContainer.currentItem = 4
             }
             true
         }

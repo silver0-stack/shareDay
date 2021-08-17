@@ -36,7 +36,7 @@
         android:id="@+id/menu_myPage"
         android:enabled="true"
         android:icon="@drawable/mypage_icon"
-        android:title="@string/menu_myPage"
+        android:title="마이페이지"
         app:cnb_iconColor="@color/navigation_color_profile"
         app:showAsAction="always" />
 </menu>
