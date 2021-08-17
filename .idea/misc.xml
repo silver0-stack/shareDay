@@ -12,7 +12,7 @@
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/shareDay/app/src/main/res/drawable/edittext_background.xml" value="0.34564102564102567" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/shareDay/app/src/main/res/drawable/profile_background_gradient.xml" value="0.24010416666666667" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/shareDay/app/src/main/res/layout/activity_chat.xml" value="0.22" />
-        <entry key="..\:/Users/Administrator/AndroidStudioProjects/shareDay/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/shareDay/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/shareDay/app/src/main/res/layout/activity_map.xml" value="0.1358695652173913" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/shareDay/app/src/main/res/layout/activity_profile_pop_up.xml" value="0.22" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/shareDay/app/src/main/res/layout/activity_sign_in.xml" value="0.1358695652173913" />
@@ -31,6 +31,7 @@
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/shareDay/app/src/main/res/layout/my_area.xml" value="0.190625" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/shareDay/app/src/main/res/layout/mypage.xml" value="0.18020833333333333" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/shareDay/app/src/main/res/layout/splash_screen.xml" value="0.190625" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/shareDay/app/src/main/res/menu/bottom_nav_menu.xml" value="0.33489583333333334" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/shareDay/app/src/main/res/menu/main_menu.xml" value="0.33489583333333334" />
       </map>
     </option>
