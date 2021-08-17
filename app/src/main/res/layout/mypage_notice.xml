@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center_horizontal"
-    android:layout_height="match_parent">
-
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -22,23 +21,27 @@
             android:layout_gravity="center"
             android:textSize="20dp"
             android:textColor="@color/black"
-            android:text="알람"
+            android:text="공지사항"
             />
         <ImageButton
-            android:id="@+id/mypage_alarm_back"
+            android:id="@+id/mypage_notice_back"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:background="@drawable/back_icon"/>
-
+        <ImageButton
+            android:id="@+id/mypage_notice_alarm"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="right"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/alarm_black_icon"/>
 
     </androidx.appcompat.widget.Toolbar>
 
-
     <ImageView
-        android:layout_marginTop="24dp"
         android:layout_width="364dp"
-        android:layout_height="430dp"
-        android:background="@drawable/mypage_alarm"/>
-
+        android:layout_height="490dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/mypage_notice"/>
 
 </LinearLayout>

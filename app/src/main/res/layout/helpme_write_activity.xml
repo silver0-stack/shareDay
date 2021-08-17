@@ -107,7 +107,6 @@
     </RadioGroup>
 
 
-
     <ImageButton
         android:id="@+id/write_upload_button"
         android:layout_width="78dp"
