@@ -4,8 +4,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:background="@drawable/border_bottom"
-    android:layout_margin="10dp"
-    android:padding="10dp">
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingVertical="10dp">
 
     <ImageView
         android:layout_width="40dp"
