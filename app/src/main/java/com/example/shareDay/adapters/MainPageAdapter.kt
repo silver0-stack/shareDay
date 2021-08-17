@@ -16,6 +16,7 @@ class MainPageAdapter(fm: FragmentManager, private var tabCount: Int) : Fragment
             1 -> HelpMeFragment()
             2 -> HelpYouFragment() //지도탭 버튼때문에 임의로 채팅 연결시킴. 오류 아님.
             3 -> HelpYouFragment()
+            4 -> MyPageFragment()
             else -> MyPageFragment() //마이페이지 탭으로 이동
         }
     }
