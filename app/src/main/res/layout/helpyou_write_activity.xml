@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".board.WriteActivity">
+
+
+
+    <ImageView
+        android:id="@+id/item_profile"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="24dp"
+        android:src="@drawable/ic_person4" />
+    <EditText
+        android:id="@+id/write_name_text"
+        android:layout_toEndOf="@id/item_profile"
+        android:layout_alignBottom="@+id/item_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:hint="Name"
+        android:textSize="24dp"
+        android:textColor="@color/black"
+        android:background="@null"
+        tools:ignore="HardcodedText"
+        />
+
+    <ImageButton
+        android:layout_width="157dp"
+        android:layout_height="36dp"
+        android:layout_alignBottom="@+id/item_profile"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="24dp"
+        android:background="@drawable/helpyou_mylocation" />
+
+
+    <ImageView
+        android:id="@+id/write_mylocation_image"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_below="@+id/item_profile"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/mylocation_image" />
+
+    <TextView
+        android:id="@+id/item_mylocation_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="95dp"
+        android:layout_marginLeft="54dp"
+        android:text="E편한세상 시티 3차" />
+
+
+    <ImageView
+        android:id="@+id/write_contents_image"
+        android:layout_width="wrap_content"
+        android:layout_height="160dp"
+        android:layout_below="@+id/write_mylocation_image"
+        android:layout_marginTop="18dp"
+        android:src="@drawable/content_image" />
+
+
+    <EditText
+        android:id="@+id/write_contents_text"
+        android:layout_below="@+id/item_profile"
+        android:layout_marginTop="80dp"
+        android:layout_marginLeft="54dp"
+        android:layout_marginRight="54dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="content"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        tools:ignore="HardcodedText"
+        android:background="@null"
+        />
+
+    <TextView
+        android:id="@+id/item_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="320dp"
+        android:text="글을 올릴 게시판을 선택해주세요" />
+
+    <RadioGroup
+        android:id="@+id/item_radiogroup"
+        android:orientation="horizontal"
+        android:layout_below="@+id/item_text"
+        android:layout_marginLeft="28dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/item_pad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="생리대"/>
+        <RadioButton
+            android:id="@+id/item_tampon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="탐폰"/>
+        <RadioButton
+            android:id="@+id/item_pantyliner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="팬티라이너"/>
+
+
+
+    </RadioGroup>
+
+
+
+    <ImageButton
+        android:id="@+id/write_upload_button"
+        android:layout_width="78dp"
+        android:layout_height="36dp"
+        android:layout_below="@+id/item_radiogroup"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="35dp"
+        android:layout_marginRight="24dp"
+        android:background="@drawable/helpyou_write"
+
+        />
+
+
+</RelativeLayout>
