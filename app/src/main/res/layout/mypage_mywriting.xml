@@ -28,14 +28,18 @@
             android:id="@+id/mypage_mywriting_back"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:background="@drawable/back_icon"/>
+            android:scaleType="centerCrop"
+            android:background="#00000000"
+            android:src="@drawable/back_icon"/>
         <ImageButton
             android:id="@+id/mypage_mywriting_alarm"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_gravity="right"
             android:layout_marginRight="30dp"
-            android:background="@drawable/alarm_black_icon"/>
+            android:background="#00000000"
+            android:scaleType="centerCrop"
+            android:src="@drawable/alarm_black_icon"/>
 
     </androidx.appcompat.widget.Toolbar>
 
@@ -46,46 +50,72 @@
         android:layout_marginTop="24dp"
         android:layout_marginLeft="24dp"
         >
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="182dp"
             android:layout_height="48dp"
             android:orientation="vertical"
             android:gravity="center_horizontal"
-            android:background="@drawable/mylocation_image">
-            <TextView
-                android:id="@+id/helpme_text"
-                android:layout_width="wrap_content"
+            >
+            <ImageView
+                android:layout_width="182dp"
+                android:layout_height="48dp"
+                android:scaleType="centerCrop"
+                android:background="#00000000"
+                android:src="@drawable/mylocation_image"/>
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:textColor="@color/black"
-                android:text="도와주세요" />
-            <TextView
-                android:id="@+id/helpme_count"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/navigation_color_add"
-                android:text="2"/>
-        </LinearLayout>
-        <LinearLayout
+                android:gravity="center"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/helpme_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:textColor="@color/black"
+                    android:text="도와주세요" />
+                <TextView
+                    android:id="@+id/helpme_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/navigation_color_add"
+                    android:text="2"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
             android:layout_width="182dp"
             android:layout_height="48dp"
-            android:orientation="vertical"
             android:gravity="center_horizontal"
-            android:background="@drawable/mylocation_image">
-            <TextView
-                android:id="@+id/helpyou_text"
-                android:layout_width="wrap_content"
+          >
+            <ImageView
+                android:layout_width="182dp"
+                android:layout_height="48dp"
+                android:scaleType="center"
+                android:src="@drawable/mylocation_image"/>
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:textColor="@color/black"
-                android:text="도와줄게요" />
-            <TextView
-                android:id="@+id/helpyou_count"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/navigation_color_chart"
-                android:text="7"/>
-        </LinearLayout>
+                android:orientation="vertical"
+                android:gravity="center_horizontal">
+                <TextView
+                    android:id="@+id/helpyou_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:textColor="@color/black"
+                    android:text="도와줄게요" />
+                <TextView
+                    android:id="@+id/helpyou_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/navigation_color_chart"
+                    android:text="7"/>
+            </LinearLayout>
+
+        </RelativeLayout>
 
 
         </LinearLayout>

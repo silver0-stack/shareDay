@@ -19,10 +19,11 @@ import com.example.shareDay.chats.ProfilePopUp
 import org.w3c.dom.Text
 
 //1:1채팅방 Activity에 recyclerView를 연결하는 Adapter
-class ChatAdapter(chatData: MutableList<Chat>?, name: String) :
+class ChatAdapter(chatData: MutableList<Chat>?, userName: String, chatName: String) :
     RecyclerView.Adapter<ChatAdapter.MyViewHolder>() {
     private val chatList = chatData
-    private val name: String = name
+    private val name: String = userName
+    private val chatName: String = chatName
 
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var nameText: TextView
@@ -85,6 +86,8 @@ class ChatAdapter(chatData: MutableList<Chat>?, name: String) :
 
         holder.nameText.setOnClickListener{
             val intent = Intent(holder.itemView?.context, ProfilePopUp::class.java)
+            intent.putExtra("chatName", chatName)
+            intent.putExtra("userName", name)
             ContextCompat.startActivity(holder.itemView.context, intent, null)
         }
     }
@@ -98,10 +101,6 @@ class ChatAdapter(chatData: MutableList<Chat>?, name: String) :
     fun addChat(chat: Chat) {
         chatList!!.add(chat)
         notifyItemInserted(chatList.size - 1)
-    }
-
-    init {
-        //MainActivity.java에서 받은 데이터들을 저장
     }
 
     interface ClickListener{

@@ -4,13 +4,16 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.shareDay.chats.UserInfo
+import org.w3c.dom.Text
 
 //홈 채팅 탭에 뜨는 채팅방 목록 fragment의 recyclerView를 띄우는 Adapter
-class UserListAdapter(val listData: List<UserInfo>, val clickListener: ClickListener):RecyclerView.Adapter<UserListAdapter.MyViewHoler>() {
+class UserListAdapter(val listData: List<UserInfo>, val clickListener: ClickListener)
+    : RecyclerView.Adapter<UserListAdapter.MyViewHoler>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHoler {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.chat_list_item, parent, false)
@@ -24,19 +27,25 @@ class UserListAdapter(val listData: List<UserInfo>, val clickListener: ClickList
 
     class MyViewHoler(view: View): RecyclerView.ViewHolder(view){
         var name_text: TextView
+        var about: TextView
+        var profile_img : ImageView
 
         init{
             name_text = view.findViewById(R.id.name_text)
+            about = view.findViewById(R.id.about)
+            profile_img = view.findViewById(R.id.profile_img)
         }
     }
 
     override fun onBindViewHolder(holder: MyViewHoler, position: Int) {
         holder.name_text.text = listData.get(position).name
+        holder.about.text = listData.get(position).about
 
         holder.itemView.setOnClickListener {
             listener?.onItemClick()
 
             val intent = Intent(holder.itemView?.context, ChatActivity::class.java)
+            intent.putExtra("chatName", listData.get(position).name)
             ContextCompat.startActivity(holder.itemView.context, intent, null)
             //intent.putExtra("", value)
             //startActivity(intent)
