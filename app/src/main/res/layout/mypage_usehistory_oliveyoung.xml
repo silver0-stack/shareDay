@@ -42,6 +42,7 @@
     <ImageView
         android:layout_width="412dp"
         android:layout_height="600dp"
-        android:background="@drawable/mypage_olivyoung"/>
+        android:scaleType="centerCrop"
+        android:src="@drawable/mypage_olivyoung"/>
 
 </LinearLayout>

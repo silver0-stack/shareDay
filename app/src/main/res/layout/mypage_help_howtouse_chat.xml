@@ -53,7 +53,7 @@
             <ImageView
                 android:layout_width="413dp"
                 android:layout_height="1148dp"
-                android:background="@drawable/howtousechatting_info_image"/>
+                android:src="@drawable/howtousechatting_info_image"/>
         </LinearLayout>
 
 

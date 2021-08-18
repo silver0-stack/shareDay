@@ -54,7 +54,7 @@
             <ImageView
                 android:layout_width="413dp"
                 android:layout_height="1248dp"
-                android:background="@drawable/howtousemap_info_image"/>
+                android:src="@drawable/howtousemap_info_image"/>
         </LinearLayout>
     </ScrollView>
 

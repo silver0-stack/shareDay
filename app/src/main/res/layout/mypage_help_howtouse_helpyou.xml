@@ -57,7 +57,7 @@
             <ImageView
                 android:layout_width="413dp"
                 android:layout_height="1513dp"
-                android:background="@drawable/howtousehelpyou_info_image"/>
+                android:src="@drawable/howtousehelpyou_info_image"/>
         </LinearLayout>
     </ScrollView>
 
