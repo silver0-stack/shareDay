@@ -12,7 +12,6 @@ import com.bumptech.glide.Glide
 import com.example.shareDay.ChatActivity
 import com.example.shareDay.R
 
-import com.example.shareDay.helpme.dto.total
 import com.example.shareDay.helpme.dto.total2
 import com.example.shareDay.mapmenu.MapActivity
 import kotlinx.android.synthetic.main.helpyou_write_list.view.*
@@ -25,7 +24,7 @@ class HelpYouTotalAdapter(private val userList: ArrayList<total2>) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(
-            R.layout.helpyou_item_main,
+            R.layout.hy_total_list,
             parent,
             false
         )
