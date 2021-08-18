@@ -47,17 +47,18 @@
         android:layout_width="wrap_content"
         android:layout_height="600dp"
         >
+
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="600dp"
             android:background="#00000000"
             android:scaleType="centerCrop"
-            android:src="@drawable/mypage_userinfobackground"/>
+            android:src="@drawable/mypage_userhistory2" />
         <ImageButton
             android:id="@+id/mypage_oliveyoung_button"
             android:layout_width="70dp"
             android:layout_height="110dp"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="69dp"
             android:layout_marginLeft="24dp"
             android:background="#00000000"
             android:scaleType="centerCrop"
