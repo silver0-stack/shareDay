@@ -13,6 +13,7 @@ import com.google.firebase.database.ChildEventListener
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import java.util.ArrayList
+import android.content.Intent
 
 
 class ChatActivity : AppCompatActivity() { //1:1 채팅방
@@ -20,16 +21,28 @@ class ChatActivity : AppCompatActivity() { //1:1 채팅방
     private var adapter: RecyclerView.Adapter<*>? = null
     private var layoutManager: RecyclerView.LayoutManager? = null
     private var chatList: List<Chat>? = null
-    private val nickname = "익명1"
     private var chatText: EditText? = null
     private var sendButton: Button? = null
     private var myRef: DatabaseReference? = null
 
     lateinit var chatBackBtn: ImageButton
 
+    private var CHAT_NAME: String? = null
+    private var USER_NAME: String? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chat)
+
+        // 다른 화면에서 받아온 채팅방 이름, 유저 이름 저장
+        val intent = intent
+        CHAT_NAME = intent.getStringExtra("chatName")
+        USER_NAME = intent.getStringExtra("userName")
+        //임시로 다른 값 넣어둠
+        CHAT_NAME = "테스트채팅방1"
+        USER_NAME = "익명1"
+
+        // xml ID 참조 및 클릭리스너
         chatText = findViewById<EditText>(R.id.chatText)
         sendButton = findViewById<Button>(R.id.sendButton)
         sendButton?.setOnClickListener(View.OnClickListener {
@@ -37,7 +50,7 @@ class ChatActivity : AppCompatActivity() { //1:1 채팅방
             val msg = this.chatText?.text.toString()
             if (msg != null) {
                 val chat = Chat()
-                chat.name = nickname
+                chat.name = USER_NAME
                 chat.msg = msg
 
                 //메시지를 파이어베이스에 보냄.
@@ -45,16 +58,25 @@ class ChatActivity : AppCompatActivity() { //1:1 채팅방
                 chatText?.setText("")
             }
         })
+        chatBackBtn = findViewById(R.id.chatBackBtn)
+        chatBackBtn.setOnClickListener{
+            //뒤로가기 버튼 : 여기 ChatActivity에서 채팅 탭 목록으로 이동
+            val intent = Intent(this, MainActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP //인텐트 플래그 설정
+            startActivity(intent) //인텐트 이동
+            finish() //현재 액티비티 종료
+        }
+
         //리사이클러뷰에 어댑터 적용
         recyclerView = findViewById(R.id.recyclerView)
         recyclerView?.setHasFixedSize(true)
         layoutManager = LinearLayoutManager(this)
         recyclerView?.setLayoutManager(layoutManager)
         chatList = ArrayList()
-        adapter = ChatAdapter(chatList as ArrayList<Chat>, nickname)
+        adapter = ChatAdapter(chatList as ArrayList<Chat>, USER_NAME!!)
         recyclerView?.setAdapter(adapter)
         val database = FirebaseDatabase.getInstance()
-        myRef = database.getReference("message")
+        myRef = database.getReference("chatRoom").child(CHAT_NAME!!)
 
         //데이터들을 추가, 변경, 제거, 이동, 취소
         myRef!!.addChildEventListener(object : ChildEventListener {
@@ -70,11 +92,5 @@ class ChatActivity : AppCompatActivity() { //1:1 채팅방
             override fun onChildMoved(snapshot: DataSnapshot, previousChildName: String?) {}
             override fun onCancelled(error: DatabaseError) {}
         })
-
-        chatBackBtn = findViewById(R.id.chatBackBtn)
-        chatBackBtn.setOnClickListener{
-            //뒤로가기 버튼 : 여기 ChatActivity에서 Chatfragment로 이동
-        }
-
     }
 }

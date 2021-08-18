@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".chats.ProfilePopUp"
     android:background="@drawable/profile_background_gradient"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:id="@+id/profile_pop_up">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -91,6 +92,7 @@
             android:gravity="center">
 
             <ImageButton
+                android:id="@+id/profile_Good"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:scaleType="fitCenter"
@@ -111,6 +113,7 @@
             android:paddingHorizontal="50dp">
 
             <ImageButton
+                android:id="@+id/profile_Bad"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:background="@drawable/chatting_profile_bad_icon"
@@ -130,6 +133,7 @@
             android:gravity="center">
 
             <ImageButton
+                android:id="@+id/profile_Leave"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:background="@drawable/chatting_profile_out_icon"

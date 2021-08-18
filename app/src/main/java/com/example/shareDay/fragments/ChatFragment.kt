@@ -33,8 +33,8 @@ class ChatFragment : Fragment(R.layout.chat_fragment), UserListAdapter.ClickList
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let{
 
+        arguments?.let{
         }
     }
 
@@ -82,7 +82,6 @@ class ChatFragment : Fragment(R.layout.chat_fragment), UserListAdapter.ClickList
             }
 
         })
-
 
         //예시 데이터
         listData.add(UserInfo("test1", "","ttttttt"))
