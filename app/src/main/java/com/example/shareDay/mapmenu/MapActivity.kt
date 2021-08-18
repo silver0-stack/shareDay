@@ -21,6 +21,8 @@ import com.example.shareDay.R
 import com.naver.maps.map.*
 import com.naver.maps.map.util.FusedLocationSource
 
+//지도 탭에 보이는 마커들 표시하는 코드
+
 class MapActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private var mapView: MapView? = null

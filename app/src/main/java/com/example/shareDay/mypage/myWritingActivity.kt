@@ -10,6 +10,8 @@ import com.example.shareDay.R
 import com.google.android.material.tabs.TabLayout
 import kotlin.reflect.KMutableProperty1
 
+//마이페이지- 내가 쓴글 페이지
+
 class myWritingActivity :AppCompatActivity(){
 
 

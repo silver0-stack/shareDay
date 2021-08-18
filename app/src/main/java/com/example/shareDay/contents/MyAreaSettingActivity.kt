@@ -19,6 +19,7 @@ import com.pedro.library.AutoPermissionsListener
 import com.pedro.library.AutoPermissions
 import com.pedro.library.AutoPermissions.Companion.parsePermissions
 
+//지도 탭에서 내 위치 설정하는 코드
 
 //위치 기반 서비스와 센서 이용
 open class MyAreaSettingActivity : AppCompatActivity(), AutoPermissionsListener {

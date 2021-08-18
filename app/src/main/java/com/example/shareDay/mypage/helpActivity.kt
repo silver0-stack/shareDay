@@ -5,6 +5,8 @@ import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import com.example.shareDay.R
 
+//마이페이지- 도움말페이지
+
 class helpActivity:AppCompatActivity() {
     //lateinit var mypage_help_back: ImageButton
     //override fun onCreate(savedInstanceState: Bundle?) {

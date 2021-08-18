@@ -1,5 +1,7 @@
 package com.example.shareDay.mypage
 
+
+//마이페이지- 사용내역 페이지
 import android.os.Bundle
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
