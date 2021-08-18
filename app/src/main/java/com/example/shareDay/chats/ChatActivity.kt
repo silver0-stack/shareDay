@@ -17,6 +17,7 @@ import android.content.Intent
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.activity_sign_in.*
 
 
 class ChatActivity : AppCompatActivity() { //1:1 채팅방
@@ -26,12 +27,15 @@ class ChatActivity : AppCompatActivity() { //1:1 채팅방
     private var chatList: List<Chat>? = null
     private var chatText: EditText? = null
     private var sendButton: Button? = null
+
+    //데이터베이스 읽고 쓰기 위해서
     private var myRef: DatabaseReference? = null
+    val database = FirebaseDatabase.getInstance()
 
     lateinit var chatBackBtn: ImageButton
 
-    private var CHAT_NAME: String? = null
-    private var USER_NAME: String? = null
+    var CHAT_NAME: String? = null
+    var USER_NAME: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,23 +43,13 @@ class ChatActivity : AppCompatActivity() { //1:1 채팅방
 
         //유저 식별
         val user = Firebase.auth.currentUser
-        user?.let{
-            val name = user.displayName
-            val email = user.email
-            val photoUrl = user.photoUrl
-
-            val emailVerified = user.isEmailVerified
-
-            val uid = user.uid
-        }
-
 
         // 다른 화면에서 받아온 채팅방 이름, 유저 이름 저장
         val intent = intent
         CHAT_NAME = intent.getStringExtra("chatName")
         USER_NAME = intent.getStringExtra("userName")
         //임시로 다른 값 넣어둠
-        CHAT_NAME = "테스트채팅방1"
+        CHAT_NAME = "테스트채팅방"
         USER_NAME = user?.email
 
         // xml ID 참조 및 클릭리스너
