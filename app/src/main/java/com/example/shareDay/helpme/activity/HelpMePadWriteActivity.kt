@@ -1,4 +1,4 @@
-package com.example.shareDay.board
+package com.example.shareDay.helpme.activity
 
 import android.annotation.SuppressLint
 import android.content.ContentValues
@@ -9,14 +9,16 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatImageView
 import com.example.shareDay.R
-import com.example.shareDay.helpme.*
+import com.example.shareDay.helpme.dto.pad_PostingData
+import com.example.shareDay.helpme.dto.total_PostingData
+import com.example.shareDay.helpme.fragment.HelpMeTamponFragment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 
-class HelpYouWriteActivity : AppCompatActivity(), RadioGroup.OnCheckedChangeListener {
+class HelpMePadWriteActivity : AppCompatActivity(), RadioGroup.OnCheckedChangeListener {
     //firebase
     lateinit var storage: FirebaseStorage
     var photoUri: Uri? = null
@@ -111,6 +113,7 @@ class HelpYouWriteActivity : AppCompatActivity(), RadioGroup.OnCheckedChangeList
 
     }
 
+
     private fun writeNewPost(
         myLocation: String,
         contents: String,
@@ -122,22 +125,23 @@ class HelpYouWriteActivity : AppCompatActivity(), RadioGroup.OnCheckedChangeList
         } else if (contents.isEmpty()) {
             Toast.makeText(this, "글의 내용을 작성해주세요.", Toast.LENGTH_LONG).show()
         } else {
-            val key = database.child("PostingData").push().key
+            val key = database.child("helpme_pad").push().key
             if (key == null) {
                 Log.w(ContentValues.TAG, "Couldn't get push key for posts")
                 return
             }
-            val newPost = PostingData(
+            val newPost = pad_PostingData(
                 myLocation,
                 contents,
                 userName,
                 uid
             )
-            database.child("PostingData").child(key).setValue(newPost).addOnSuccessListener {
+            database.child("helpme_pad").child(key).setValue(newPost).addOnSuccessListener {
                 Toast.makeText(this, "⭕업로드 성공⭕", Toast.LENGTH_SHORT).show()
             }
         }
     }
+
 
     override fun onBackPressed() {
         super.onBackPressed()

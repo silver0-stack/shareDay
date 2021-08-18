@@ -1,4 +1,4 @@
-package com.example.shareDay.board
+package com.example.shareDay.helpyou.activity
 
 import android.annotation.SuppressLint
 import android.content.ContentValues
@@ -9,14 +9,16 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatImageView
 import com.example.shareDay.R
-import com.example.shareDay.helpme.*
+import com.example.shareDay.helpme.dto.pad2_PostingData
+import com.example.shareDay.helpme.dto.total_PostingData
+import com.example.shareDay.helpme.fragment.HelpMeTamponFragment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 
-class HelpMeWriteActivity : AppCompatActivity(), RadioGroup.OnCheckedChangeListener {
+class HelpYouPadWriteActivity : AppCompatActivity(), RadioGroup.OnCheckedChangeListener {
     //firebase
     lateinit var storage: FirebaseStorage
     var photoUri: Uri? = null
@@ -87,7 +89,7 @@ class HelpMeWriteActivity : AppCompatActivity(), RadioGroup.OnCheckedChangeListe
     }
 
     private fun posting() {
-       val myLocation = myLoc.text.toString().trim()
+        val myLocation = myLoc.text.toString().trim()
         val contents = contents.text.toString().trim()
         boardType.setOnCheckedChangeListener(this);
 
@@ -111,7 +113,6 @@ class HelpMeWriteActivity : AppCompatActivity(), RadioGroup.OnCheckedChangeListe
 
     }
 
-
     private fun writeNewPost(
         myLocation: String,
         contents: String,
@@ -123,23 +124,22 @@ class HelpMeWriteActivity : AppCompatActivity(), RadioGroup.OnCheckedChangeListe
         } else if (contents.isEmpty()) {
             Toast.makeText(this, "글의 내용을 작성해주세요.", Toast.LENGTH_LONG).show()
         } else {
-            val key = database.child("PostingData").push().key
+            val key = database.child("helpyou_pad").push().key
             if (key == null) {
                 Log.w(ContentValues.TAG, "Couldn't get push key for posts")
                 return
             }
-            val newPost = PostingData(
+            val newPost = pad2_PostingData(
                 myLocation,
                 contents,
                 userName,
                 uid
             )
-            database.child("PostingData").child(key).setValue(newPost).addOnSuccessListener {
+            database.child("helpyou_pad").child(key).setValue(newPost).addOnSuccessListener {
                 Toast.makeText(this, "⭕업로드 성공⭕", Toast.LENGTH_SHORT).show()
             }
         }
     }
-
 
     override fun onBackPressed() {
         super.onBackPressed()

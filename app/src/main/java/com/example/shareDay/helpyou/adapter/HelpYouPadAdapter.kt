@@ -1,10 +1,9 @@
-package com.example.shareDay.helpme
+package com.example.shareDay.helpyou.adapter
 
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
@@ -12,13 +11,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.shareDay.ChatActivity
 import com.example.shareDay.R
+import com.example.shareDay.helpme.dto.pad2
 
-import com.example.shareDay.board.board
+import com.example.shareDay.helpme.dto.total
 import com.example.shareDay.mapmenu.MapActivity
 import kotlinx.android.synthetic.main.helpyou_write_list.view.*
 
-class HelpYouLinerAdapter(private val userList: ArrayList<board>) :
-    RecyclerView.Adapter<HelpYouLinerAdapter.MyViewHolder>() {
+class HelpYouPadAdapter(private val userList: ArrayList<pad2>) :
+    RecyclerView.Adapter<HelpYouPadAdapter.MyViewHolder>() {
 
     lateinit var chatIcon: ImageButton
     lateinit var mapIcon: ImageButton

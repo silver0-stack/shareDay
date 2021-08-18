@@ -17,8 +17,14 @@
         <activity
             android:name=".chats.ProfilePopUp"
             android:exported="true" />
-        <activity android:name=".board.HelpYouWriteActivity"/>
-        <activity android:name=".board.HelpMeWriteActivity"/>
+        <activity android:name=".helpme.activity.HelpMeTotalWriteActivity"/>
+        <activity android:name=".helpme.activity.HelpMeLinerWriteActivity"/>
+        <activity android:name=".helpme.activity.HelpMePadWriteActivity"/>
+        <activity android:name=".helpme.activity.HelpMeTamponWriteActivity"/>
+        <activity android:name=".helpyou.activity.HelpYouTamponWriteActivity"/>
+        <activity android:name=".helpyou.activity.HelpYouLinerWriteActivity"/>
+        <activity android:name=".helpyou.activity.HelpYouTotalWriteActivity"/>
+        <activity android:name=".helpyou.activity.HelpYouPadWriteActivity"/>
         <activity android:name=".contents.MyAreaSettingActivity" />
         <activity android:name=".mapmenu.MapActivity" />
         <activity android:name=".user.GoogleSignInActivity" />

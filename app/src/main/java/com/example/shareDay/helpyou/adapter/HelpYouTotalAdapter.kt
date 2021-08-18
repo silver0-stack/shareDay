@@ -1,10 +1,9 @@
-package com.example.shareDay.helpme
+package com.example.shareDay.helpyou.adapter
 
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
@@ -12,19 +11,21 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.shareDay.ChatActivity
 import com.example.shareDay.R
-import com.example.shareDay.board.board
+
+import com.example.shareDay.helpme.dto.total
+import com.example.shareDay.helpme.dto.total2
 import com.example.shareDay.mapmenu.MapActivity
 import kotlinx.android.synthetic.main.helpyou_write_list.view.*
 
-class HelpmeListTamponAdapter(private val userList: ArrayList<board>) :
-    RecyclerView.Adapter<HelpmeListTamponAdapter.MyViewHolder>() {
+class HelpYouTotalAdapter(private val userList: ArrayList<total2>) :
+    RecyclerView.Adapter<HelpYouTotalAdapter.MyViewHolder>() {
 
     lateinit var chatIcon: ImageButton
     lateinit var mapIcon: ImageButton
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val itemView = LayoutInflater.from(parent.context.applicationContext).inflate(
-            R.layout.helpme_item_list,
+        val itemView = LayoutInflater.from(parent.context).inflate(
+            R.layout.helpyou_item_main,
             parent,
             false
         )
@@ -36,7 +37,7 @@ class HelpmeListTamponAdapter(private val userList: ArrayList<board>) :
             //채팅아이콘 클릭 이벤트
             chatIcon.setOnClickListener {
                 val Img = userImg.text.toString()
-                val intent = Intent(parent.context.applicationContext, ChatActivity::class.java)
+                val intent = Intent(parent.context, ChatActivity::class.java)
                 intent.putExtra("pofileImg", Img) /*1:1 채팅방으로 프사 송신*/
                 parent.context.startActivity(intent)
             }
@@ -48,7 +49,7 @@ class HelpmeListTamponAdapter(private val userList: ArrayList<board>) :
                 val Contents = contents.text.toString()
 
                 val intent =
-                    Intent(parent.context.applicationContext, MapActivity::class.java) //일단은 지도로 인텐트 해놓음 //자세한건 다음
+                    Intent(parent.context, MapActivity::class.java) //일단은 지도로 인텐트 해놓음 //자세한건 다음
                 intent.putExtra("Img", Img) /*해당 위치 레이아웃에 이름,프사,내용,위치 송신*/
                 intent.putExtra("Loc", Loc)
                 intent.putExtra("Name", Name)
@@ -70,9 +71,9 @@ class HelpmeListTamponAdapter(private val userList: ArrayList<board>) :
         Glide.with(holder.userImg).load(imgUrl).into(holder.userImg) //이미지 배치할 곳에 url 로드
 
         //holder.userImg.text = currentItem.userImg
-        holder. userName.text =currentItem.userName
-        holder.userLocation .text =currentItem.userLocation
-        holder.contents.text =currentItem.contents
+        holder.userName.text = currentItem.userName
+        holder.userLocation.text = currentItem.userLocation
+        holder.contents.text = currentItem.contents
     }
 
     override fun getItemCount(): Int {

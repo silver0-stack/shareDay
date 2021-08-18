@@ -10,11 +10,11 @@ import android.widget.ImageButton
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import com.example.shareDay.adapters.HelpMeAdapter
-import com.example.shareDay.board.HelpMeWriteActivity
-import com.example.shareDay.helpme.HelpMeLinerFragment
-import com.example.shareDay.helpme.HelpMePadFragment
-import com.example.shareDay.helpme.HelpMeTamponFragment
-import com.example.shareDay.helpme.HelpMeTotalFragment
+import com.example.shareDay.helpme.activity.HelpMeTotalWriteActivity
+import com.example.shareDay.helpme.fragment.HelpMeLinerFragment
+import com.example.shareDay.helpme.fragment.HelpMePadFragment
+import com.example.shareDay.helpme.fragment.HelpMeTamponFragment
+import com.example.shareDay.helpme.fragment.HelpMeTotalFragment
 import com.google.android.material.tabs.TabLayout
 
 class HelpMeFragment : Fragment(R.layout.helpme_fragment) {
@@ -41,7 +41,7 @@ class HelpMeFragment : Fragment(R.layout.helpme_fragment) {
         helpMeWriteBtn = myFragment.findViewById(R.id.helpMeWriteBtn)
 
         helpMeWriteBtn.setOnClickListener {
-            val intent = Intent(context, HelpMeWriteActivity::class.java)
+            val intent = Intent(context, HelpMeTotalWriteActivity::class.java)
             startActivity(intent)
         }
         return myFragment

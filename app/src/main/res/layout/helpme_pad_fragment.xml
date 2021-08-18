@@ -1,18 +1,94 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- 도와주세요 상단 생리대 화면 -->
+<?xml version="1.0" encoding="utf-8"?><!-- 도와주세요 상단 생리대 화면 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#FFFFFF">
+    android:background="#FFFFFF"
+    android:orientation="vertical">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/helpme_pad_recycler"
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:clickable="true"
-        tools:listitem="@layout/helpme_item_list"
-        android:focusable="true" />
+        tools:ignore="ExtraText,UselessParent">
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/helpme_pad_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+            tools:listitem="@layout/helpme_item_list" />
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/helpme_total_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="76dp"
+            android:backgroundTint="@color/white"
+            android:src="@drawable/helpme_color_icon"
+            app:borderWidth="0dp"
+            app:fabSize="normal"
+            app:layout_constraintBottom_toBottomOf="@+id/fab_btn"
+            app:layout_constraintEnd_toEndOf="@+id/fab_btn"
+            app:layout_constraintStart_toStartOf="@+id/fab_btn"
+            app:layout_constraintTop_toTopOf="@+id/fab_btn" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/helpme_pad_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="76dp"
+            android:backgroundTint="@color/purple_200"
+            android:src="@drawable/ic_baseline_create_24"
+            app:borderWidth="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:tint="@android:color/white" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/helpme_tampon_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="76dp"
+            android:backgroundTint="@color/purple_200"
+            android:src="@drawable/ic_baseline_create_24"
+            app:borderWidth="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:tint="@android:color/white" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/helpme_liner_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="76dp"
+            android:backgroundTint="@color/purple_200"
+            android:src="@drawable/location_info_icon"
+            app:borderWidth="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:tint="@android:color/white" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/tog_btn"
+            app:borderWidth="0dp"
+            app:fabSize="normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="76dp"
+            android:backgroundTint="@color/white"
+            android:src="@drawable/writing_icon" />
+    </FrameLayout>
 </LinearLayout>

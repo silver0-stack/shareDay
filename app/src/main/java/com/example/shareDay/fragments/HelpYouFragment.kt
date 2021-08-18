@@ -10,11 +10,12 @@ import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import com.example.shareDay.R
 import com.example.shareDay.adapters.HelpYouAdapter
-import com.example.shareDay.board.HelpMeWriteActivity
-import com.example.shareDay.board.HelpYouWriteActivity
-import com.example.shareDay.helpme.*
+import com.example.shareDay.helpyou.activity.HelpYouTamponWriteActivity
+import com.example.shareDay.helpyou.fragment.HelpYouLinerFragment
+import com.example.shareDay.helpyou.fragment.HelpYouPadFragment
+import com.example.shareDay.helpyou.fragment.HelpYouTamponFragment
+import com.example.shareDay.helpyou.fragment.HelpYouTotalFragment
 import com.google.android.material.tabs.TabLayout
-import kotlinx.android.synthetic.main.helpyou_fragment.*
 
 class HelpYouFragment : Fragment() {
 
@@ -40,7 +41,7 @@ class HelpYouFragment : Fragment() {
         helpYouWriteBtn=myFragment.findViewById(R.id.helpYouWriteBtn)
 
         helpYouWriteBtn.setOnClickListener{
-            val intent= Intent(context, HelpYouWriteActivity::class.java)
+            val intent= Intent(context, HelpYouTamponWriteActivity::class.java)
             startActivity(intent)
         }
 

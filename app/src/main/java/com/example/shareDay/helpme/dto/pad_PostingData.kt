@@ -1,10 +1,10 @@
-package com.example.shareDay.board
+package com.example.shareDay.helpme.dto
 
 import com.google.firebase.database.IgnoreExtraProperties
 
 //도와주세요 글 등록하기 위한 데이터 구조
 @IgnoreExtraProperties
-data class PostingData(
+data class pad_PostingData(
     val userLocation: String?,
     val contents: String?,
     val userName: String?,
