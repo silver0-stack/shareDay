@@ -25,6 +25,13 @@
         <activity android:name=".user.SignUpActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".ChatActivity" />
+        <activity android:name=".mypage.helpHistoryActivity"/>
+        <activity android:name=".mypage.useHistoryActivity"/>
+        <activity android:name=".mypage.userInfoModificationActivity"/>
+        <activity android:name=".mypage.myWritingActivity"/>
+        <activity android:name=".mypage.settingsActivity"/>
+        <activity android:name=".mypage.helpActivity"/>
+        <activity android:name=".mypage.useHistory_oliveyoung"/>
         <activity
             android:name=".SplashActivity"
             android:exported="true">

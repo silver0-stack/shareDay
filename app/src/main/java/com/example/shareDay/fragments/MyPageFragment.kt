@@ -94,43 +94,43 @@ class MyPageFragment : Fragment() {
         //도움내역
         helpHistoryBtn = myPageView.findViewById(R.id.helpHistoryBtn)
         helpHistoryBtn.setOnClickListener {
-//            val intent = Intent(activity, helpHistoryActivity::class.java)
-//            startActivity(intent)
+            val intent = Intent(activity, helpHistoryActivity::class.java)
+            startActivity(intent)
         }
 
         //사용내역
         useHistoryBtn = myPageView.findViewById(R.id.useHistoryBtn)
         useHistoryBtn.setOnClickListener {
-//            val intent = Intent(activity, useHistoryActivity::class.java)
-//            startActivity(intent)
+            val intent = Intent(activity, useHistoryActivity::class.java)
+            startActivity(intent)
         }
 
         //개인정보수정
         userInfoModification = myPageView.findViewById(R.id.userInfoModification)
         userInfoModification.setOnClickListener {
-       //     val intent = Intent(activity, userInfoModificationActivity::class.java)
-        //    startActivity(intent)
+            val intent = Intent(activity, userInfoModificationActivity::class.java)
+            startActivity(intent)
         }
 
         //내가 쓴 글
         myWriting = myPageView.findViewById(R.id.myWriting)
         myWriting.setOnClickListener {
-//            val intent = Intent(activity, myWritingActivity::class.java)
-//            startActivity(intent)
+            val intent = Intent(activity, myWritingActivity::class.java)
+            startActivity(intent)
         }
 
         //공지사항
         settings = myPageView.findViewById(R.id.settings)
         settings.setOnClickListener {
-//            val intent = Intent(activity, settingsActivity::class.java)
-//            startActivity(intent)
+            val intent = Intent(activity, settingsActivity::class.java)
+            startActivity(intent)
         }
 
         //도움
         help = myPageView.findViewById(R.id.help)
         help.setOnClickListener {
-//            val intent = Intent(activity, helpActivity::class.java)
-//            startActivity(intent)
+            val intent = Intent(activity, helpActivity::class.java)
+            startActivity(intent)
         }
 
         return myPageView

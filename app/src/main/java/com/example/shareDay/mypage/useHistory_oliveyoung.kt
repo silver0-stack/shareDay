@@ -1,20 +1,19 @@
 package com.example.shareDay.mypage
 
-//마이페이지- 개인정보 수정 페이지
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import com.example.shareDay.R
 
-class userInfoModificationActivity:AppCompatActivity(){
-    lateinit var mypage_userinfo_back: ImageButton
+class useHistory_oliveyoung: AppCompatActivity() {
+    lateinit var mypage_usehistroy_oliveyoung_back: ImageButton
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.mypage_userinfo_modification)
+        setContentView(R.layout.mypage_usehistory_oliveyoung)
 
-        mypage_userinfo_back=findViewById(R.id.mypage_userinfo_back)
-        mypage_userinfo_back.setOnClickListener{
+        mypage_usehistroy_oliveyoung_back=findViewById(R.id.mypage_usehistroy_oliveyoung_back)
+        mypage_usehistroy_oliveyoung_back.setOnClickListener{
             onBackPressed()
         }
     }

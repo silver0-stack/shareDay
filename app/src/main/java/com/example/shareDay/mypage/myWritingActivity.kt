@@ -13,9 +13,6 @@ import kotlin.reflect.KMutableProperty1
 //마이페이지- 내가 쓴글 페이지
 
 class myWritingActivity :AppCompatActivity(){
-
-
-    /*
     lateinit var mywriting_tab_helpme : myWritingHelpmeFragment
     lateinit var mywriting_tab_helpyou : myWritingHelpyouFragment
     lateinit var mywriting_tabs : TabLayout
@@ -31,7 +28,7 @@ class myWritingActivity :AppCompatActivity(){
 
         mypage_mywriting_back=findViewById(R.id.mypage_mywriting_back)
              mypage_mywriting_back.setOnClickListener{
-                finish()
+                onBackPressed()
             }
 
         mywriting_tabs.addOnTabSelectedListener(object :TabLayout.OnTabSelectedListener{
@@ -47,11 +44,11 @@ class myWritingActivity :AppCompatActivity(){
             }
 
             override fun onTabUnselected(tab: TabLayout.Tab?) {
-                TODO("Not yet implemented")
+
             }
 
             override fun onTabReselected(tab: TabLayout.Tab?) {
-                TODO("Not yet implemented")
+
             }
 
 
@@ -66,7 +63,7 @@ class myWritingActivity :AppCompatActivity(){
         }
     }
 
-     */
+
 
 
 }

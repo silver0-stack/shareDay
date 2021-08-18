@@ -14,7 +14,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:background="#7D43C5"
+            android:background="@drawable/mypage_background"
             android:orientation="horizontal"
             tools:ignore="MissingConstraints">
 
@@ -24,20 +24,12 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <ImageView
-                    android:id="@+id/backBtn"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/back_icon"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginLeft="16dp"
-                    app:tint="@color/white" />
 
                 <TextView
                     android:id="@+id/myPageTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="110dp"
+                    android:layout_marginLeft="168dp"
                     android:layout_marginTop="16dp"
                     android:gravity="center"
                     android:text="마이페이지"
@@ -79,12 +71,12 @@
 
             <ImageView
                 android:id="@+id/myPhotoChange"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginLeft="40dp"
                 android:layout_marginTop="170dp"
-                android:src="@drawable/photochange_icon"/>
+                android:src="@drawable/mypage_photochage_icon"/>
         </LinearLayout>
     </FrameLayout>
 
@@ -125,7 +117,7 @@
                 android:layout_width="25dp"
                 android:layout_height="20dp"
                 android:layout_marginRight="5dp"
-                android:src="@drawable/crown_icon"/>
+                android:src="@drawable/mypage_bigcrown_icon"/>
 
             <TextView
                 android:id="@+id/helpScore"
@@ -134,27 +126,44 @@
                 android:text="도움지수 20P"
                 android:textColor="@color/black"
                 android:textSize="13sp" />
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="20dp"
+                android:src="@drawable/mypage_point_icon"
+                android:layout_marginLeft="80dp"
+                />
+
+            <TextView
+                android:id="@+id/pointScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="포인트 39P"
+                android:textColor="@color/black"
+                android:textSize="13sp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:padding="10dp">
+            android:layout_margin="8dp"
+            android:gravity="center_horizontal">
 
             <Button
                 android:id="@+id/helpHistoryBtn"
                 android:layout_width="160dp"
-                android:layout_height="40dp"
-                android:layout_marginEnd="10dp"
+                android:layout_height="50dp"
+                android:backgroundTint="#7D2F85"
+                android:textStyle="bold"
                 android:text="도움 내역" />
 
             <Button
                 android:id="@+id/useHistoryBtn"
                 android:layout_width="160dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="30dp"
+                android:backgroundTint="#882489"
+                android:textStyle="bold"
                 android:text="사용 내역" />
 
         </LinearLayout>
@@ -163,12 +172,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="15dp">
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
-                android:background="@color/purple_200"
+                android:background="#8E6D91"
                 android:layout_gravity="center"/>
             <Button
                 style="@style/Widget.AppCompat.Button.Borderless"
@@ -180,12 +189,13 @@
                 android:text="개인 정보 수정"
                 android:textAlignment="viewStart"
                 android:textColor="@color/black" />
+
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/purple_200"
+                android:background="#AEA6AF"
                 android:layout_gravity="center"/>
-
             <Button
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:id="@+id/myWriting"
@@ -200,7 +210,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/purple_200"
+                android:background="#AEA6AF"
                 android:layout_gravity="center"/>
 
             <Button
@@ -217,7 +227,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/purple_200"
+                android:background="#AEA6AF"
                 android:layout_gravity="center"/>
 
             <Button
@@ -233,7 +243,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
-                android:background="@color/purple_200"
+                android:background="#8E6D91"
                 android:layout_gravity="center"/>
 
         </LinearLayout>

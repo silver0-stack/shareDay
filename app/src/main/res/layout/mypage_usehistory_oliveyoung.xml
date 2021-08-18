@@ -40,9 +40,8 @@
     </androidx.appcompat.widget.Toolbar>
 
     <ImageView
-        android:layout_marginTop="30dp"
-        android:layout_width="364dp"
-        android:layout_height="519dp"
-        android:background="@drawable/oliveyoung2"/>
+        android:layout_width="412dp"
+        android:layout_height="600dp"
+        android:background="@drawable/mypage_olivyoung"/>
 
 </LinearLayout>
