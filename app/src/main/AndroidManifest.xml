@@ -32,6 +32,12 @@
         <activity android:name=".mypage.settingsActivity"/>
         <activity android:name=".mypage.helpActivity"/>
         <activity android:name=".mypage.useHistory_oliveyoung"/>
+        <activity android:name=".mypage.helpHowtouseChatActivity"/>
+        <activity android:name=".mypage.helpHowtouseHelpmeActivity"/>
+        <activity android:name=".mypage.helpHowtouseHelpyouActivity"/>
+        <activity android:name=".mypage.helpHowtouseMapActivity"/>
+        <activity android:name=".mypage.helpHowtouseMypageActivity"/>
+        <activity android:name=".mypage.helpHowtouseShareboxActivity"/>
         <activity
             android:name=".SplashActivity"
             android:exported="true">
