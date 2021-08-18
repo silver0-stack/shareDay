@@ -10,7 +10,6 @@ import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import com.example.shareDay.R
 import com.example.shareDay.adapters.HelpYouAdapter
-import com.example.shareDay.helpyou.activity.HelpYouTamponWriteActivity
 import com.example.shareDay.helpyou.fragment.HelpYouLinerFragment
 import com.example.shareDay.helpyou.fragment.HelpYouPadFragment
 import com.example.shareDay.helpyou.fragment.HelpYouTamponFragment

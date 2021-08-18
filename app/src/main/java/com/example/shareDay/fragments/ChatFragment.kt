@@ -64,18 +64,16 @@ class ChatFragment : Fragment(R.layout.chat_fragment), UserListAdapter.ClickList
 
         db = FirebaseDatabase.getInstance().reference
 
-        val key = db.child("chatRoom").key
-        Log.e("snap", key.toString())
-
         db.addValueEventListener(object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 val chat_room = snapshot.child("chatRoom")
                 for(item in chat_room.children){
-                    //val name : String = item.child("name").value as String
-                    //val about : String = item.child("msg").value as String
+                    //val id : String = item.key.toString()
+                    //val name : String? = item.child("name").value as String?
+                    //val about : String? = item.child("msg").value as String?
 
-                    //val user_info = UserInfo(name, "", about)
-                    //listData.add(user_info)
+                    //val users = UserInfo(name.toString(), id, about.toString())
+                    //listData.add(users)
                     //listData.add(UserInfo(name,"",about))
                     Log.e("snap", item.toString())
                     //Log.e("snap", user_info.toString())
@@ -85,7 +83,7 @@ class ChatFragment : Fragment(R.layout.chat_fragment), UserListAdapter.ClickList
         })
 
         //예시 데이터
-        listData.add(UserInfo("test1", "","ttttttt"))
+        listData.add(UserInfo("second@naver.com", "","ttttttt"))
         listData.add(UserInfo("test2", "", "eeeeeeeeeee"))
         listData.add(UserInfo("test3", "","sssssssssst" ))
         Log.e("snap", listData.toString())

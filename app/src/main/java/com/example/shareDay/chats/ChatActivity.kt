@@ -17,6 +17,8 @@ import android.content.Intent
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.activity_sign_in.*
+import org.w3c.dom.Text
 
 
 class ChatActivity : AppCompatActivity() { //1:1 채팅방
@@ -26,12 +28,18 @@ class ChatActivity : AppCompatActivity() { //1:1 채팅방
     private var chatList: List<Chat>? = null
     private var chatText: EditText? = null
     private var sendButton: Button? = null
+    private var chatToolbar: TextView? = null
+
+    //데이터베이스 읽고 쓰기 위해서
     private var myRef: DatabaseReference? = null
+    val database = FirebaseDatabase.getInstance()
 
     lateinit var chatBackBtn: ImageButton
 
-    private var CHAT_NAME: String? = null
-    private var USER_NAME: String? = null
+    var CHAT_NAME: String? = null
+    var USER_NAME: String? = null
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,34 +47,32 @@ class ChatActivity : AppCompatActivity() { //1:1 채팅방
 
         //유저 식별
         val user = Firebase.auth.currentUser
-        user?.let{
-            val name = user.displayName
-            val email = user.email
-            val photoUrl = user.photoUrl
-            val emailVerified = user.isEmailVerified
-            val uid = user.uid
-        }
+
         // 다른 화면에서 받아온 채팅방 이름, 유저 이름 저장
         val intent = intent
         CHAT_NAME = intent.getStringExtra("chatName")
         USER_NAME = intent.getStringExtra("userName")
+
         //임시로 다른 값 넣어둠
-        CHAT_NAME = "테스트채팅방1"
         USER_NAME = user?.email
 
-        // xml ID 참조 및 클릭리스너
+        // xml ID 참조 및 클릭리스너와 텍스트 제어
         chatText = findViewById<EditText>(R.id.chatText)
         sendButton = findViewById<Button>(R.id.sendButton)
+        chatToolbar = findViewById<TextView>(R.id.chatToolbar)
+        chatToolbar?.setText(CHAT_NAME)
         sendButton?.setOnClickListener(View.OnClickListener {
             //입력창에 메시지를 입력 후 버튼클릭했을 때
             val msg = this.chatText?.text.toString()
-            val chat = Chat()
-            chat.name = USER_NAME
-            chat.msg = msg
+            if (msg != null) {
+                val chat = Chat()
+                chat.name = USER_NAME
+                chat.msg = msg
 
-            //메시지를 파이어베이스에 보냄.
-            myRef!!.push().setValue(chat)
-            chatText?.setText("")
+                //메시지를 파이어베이스에 보냄.
+                myRef!!.push().setValue(chat)
+                chatText?.setText("")
+            }
         })
         chatBackBtn = findViewById(R.id.chatBackBtn)
         chatBackBtn.setOnClickListener{
@@ -81,10 +87,10 @@ class ChatActivity : AppCompatActivity() { //1:1 채팅방
         recyclerView = findViewById(R.id.recyclerView)
         recyclerView?.setHasFixedSize(true)
         layoutManager = LinearLayoutManager(this)
-        recyclerView?.layoutManager = layoutManager
+        recyclerView?.setLayoutManager(layoutManager)
         chatList = ArrayList()
-        adapter = ChatAdapter(chatList as ArrayList<Chat>, USER_NAME!!)
-        recyclerView?.adapter = adapter
+        adapter = ChatAdapter(chatList as ArrayList<Chat>, USER_NAME!!, CHAT_NAME!!)
+        recyclerView?.setAdapter(adapter)
         val database = FirebaseDatabase.getInstance()
         myRef = database.getReference("chatRoom").child(CHAT_NAME!!)
 
@@ -92,7 +98,7 @@ class ChatActivity : AppCompatActivity() { //1:1 채팅방
         myRef!!.addChildEventListener(object : ChildEventListener {
             override fun onChildAdded(snapshot: DataSnapshot, previousChildName: String?) {
 
-                //어댑터에 DTO추가.
+                //어댑터에 DTO추가
                 val chat = snapshot.getValue(Chat::class.java)
                 (adapter as ChatAdapter).addChat(chat!!)
             }
