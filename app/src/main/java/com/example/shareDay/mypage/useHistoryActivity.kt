@@ -22,7 +22,7 @@ class useHistoryActivity:AppCompatActivity() {
 
         mypage_oliveyoung_button=findViewById(R.id.mypage_oliveyoung_button)
         mypage_oliveyoung_button.setOnClickListener{
-           var intent=Intent(this,useHistory_oliveyoung::class.java)
+           val intent=Intent(this,useHistory_oliveyoung::class.java)
             startActivity(intent)
         }
     }

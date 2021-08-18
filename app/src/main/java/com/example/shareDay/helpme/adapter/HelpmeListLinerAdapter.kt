@@ -26,22 +26,24 @@ class HelpmeListLinerAdapter(@NonNull private val userList: ArrayList<liner>) :
     lateinit var mapIcon: ImageButton
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val itemView = LayoutInflater.from(parent.context?.applicationContext).inflate(
+        val itemView = LayoutInflater.from(parent.context).inflate(
             R.layout.helpme_item_list,
             parent,
             false
         )
 
         chatIcon = itemView.findViewById(R.id.startChat)
-        mapIcon=itemView.findViewById(R.id.checkLoc)
+        mapIcon = itemView.findViewById(R.id.checkLoc)
 
         return MyViewHolder(itemView).apply {
             //채팅아이콘 클릭 이벤트
             chatIcon.setOnClickListener {
                 val Img = userImg.text.toString()
-                val intent = Intent(parent.context?.applicationContext, ChatActivity::class.java)
+                val userName = userName.text.toString()
+                val intent = Intent(parent.context, ChatActivity::class.java)
                 intent.putExtra("pofileImg", Img) /*1:1 채팅방으로 프사 송신*/
-                parent.context?.startActivity(intent)
+                intent.putExtra("name", userName)/*1:1 채팅방으로 이름 송신*/
+                parent.context.startActivity(intent)/*1:1 채팅방으로 인텐트*/
             }
             //지도아이콘 클릭 이벤트
             mapIcon.setOnClickListener {
@@ -51,38 +53,38 @@ class HelpmeListLinerAdapter(@NonNull private val userList: ArrayList<liner>) :
                 val Contents = contents.text.toString()
 
                 val intent =
-                    Intent(parent.context?.applicationContext, MapActivity::class.java) //일단은 지도로 인텐트 해놓음 //자세한건 다음
+                    Intent(parent.context,
+                        MapActivity::class.java) //일단은 지도로 인텐트 해놓음 //자세한건 다음
                 intent.putExtra("Img", Img) /*해당 위치 레이아웃에 이름,프사,내용,위치 송신*/
                 intent.putExtra("Loc", Loc)
                 intent.putExtra("Name", Name)
                 intent.putExtra("Contents", Contents)
 
-                parent.context?.applicationContext?.startActivity(intent)
+                parent.context.startActivity(intent)
             }
         }
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        val currentItem = userList?.get(position)
+        val currentItem = userList[position]
 
-        val imageName: String? = currentItem?.userImg //저장된 이미지 이름 받아오기
+        val imageName: String = currentItem.userImg //저장된 이미지 이름 받아오기
         val imgUrl: String = "https://firebasestorage.googleapis.com/" +
                 "v0/b/nami-market.appspot.com/o/images%2F" + imageName +
                 "?alt=media&token=8770eebd-9052-4fe7-9e1a-a70273921fbf" //이미지 url
 
         try {
-            Glide.with(holder.userImg).load(imgUrl).into(holder.userImg) //이미지 배치할 곳에 url 로드
-
-            holder.userName.text = currentItem?.userName
-            holder.userLocation.text = currentItem?.userLocation
-            holder.contents.text = currentItem?.contents
-        }catch (e:NullPointerException){
+            Glide.with(holder.itemView).load(imgUrl).into(holder.userImg) //이미지 배치할 곳에 url 로드
+            holder.userName.text = currentItem.userName
+            holder.userLocation.text = currentItem.userLocation
+            holder.contents.text = currentItem.contents
+        } catch (e: NullPointerException) {
             e.printStackTrace()
         }
     }
 
     override fun getItemCount(): Int {
-        return userList!!.size
+        return userList.size
     }
 
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -91,6 +93,5 @@ class HelpmeListLinerAdapter(@NonNull private val userList: ArrayList<liner>) :
         val userLocation = itemView.findViewById<TextView>(R.id.HmItemLoc)
         val contents = itemView.findViewById<TextView>(R.id.HmItemContents)
     }
-
 
 }

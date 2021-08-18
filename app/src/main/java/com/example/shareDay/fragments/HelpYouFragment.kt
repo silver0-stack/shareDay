@@ -40,10 +40,10 @@ class HelpYouFragment : Fragment() {
         topTabLayout = myFragment.findViewById(R.id.hy_tab_layout)
         helpYouWriteBtn=myFragment.findViewById(R.id.helpYouWriteBtn)
 
-        helpYouWriteBtn.setOnClickListener{
-            val intent= Intent(context, HelpYouTamponWriteActivity::class.java)
-            startActivity(intent)
-        }
+//        helpYouWriteBtn.setOnClickListener{
+//            val intent= Intent(context, HelpYouTamponWriteActivity::class.java)
+//            startActivity(intent)
+//        }
 
         return myFragment
     }

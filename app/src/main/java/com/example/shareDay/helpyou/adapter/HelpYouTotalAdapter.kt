@@ -68,12 +68,16 @@ class HelpYouTotalAdapter(private val userList: ArrayList<total2>) :
                 "v0/b/nami-market.appspot.com/o/images%2F" + imageName +
                 "?alt=media&token=8770eebd-9052-4fe7-9e1a-a70273921fbf" //이미지 url
 
-        Glide.with(holder.userImg).load(imgUrl).into(holder.userImg) //이미지 배치할 곳에 url 로드
+        try {
+            Glide.with(holder.userImg).load(imgUrl).into(holder.userImg) //이미지 배치할 곳에 url 로드
 
-        //holder.userImg.text = currentItem.userImg
-        holder.userName.text = currentItem.userName
-        holder.userLocation.text = currentItem.userLocation
-        holder.contents.text = currentItem.contents
+            //holder.userImg.text = currentItem.userImg
+            holder.userName.text = currentItem.userName
+            holder.userLocation.text = currentItem.userLocation
+            holder.contents.text = currentItem.contents
+        }catch(e:NullPointerException){
+            e.stackTrace
+        }
     }
 
     override fun getItemCount(): Int {
