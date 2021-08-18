@@ -63,6 +63,10 @@ class ChatFragment : Fragment(R.layout.chat_fragment), UserListAdapter.ClickList
     private fun buildDisplayData(){
 
         db = FirebaseDatabase.getInstance().reference
+
+        val key = db.child("chatRoom").key
+        Log.e("snap", key.toString())
+
         db.addValueEventListener(object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 val chat_room = snapshot.child("chatRoom")
@@ -74,6 +78,7 @@ class ChatFragment : Fragment(R.layout.chat_fragment), UserListAdapter.ClickList
                     //listData.add(user_info)
                     //listData.add(UserInfo(name,"",about))
                     Log.e("snap", item.toString())
+                    //Log.e("snap", user_info.toString())
                 }
             }
             override fun onCancelled(error: DatabaseError) {}

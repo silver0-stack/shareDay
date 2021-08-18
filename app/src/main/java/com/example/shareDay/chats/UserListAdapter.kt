@@ -9,7 +9,6 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.shareDay.chats.UserInfo
-import org.w3c.dom.Text
 
 //홈 채팅 탭에 뜨는 채팅방 목록 fragment의 recyclerView를 띄우는 Adapter
 class UserListAdapter(val listData: List<UserInfo>, val clickListener: ClickListener)
@@ -47,8 +46,6 @@ class UserListAdapter(val listData: List<UserInfo>, val clickListener: ClickList
             val intent = Intent(holder.itemView?.context, ChatActivity::class.java)
             intent.putExtra("chatName", listData.get(position).name)
             ContextCompat.startActivity(holder.itemView.context, intent, null)
-            //intent.putExtra("", value)
-            //startActivity(intent)
         }
 
     }
