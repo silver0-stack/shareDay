@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:orientation="horizontal">
+    android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -25,6 +24,7 @@
             android:textColor="@color/black"
             android:text="채팅">
         </TextView>
+
 
         <ImageButton
             android:id="@+id/chatBtn"

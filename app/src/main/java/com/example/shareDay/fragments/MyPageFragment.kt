@@ -19,10 +19,11 @@ import com.example.shareDay.mypage.*
 import com.example.shareDay.user.SignInActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.storage.FirebaseStorage
+import kotlinx.android.synthetic.main.mypage.*
 import java.text.SimpleDateFormat
 import java.util.*
 
-class MyPageFragment  : Fragment() {
+class MyPageFragment : Fragment() {
     private var mAuth: FirebaseAuth? = null
     private var PICK_IMAGE_FROM_ALBUM = 0 //앨범 픽 변수
     private var storage: FirebaseStorage? = null
@@ -33,19 +34,22 @@ class MyPageFragment  : Fragment() {
     //lateinit var signOut: Button
     //lateinit var removeUser: Button
 
-    lateinit var alarmIcon:ImageView
-    lateinit var myPhoto:ImageView
-    lateinit var myPhotoChange:ImageView
+    lateinit var alarmIcon: ImageView
+    lateinit var myPhoto: ImageView
+    lateinit var myPhotoChange: ImageView
     lateinit var helpHistoryBtn: Button
-    lateinit var useHistoryBtn : Button
-    lateinit var userInfoModification : Button
-    lateinit var myWriting : Button
-    lateinit var settings : Button
-    lateinit var help : Button
+    lateinit var useHistoryBtn: Button
+    lateinit var userInfoModification: Button
+    lateinit var myWriting: Button
+    lateinit var settings: Button
+    lateinit var help: Button
+    lateinit var image1: String //이미지 이름
+    lateinit var uid : String //uid
+    lateinit var userName : String //유저네임
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
         // Inflate the layout for this fragment
         myPageView = inflater.inflate(
@@ -74,13 +78,13 @@ class MyPageFragment  : Fragment() {
 
 
         //알람 리스너
-        alarmIcon=myPageView.findViewById(R.id.alarmIcon)
-        alarmIcon.setOnClickListener {  } //여기 알람 내역 액티비티로 인텐트
+        alarmIcon = myPageView.findViewById(R.id.alarmIcon)
+        alarmIcon.setOnClickListener { } //여기 알람 내역 액티비티로 인텐트
 
 
         //앨범 열기
-        myPhoto=myPageView.findViewById(R.id.myPhoto)
-        myPhotoChange=myPageView.findViewById(R.id.myPhotoChange)
+        myPhoto = myPageView.findViewById(R.id.myPhoto)
+        myPhotoChange = myPageView.findViewById(R.id.myPhotoChange)
         myPhotoChange.setOnClickListener {
             val photoPickerIntent = Intent(Intent.ACTION_PICK)
             photoPickerIntent.type = "image/*"
@@ -137,6 +141,9 @@ class MyPageFragment  : Fragment() {
     @SuppressLint("SimpleDateFormat")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
+
+
+
         if (requestCode == PICK_IMAGE_FROM_ALBUM) {
             if (resultCode == Activity.RESULT_OK) {
                 //선택된 이미지 path
@@ -145,9 +152,21 @@ class MyPageFragment  : Fragment() {
 
                 val timestamp = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
                 val imageFileName = "IMAGE_" + timestamp + "_.png"
-                val storageRef = storage?.reference?.child("images")?.child(imageFileName)
+                image1 = imageFileName //설정한 이미지 이름을 넣어줌(url 만들 때 필요함)
+                val storageRef = storage?.reference?.child("profileImg")?.child(imageFileName)
                 //파일업로드
                 storageRef?.putFile(photoUri!!)?.addOnSuccessListener {
+                    //누구 프사인지 식별하기 위해 회원 정보 갖고 오기
+                    mAuth = FirebaseAuth.getInstance()
+                    val user = mAuth!!.currentUser
+
+                    if (user != null) {
+                        userName = user.email.toString()
+                        uid = user.uid
+                    }
+                    val userName = userName
+                    val uid = uid
+                    val image1= image1
                     Toast.makeText(activity, "프로필 사진 설정이 완료되었습니다.", Toast.LENGTH_SHORT).show()
                 }
             } else {

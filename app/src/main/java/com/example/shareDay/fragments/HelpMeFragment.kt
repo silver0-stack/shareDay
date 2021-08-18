@@ -1,26 +1,81 @@
 package com.example.shareDay.fragments
 
+import com.example.shareDay.R
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
-import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.example.shareDay.ChatFragment
-import com.example.shareDay.R
-import com.example.shareDay.UserListAdapter
-import com.example.shareDay.board.BoardAdapter
-import com.example.shareDay.chats.UserInfo
-import com.google.firebase.database.*
-import java.util.ArrayList
+import androidx.viewpager.widget.ViewPager
+import com.example.shareDay.adapters.HelpMeAdapter
+import com.example.shareDay.board.HelpMeWriteActivity
+import com.example.shareDay.helpme.HelpMeLinerFragment
+import com.example.shareDay.helpme.HelpMePadFragment
+import com.example.shareDay.helpme.HelpMeTamponFragment
+import com.example.shareDay.helpme.HelpMeTotalFragment
+import com.google.android.material.tabs.TabLayout
 
-class HelpMeFragment : Fragment(R.layout.helpme_write_list) {
+class HelpMeFragment : Fragment(R.layout.helpme_fragment) {
 
+    lateinit var myFragment: View
+    lateinit var viewHomePager: ViewPager //게시물이 배치되는 화면
+    lateinit var topTabLayout: TabLayout //상단메뉴탭
+    lateinit var helpMeWriteBtn: ImageButton
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        arguments?.let {
+        }
+    }
 
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?,
+    ): View {
+        // Inflate the layout for this fragment
+        myFragment = inflater.inflate(R.layout.helpme_fragment, container, false)
+        viewHomePager = myFragment.findViewById(R.id.hm_view_home)
+        topTabLayout = myFragment.findViewById(R.id.hm_tab_layout)
+        helpMeWriteBtn = myFragment.findViewById(R.id.helpMeWriteBtn)
 
+        helpMeWriteBtn.setOnClickListener {
+            val intent = Intent(context, HelpMeWriteActivity::class.java)
+            startActivity(intent)
+        }
+        return myFragment
+    }
 
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+        setUpViewPager()
+        topTabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+            override fun onTabReselected(tab: TabLayout.Tab?) {
+            }
+
+            override fun onTabUnselected(tab: TabLayout.Tab?) {
+            }
+
+            override fun onTabSelected(tab: TabLayout.Tab?) {
+            }
+        })
+    }
+
+    private fun setUpViewPager() {
+
+        val adapter = HelpMeAdapter(childFragmentManager)
+        adapter.addFragment(HelpMeTotalFragment(), "전체")
+        adapter.addFragment(HelpMePadFragment(), "생리대")
+        adapter.addFragment(HelpMeTamponFragment(), "탐폰")
+        adapter.addFragment(HelpMeLinerFragment(), "팬티라이너")
+
+        viewHomePager.adapter = adapter
+        topTabLayout.setupWithViewPager(viewHomePager)
+    }
+
+    companion object {
+
+    }
 }

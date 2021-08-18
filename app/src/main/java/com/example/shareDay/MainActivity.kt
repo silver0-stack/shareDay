@@ -1,6 +1,7 @@
 package com.example.shareDay
 
 import android.Manifest
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -12,8 +13,11 @@ import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import com.example.shareDay.adapters.MainPageAdapter
 import com.example.shareDay.chats.UserInfo
+import com.example.shareDay.fragments.MyPageFragment
 import com.example.shareDay.mapmenu.MapActivity
+import com.google.android.material.bottomnavigation.BottomNavigationItemView
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.naver.maps.map.MapFragment
 import java.lang.reflect.Array.newInstance
 import java.net.URLClassLoader.newInstance
 import java.util.ArrayList
@@ -26,7 +30,7 @@ class MainActivity : AppCompatActivity()  {
     private lateinit var viewContainer: ViewPager //하단메뉴바로 바뀌는 화면
 
     lateinit var mapBtn : ImageView //지도 버튼
-
+    lateinit var mypageBtn: BottomNavigationItemView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -42,7 +46,7 @@ class MainActivity : AppCompatActivity()  {
             1) //사진 접근 권한
 
         mapBtn = findViewById(R.id.mapBtn)
-
+        mypageBtn=findViewById(R.id.menu_myPage)
         viewContainer.adapter = MainPageAdapter(supportFragmentManager,5)
         //viewContainer.offscreenPageLimit = 4 //뷰 계층 구조에 보관된 페이지, view/fragment 수 제어
 
@@ -76,5 +80,10 @@ class MainActivity : AppCompatActivity()  {
             val intent = Intent(this, MapActivity ::class.java)
             startActivity(intent)
         }
+
+//       mypageBtn.setOnClickListener{
+//            val intent= Intent(this@MainActivity,MyPageFragment::class.java)
+//            startActivity(intent)
+//        }
     }
 }

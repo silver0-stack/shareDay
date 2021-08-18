@@ -19,8 +19,8 @@
         app:showAsAction="always" />
     <item
         android:id="@+id/menu_map"
-        android:enabled="false"
-        android:checkable="false"
+        android:enabled="true"
+        android:checkable="true"
 
         app:cnb_iconColor="@color/navigation_color_add"
         app:showAsAction="always"

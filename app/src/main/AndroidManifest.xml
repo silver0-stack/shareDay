@@ -16,6 +16,8 @@
         <activity
             android:name=".chats.ProfilePopUp"
             android:exported="true" />
+        <activity android:name=".board.HelpYouWriteActivity"/>
+        <activity android:name=".board.HelpMeWriteActivity"/>
         <activity android:name=".contents.MyAreaSettingActivity" />
         <activity android:name=".mapmenu.MapActivity" />
         <activity android:name=".user.GoogleSignInActivity" />
