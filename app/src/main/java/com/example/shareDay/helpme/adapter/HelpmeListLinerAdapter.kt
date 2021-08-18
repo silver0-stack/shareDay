@@ -38,12 +38,12 @@ class HelpmeListLinerAdapter(@NonNull private val userList: ArrayList<liner>) :
         return MyViewHolder(itemView).apply {
             //채팅아이콘 클릭 이벤트
             chatIcon.setOnClickListener {
-                val Img = userImg.text.toString()
-                val userName = userName.text.toString()
-                val intent = Intent(parent.context, ChatActivity::class.java)
-                intent.putExtra("pofileImg", Img) /*1:1 채팅방으로 프사 송신*/
-                intent.putExtra("name", userName)/*1:1 채팅방으로 이름 송신*/
-                parent.context.startActivity(intent)/*1:1 채팅방으로 인텐트*/
+//                val Img = userImg.text.toString()
+//                val userName = userName.text.toString()
+//                val intent = Intent(parent.context, ChatActivity::class.java)
+//                intent.putExtra("profileImg", Img) /*1:1 채팅방으로 프사 송신*/
+//                intent.putExtra("name", userName)/*1:1 채팅방으로 이름 송신*/
+//                parent.context.startActivity(intent)/*1:1 채팅방으로 인텐트*/
             }
             //지도아이콘 클릭 이벤트
             mapIcon.setOnClickListener {

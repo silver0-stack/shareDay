@@ -43,13 +43,9 @@ class ChatActivity : AppCompatActivity() { //1:1 채팅방
             val name = user.displayName
             val email = user.email
             val photoUrl = user.photoUrl
-
             val emailVerified = user.isEmailVerified
-
             val uid = user.uid
         }
-
-
         // 다른 화면에서 받아온 채팅방 이름, 유저 이름 저장
         val intent = intent
         CHAT_NAME = intent.getStringExtra("chatName")
@@ -64,15 +60,13 @@ class ChatActivity : AppCompatActivity() { //1:1 채팅방
         sendButton?.setOnClickListener(View.OnClickListener {
             //입력창에 메시지를 입력 후 버튼클릭했을 때
             val msg = this.chatText?.text.toString()
-            if (msg != null) {
-                val chat = Chat()
-                chat.name = USER_NAME
-                chat.msg = msg
+            val chat = Chat()
+            chat.name = USER_NAME
+            chat.msg = msg
 
-                //메시지를 파이어베이스에 보냄.
-                myRef!!.push().setValue(chat)
-                chatText?.setText("")
-            }
+            //메시지를 파이어베이스에 보냄.
+            myRef!!.push().setValue(chat)
+            chatText?.setText("")
         })
         chatBackBtn = findViewById(R.id.chatBackBtn)
         chatBackBtn.setOnClickListener{
@@ -87,7 +81,7 @@ class ChatActivity : AppCompatActivity() { //1:1 채팅방
         recyclerView = findViewById(R.id.recyclerView)
         recyclerView?.setHasFixedSize(true)
         layoutManager = LinearLayoutManager(this)
-        recyclerView?.setLayoutManager(layoutManager)
+        recyclerView?.layoutManager = layoutManager
         chatList = ArrayList()
         adapter = ChatAdapter(chatList as ArrayList<Chat>, USER_NAME!!)
         recyclerView?.adapter = adapter
