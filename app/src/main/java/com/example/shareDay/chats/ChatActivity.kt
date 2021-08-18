@@ -90,7 +90,7 @@ class ChatActivity : AppCompatActivity() { //1:1 채팅방
         recyclerView?.setLayoutManager(layoutManager)
         chatList = ArrayList()
         adapter = ChatAdapter(chatList as ArrayList<Chat>, USER_NAME!!)
-        recyclerView?.setAdapter(adapter)
+        recyclerView?.adapter = adapter
         val database = FirebaseDatabase.getInstance()
         myRef = database.getReference("chatRoom").child(CHAT_NAME!!)
 
@@ -98,7 +98,7 @@ class ChatActivity : AppCompatActivity() { //1:1 채팅방
         myRef!!.addChildEventListener(object : ChildEventListener {
             override fun onChildAdded(snapshot: DataSnapshot, previousChildName: String?) {
 
-                //어댑터에 DTO추가
+                //어댑터에 DTO추가.
                 val chat = snapshot.getValue(Chat::class.java)
                 (adapter as ChatAdapter).addChat(chat!!)
             }
