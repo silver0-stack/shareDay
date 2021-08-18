@@ -44,30 +44,33 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
+
         <Button
-            style="@style/Widget.AppCompat.Button.Borderless"
             android:id="@+id/mypage_userinfo_modification"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="364dp"
             android:layout_height="52dp"
             android:backgroundTint="@color/white"
             tools:ignore="RtlCompat" />
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="15dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="15dp">
+
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:background="@drawable/mypage_changeinfo_icon"/>
+                android:background="@drawable/mypage_changeinfo_icon" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
+                android:text="회원정보수정"
                 android:textColor="@color/black"
-                android:textStyle="bold"
-                android:text="회원정보수정"/>
+                android:textStyle="bold" />
 
         </LinearLayout>
 

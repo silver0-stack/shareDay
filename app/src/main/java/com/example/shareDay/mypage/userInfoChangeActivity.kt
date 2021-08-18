@@ -5,17 +5,17 @@ import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import com.example.shareDay.R
 
-class helpHowtouseMapActivity:AppCompatActivity() {
-
-    lateinit var howtousemap_back:ImageButton
+class userInfoChangeActivity:AppCompatActivity() {
+    lateinit var mypage_userinfochange_back:ImageButton
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.mypage_help_howtouse_map)
+        setContentView(R.layout.mypage_userinfo_change)
 
-        //뒤로가기버튼
-        howtousemap_back=findViewById(R.id.howtousemap_back)
-        howtousemap_back.setOnClickListener{
+        mypage_userinfochange_back=findViewById(R.id.mypage_userinfochange_back)
+        mypage_userinfochange_back.setOnClickListener{
             onBackPressed()
         }
+
+
     }
 }

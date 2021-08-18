@@ -39,6 +39,7 @@
         <activity android:name=".mypage.helpHowtouseMapActivity"/>
         <activity android:name=".mypage.helpHowtouseMypageActivity"/>
         <activity android:name=".mypage.helpHowtouseShareboxActivity"/>
+        <activity android:name=".mypage.userInfoChangeActivity"/>
         <activity
             android:name=".SplashActivity"
             android:exported="true">
