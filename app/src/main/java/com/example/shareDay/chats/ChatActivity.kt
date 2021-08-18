@@ -18,6 +18,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_sign_in.*
+import org.w3c.dom.Text
 
 
 class ChatActivity : AppCompatActivity() { //1:1 채팅방
@@ -27,6 +28,7 @@ class ChatActivity : AppCompatActivity() { //1:1 채팅방
     private var chatList: List<Chat>? = null
     private var chatText: EditText? = null
     private var sendButton: Button? = null
+    private var chatToolbar: TextView? = null
 
     //데이터베이스 읽고 쓰기 위해서
     private var myRef: DatabaseReference? = null
@@ -49,12 +51,13 @@ class ChatActivity : AppCompatActivity() { //1:1 채팅방
         CHAT_NAME = intent.getStringExtra("chatName")
         USER_NAME = intent.getStringExtra("userName")
         //임시로 다른 값 넣어둠
-        CHAT_NAME = "테스트채팅방"
         USER_NAME = user?.email
 
-        // xml ID 참조 및 클릭리스너
+        // xml ID 참조 및 클릭리스너와 텍스트 제어
         chatText = findViewById<EditText>(R.id.chatText)
         sendButton = findViewById<Button>(R.id.sendButton)
+        chatToolbar = findViewById<TextView>(R.id.chatToolbar)
+        chatToolbar?.setText(CHAT_NAME)
         sendButton?.setOnClickListener(View.OnClickListener {
             //입력창에 메시지를 입력 후 버튼클릭했을 때
             val msg = this.chatText?.text.toString()
@@ -83,7 +86,7 @@ class ChatActivity : AppCompatActivity() { //1:1 채팅방
         layoutManager = LinearLayoutManager(this)
         recyclerView?.setLayoutManager(layoutManager)
         chatList = ArrayList()
-        adapter = ChatAdapter(chatList as ArrayList<Chat>, USER_NAME!!)
+        adapter = ChatAdapter(chatList as ArrayList<Chat>, USER_NAME!!, CHAT_NAME!!)
         recyclerView?.setAdapter(adapter)
         val database = FirebaseDatabase.getInstance()
         myRef = database.getReference("chatRoom").child(CHAT_NAME!!)

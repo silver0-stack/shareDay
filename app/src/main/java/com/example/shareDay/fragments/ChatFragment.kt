@@ -1,25 +1,17 @@
 package com.example.shareDay
 
-import android.content.Context
-import android.content.Intent
-import android.media.Image
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.shareDay.R
-import com.example.shareDay.UserListAdapter
 import com.example.shareDay.chats.UserInfo
 import com.google.firebase.database.*
-import com.google.firebase.database.ktx.database
-import com.google.firebase.ktx.Firebase
 import java.util.ArrayList
 
 class ChatFragment : Fragment(R.layout.chat_fragment), UserListAdapter.ClickListener {
@@ -73,40 +65,28 @@ class ChatFragment : Fragment(R.layout.chat_fragment), UserListAdapter.ClickList
         db = FirebaseDatabase.getInstance().reference
         db.addValueEventListener(object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
-                val value = snapshot.value
+                val chat_room = snapshot.child("chatRoom")
+                for(item in chat_room.children){
+                    //val name : String = item.child("name").value as String
+                    //val about : String = item.child("msg").value as String
 
+                    //val user_info = UserInfo(name, "", about)
+                    //listData.add(user_info)
+                    //listData.add(UserInfo(name,"",about))
+                    Log.e("snap", item.toString())
+                }
             }
-
-            override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
-            }
-
+            override fun onCancelled(error: DatabaseError) {}
         })
-
-
 
         //예시 데이터
         listData.add(UserInfo("test1", "","ttttttt"))
         listData.add(UserInfo("test2", "", "eeeeeeeeeee"))
         listData.add(UserInfo("test3", "","sssssssssst" ))
+        Log.e("snap", listData.toString())
     }
 
-    /*override fun onItemClick(dataModel: UserInfo) {
-        val transaction = activity?.supportFragmentManager!!.beginTransaction()
-
-        val intent = Intent(context, ChatActivity::class.java)
-        //intent.putExtra("", value)
-        startActivity(intent)
-
-    }*/
-
-    override fun onItemClick() {
-        //val transaction = activity?.supportFragmentManager!!.beginTransaction()
-
-        //val intent = Intent(activity, ChatActivity::class.java)
-        //intent.putExtra("", value)
-        //startActivity(intent)
-    }
+    override fun onItemClick() {}
 
     companion object{
         fun newInstance() =
