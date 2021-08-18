@@ -1,23 +1,21 @@
 package com.example.shareDay
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.shareDay.chats.Chat
 import com.google.firebase.database.DatabaseReference
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.shareDay.chats.ProfilePopUp
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ChildEventListener
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import java.util.ArrayList
 
-class ChatActivity : AppCompatActivity() {
+
+class ChatActivity : AppCompatActivity() { //1:1 채팅방
     private var recyclerView: RecyclerView? = null
     private var adapter: RecyclerView.Adapter<*>? = null
     private var layoutManager: RecyclerView.LayoutManager? = null

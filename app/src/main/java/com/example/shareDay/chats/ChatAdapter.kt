@@ -18,7 +18,7 @@ import com.example.shareDay.chats.Chat
 import com.example.shareDay.chats.ProfilePopUp
 import org.w3c.dom.Text
 
-
+//1:1채팅방 Activity에 recyclerView를 연결하는 Adapter
 class ChatAdapter(chatData: MutableList<Chat>?, name: String) :
     RecyclerView.Adapter<ChatAdapter.MyViewHolder>() {
     private val chatList = chatData

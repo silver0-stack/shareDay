@@ -64,6 +64,5 @@ public class BoardAdapter extends RecyclerView.Adapter<BoardAdapter.BoardViewHol
             this.item_contents_text=itemView.findViewById(R.id.item_contents_text);
             this.item_id_text=itemView.findViewById(R.id.item_id_text);
         }
-
     }
 }
