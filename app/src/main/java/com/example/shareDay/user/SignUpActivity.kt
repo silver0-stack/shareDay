@@ -95,6 +95,7 @@ class SignUpActivity : AppCompatActivity() {
 
                             val userHashMap = HashMap<String, Any>()
                             userHashMap["uid"] = this.firebaseUserID
+                            userHashMap["userNickname"] = userNickname
                             userHashMap["userId"] = userId
                             userHashMap["userPw"] = userPw
 

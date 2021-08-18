@@ -70,9 +70,14 @@ class SignInActivity : AppCompatActivity() {
                         Log.w(ContentValues.TAG, "userLogin:failure", task.exception)
                         Toast.makeText(
                             this,
-                            "Error Message: " + task.exception?.message.toString(),
+                            "로그인 정보를 찾을 수 없습니다",
                             Toast.LENGTH_LONG
                         ).show()
+                        /*Toast.makeText(
+                            this,
+                            "Error Message: " + task.exception?.message.toString(),
+                            Toast.LENGTH_LONG
+                        ).show()*/
                     }
                 }
         }

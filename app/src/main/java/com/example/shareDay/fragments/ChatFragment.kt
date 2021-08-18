@@ -83,6 +83,8 @@ class ChatFragment : Fragment(R.layout.chat_fragment), UserListAdapter.ClickList
 
         })
 
+
+
         //예시 데이터
         listData.add(UserInfo("test1", "","ttttttt"))
         listData.add(UserInfo("test2", "", "eeeeeeeeeee"))

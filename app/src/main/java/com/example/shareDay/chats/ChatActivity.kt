@@ -14,6 +14,9 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import java.util.ArrayList
 import android.content.Intent
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 
 class ChatActivity : AppCompatActivity() { //1:1 채팅방
@@ -34,13 +37,26 @@ class ChatActivity : AppCompatActivity() { //1:1 채팅방
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chat)
 
+        //유저 식별
+        val user = Firebase.auth.currentUser
+        user?.let{
+            val name = user.displayName
+            val email = user.email
+            val photoUrl = user.photoUrl
+
+            val emailVerified = user.isEmailVerified
+
+            val uid = user.uid
+        }
+
+
         // 다른 화면에서 받아온 채팅방 이름, 유저 이름 저장
         val intent = intent
         CHAT_NAME = intent.getStringExtra("chatName")
         USER_NAME = intent.getStringExtra("userName")
         //임시로 다른 값 넣어둠
         CHAT_NAME = "테스트채팅방1"
-        USER_NAME = "익명1"
+        USER_NAME = user?.email
 
         // xml ID 참조 및 클릭리스너
         chatText = findViewById<EditText>(R.id.chatText)
