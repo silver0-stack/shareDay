@@ -54,37 +54,49 @@
                 android:layout_height="200dp"
                 android:layout_marginBottom="24dp"
                 android:layout_marginTop="24dp"
-                android:background="@drawable/howtousemap_btn"/>
+                android:scaleType="centerCrop"
+                android:background="#00000000"
+                android:src="@drawable/howtousemap_btn"/>
             <ImageButton
                 android:id="@+id/howtousehelpyou_btn"
                 android:layout_width="364dp"
                 android:layout_height="200dp"
                 android:layout_marginBottom="24dp"
-                android:background="@drawable/howtousehelpyou_btn"/>
+                android:scaleType="centerCrop"
+                android:background="#00000000"
+                android:src="@drawable/howtousehelpyou_btn"/>
             <ImageButton
                 android:id="@+id/howtousehelpme_btn"
                 android:layout_width="364dp"
                 android:layout_height="200dp"
                 android:layout_marginBottom="24dp"
-                android:background="@drawable/howtousehelpme_btn"/>
+                android:scaleType="centerCrop"
+                android:background="#00000000"
+                android:src="@drawable/howtousehelpme_btn"/>
             <ImageButton
                 android:id="@+id/howtousechat_btn"
                 android:layout_width="364dp"
                 android:layout_height="200dp"
                 android:layout_marginBottom="24dp"
-                android:background="@drawable/howtousechatting_btn"/>
+                android:background="#00000000"
+                android:scaleType="centerCrop"
+                android:src="@drawable/howtousechatting_btn"/>
             <ImageButton
                 android:id="@+id/howtousemypage_btn"
                 android:layout_width="364dp"
                 android:layout_height="200dp"
                 android:layout_marginBottom="24dp"
-                android:background="@drawable/howtousemypage_btn"/>
+                android:background="#00000000"
+                android:scaleType="centerCrop"
+                android:src="@drawable/howtousemypage_btn"/>
             <ImageButton
                 android:id="@+id/howtousesharebox_btn"
                 android:layout_width="364dp"
                 android:layout_height="200dp"
                 android:layout_marginBottom="24dp"
-                android:background="@drawable/howtousesharebox_btn"/>
+                android:background="#00000000"
+                android:scaleType="centerCrop"
+                android:src="@drawable/howtousesharebox_btn"/>
 
 
 

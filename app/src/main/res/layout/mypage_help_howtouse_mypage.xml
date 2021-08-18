@@ -54,7 +54,7 @@
             <ImageView
                 android:layout_width="412dp"
                 android:layout_height="1351dp"
-                android:background="@drawable/howtouse_mypage_information"
+                android:src="@drawable/howtouse_mypage_information"
                 />
 
         </LinearLayout>

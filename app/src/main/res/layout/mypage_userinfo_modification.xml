@@ -62,7 +62,8 @@
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:background="@drawable/mypage_changeinfo_icon" />
+                android:scaleType="centerCrop"
+                android:src="@drawable/mypage_changeinfo_icon" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -104,7 +105,7 @@
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:background="@drawable/mypage_logout_icon"/>
+                android:src="@drawable/mypage_logout_icon"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -143,7 +144,7 @@
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:background="@drawable/mypage_leave_icon"/>
+                android:src="@drawable/mypage_leave_icon"/>
 
             <TextView
                 android:layout_width="wrap_content"

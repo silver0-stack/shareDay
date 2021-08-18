@@ -39,11 +39,16 @@
 
     </androidx.appcompat.widget.Toolbar>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="600dp"
-        android:orientation="vertical"
-        android:background="@drawable/mypage_userinfobackground">
+        >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="600dp"
+            android:background="#00000000"
+            android:scaleType="centerCrop"
+            android:src="@drawable/mypage_userinfobackground"/>
         <ImageButton
             android:id="@+id/mypage_oliveyoung_button"
             android:layout_width="70dp"
@@ -52,7 +57,5 @@
             android:layout_marginLeft="24dp"
             android:background="@drawable/olivyoung"/>
 
-
-
-    </LinearLayout>
+    </RelativeLayout>
 </LinearLayout>
