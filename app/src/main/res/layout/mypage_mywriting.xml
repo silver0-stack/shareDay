@@ -46,18 +46,16 @@
         android:layout_marginTop="24dp"
         android:layout_marginLeft="24dp"
         >
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <ImageView
-                android:layout_width="182dp"
-                android:layout_height="48dp"
-                android:background="@drawable/mylocation_image"/>
+        <LinearLayout
+            android:layout_width="182dp"
+            android:layout_height="48dp"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:background="@drawable/mylocation_image">
             <TextView
                 android:id="@+id/helpme_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
                 android:layout_marginTop="6dp"
                 android:textColor="@color/black"
                 android:text="도와주세요" />
@@ -65,23 +63,19 @@
                 android:id="@+id/helpme_count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
                 android:textColor="@color/navigation_color_add"
-                android:layout_below="@+id/helpme_text"
                 android:text="2"/>
-        </RelativeLayout>
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <ImageView
-                android:layout_width="182dp"
-                android:layout_height="48dp"
-                android:background="@drawable/mylocation_image"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="182dp"
+            android:layout_height="48dp"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:background="@drawable/mylocation_image">
             <TextView
                 android:id="@+id/helpyou_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
                 android:layout_marginTop="6dp"
                 android:textColor="@color/black"
                 android:text="도와줄게요" />
@@ -89,25 +83,39 @@
                 android:id="@+id/helpyou_count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
                 android:textColor="@color/navigation_color_chart"
-                android:layout_below="@+id/helpyou_text"
                 android:text="7"/>
-        </RelativeLayout>
+        </LinearLayout>
 
 
         </LinearLayout>
 
-
-
-    <androidx.appcompat.widget.Toolbar
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/mywriting_tabs"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        android:minHeight="?attr/actionBarSize">
+        android:layout_height="wrap_content">
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/mywriting_tab_helpme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="도와주세요"/>
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/mywriting_tab_helpyou"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="도와줄게요"/>
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <FrameLayout
+        android:id="@+id/mywriting_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
 
 
-    </androidx.appcompat.widget.Toolbar>
+    </FrameLayout>
+
+
+
 </LinearLayout>
