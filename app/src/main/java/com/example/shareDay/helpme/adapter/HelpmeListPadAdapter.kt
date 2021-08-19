@@ -19,7 +19,6 @@ class HelpmeListPadAdapter(private val userList: ArrayList<pad>) :
     RecyclerView.Adapter<HelpmeListPadAdapter.MyViewHolder>() {
 
     lateinit var chatIcon: ImageButton
-    lateinit var mapIcon: ImageButton
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(
@@ -29,7 +28,7 @@ class HelpmeListPadAdapter(private val userList: ArrayList<pad>) :
         )
 
         chatIcon = itemView.findViewById(R.id.HmPadStartChat)
-        mapIcon=itemView.findViewById(R.id.HmPadMap)
+
 
         return MyViewHolder(itemView).apply {
             //채팅아이콘 클릭 이벤트
@@ -39,22 +38,7 @@ class HelpmeListPadAdapter(private val userList: ArrayList<pad>) :
                 intent.putExtra("pofileImg", Img) /*1:1 채팅방으로 프사 송신*/
                 parent.context.startActivity(intent)
             }
-            //지도아이콘 클릭 이벤트
-            mapIcon.setOnClickListener {
-                val Img = userImg.text.toString()
-                val Loc = userLocation.text.toString()
-                val Name = userName.text.toString()
-                val Contents = contents.text.toString()
 
-                val intent =
-                    Intent(parent.context, MapActivity::class.java) //일단은 지도로 인텐트 해놓음 //자세한건 다음
-                intent.putExtra("Img", Img) /*해당 위치 레이아웃에 이름,프사,내용,위치 송신*/
-                intent.putExtra("Loc", Loc)
-                intent.putExtra("Name", Name)
-                intent.putExtra("Contents", Contents)
-
-                parent.context.startActivity(intent)
-            }
         }
     }
 

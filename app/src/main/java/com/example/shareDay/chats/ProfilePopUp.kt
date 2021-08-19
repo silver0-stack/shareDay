@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.ImageButton
 import com.example.shareDay.R
 import android.content.Intent
+import android.graphics.Color
 import android.widget.TextView
 import androidx.navigation.NavController
 import androidx.navigation.NavDeepLinkBuilder
@@ -55,12 +56,12 @@ class ProfilePopUp : AppCompatActivity() {
 
         // 클릭
         // 해결 버튼
-        btn_Good.setOnClickListener{
-
+        btn_Good.setOnClickListener {
+            btn_Good.setBackgroundColor(Color.rgb(226, 52, 141))
         }
         // 미해결 버튼
-        btn_bad.setOnClickListener{
-
+        btn_bad.setOnClickListener {
+            btn_Good.setBackgroundColor(Color.rgb(226, 52, 141))
         }
         // 나가기 버튼
         btn_leave.setOnClickListener {
@@ -72,6 +73,8 @@ class ProfilePopUp : AppCompatActivity() {
             intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP //인텐트 플래그 설정
             startActivity(intent) //인텐트 이동
             finish() //현재 액티비티 종료
+
+
         }
         // 닫기 버튼
         btn_close.setOnClickListener{
