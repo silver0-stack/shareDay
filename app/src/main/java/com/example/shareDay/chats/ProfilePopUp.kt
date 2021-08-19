@@ -57,11 +57,11 @@ class ProfilePopUp : AppCompatActivity() {
         // 클릭
         // 해결 버튼
         btn_Good.setOnClickListener {
-            btn_Good.setBackgroundColor(Color.rgb(226, 52, 141))
+            btn_Good.setImageResource(R.drawable.good_color_icon)
         }
         // 미해결 버튼
         btn_bad.setOnClickListener {
-            btn_Good.setBackgroundColor(Color.rgb(226, 52, 141))
+            btn_bad.setImageResource(R.drawable.bad_color_icon)
         }
         // 나가기 버튼
         btn_leave.setOnClickListener {

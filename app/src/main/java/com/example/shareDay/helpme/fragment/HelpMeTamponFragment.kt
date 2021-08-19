@@ -70,6 +70,7 @@ class HelpMeTamponFragment: Fragment() {
                     for (userSnapshot in snapshot.children) {
                         val user = userSnapshot.getValue(tampon::class.java)
                         userArrayList.add(user!!)
+                        userArrayList.reverse()
                     }
                     userRecyclerView.adapter = HelpmeListTamponAdapter(userArrayList)
                 }

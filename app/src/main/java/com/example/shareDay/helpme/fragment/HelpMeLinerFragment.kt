@@ -70,8 +70,10 @@ class HelpMeLinerFragment : Fragment() {
                     for (userSnapshot in snapshot.children) {
                         val user = userSnapshot.getValue(liner::class.java)
                         userArrayList.add(user!!)
+                        userArrayList.reverse()
                     }
                     userRecyclerView.adapter = HelpmeListLinerAdapter(userArrayList)
+
                 }
                 userRecyclerView.adapter?.notifyDataSetChanged()
             }

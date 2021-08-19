@@ -63,12 +63,12 @@ class HelpmeListPadAdapter(private val userList: ArrayList<pad>) :
         val currentItem = userList[position]
 
         val imageName: String? = currentItem.userImg //저장된 이미지 이름 받아오기
-        val imgUrl: String = "https://firebasestorage.googleapis.com/" +
-                "v0/b/nami-market.appspot.com/o/images%2F" + imageName +
-                "?alt=media&token=8770eebd-9052-4fe7-9e1a-a70273921fbf" //이미지 url
+        //val imgUrl: String = "https://firebasestorage.googleapis.com/" +
+        //        "v0/b/nami-market.appspot.com/o/images%2F" + imageName +
+        //        "?alt=media&token=8770eebd-9052-4fe7-9e1a-a70273921fbf" //이미지 url
 
         try {
-            Glide.with(holder.userImg).load(imgUrl).into(holder.userImg) //이미지 배치할 곳에 url 로드
+          //  Glide.with(holder.userImg).load(imgUrl).into(holder.userImg) //이미지 배치할 곳에 url 로드
 
             //holder.userImg.text = currentItem.userImg
             holder.userName.text = currentItem.userName
