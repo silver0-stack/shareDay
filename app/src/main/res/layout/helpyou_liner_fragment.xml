@@ -7,12 +7,86 @@
     android:background="#FFFFFF"
     android:orientation="vertical">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/helpyou_liner_recycler"
+
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:clickable="true"
-            android:focusable="true"
-            tools:listitem="@layout/hy_liner_list" />
+            android:layout_height="match_parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/helpyou_liner_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clickable="true"
+                    android:focusable="true"
+                    tools:listitem="@layout/hy_liner_list" />
+
+
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/helpyou_pad_fab"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="330dp"
+                    android:layout_marginTop="10dp"
+                    android:backgroundTint="#D8F3F5"
+                    android:src="@drawable/pad_icon"
+                    android:layout_gravity="bottom|right"
+                    android:layout_marginBottom="70dp"
+                    android:layout_marginRight="20dp"
+                    app:elevation="6dp"
+                    app:fabCustomSize="48dp"
+                    app:tint="#00C3C9" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/helpyou_tampon_fab"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="330dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/tam_icon"
+                    android:backgroundTint="#D8F3F5"
+                    android:layout_gravity="bottom|right"
+                    android:layout_marginBottom="70dp"
+                    android:layout_marginRight="20dp"
+                    app:elevation="6dp"
+                    app:fabCustomSize="48dp"
+                    app:tint="#00C3C9" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/helpyou_liner_fab"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="330dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/panty_icon"
+                    android:backgroundTint="#D8F3F5"
+                    android:layout_gravity="bottom|right"
+                    android:layout_marginBottom="70dp"
+                    android:layout_marginRight="20dp"
+                    app:elevation="6dp"
+                    app:fabCustomSize="48dp"
+                    app:tint="#00C3C9" />
+
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/tog_btn"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="330dp"
+                    android:layout_marginTop="10dp"
+                    android:backgroundTint="#00C3C9"
+                    android:layout_gravity="bottom|right"
+                    android:layout_marginBottom="70dp"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/writing_icon"
+                    app:fabCustomSize="48dp"
+                    app:tint="#FFFFFF" />
+
+
+
+        </FrameLayout>
+
+
+
 
 </LinearLayout>

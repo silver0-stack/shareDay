@@ -13,13 +13,24 @@ import com.naver.maps.map.overlay.Marker
 import com.naver.maps.map.overlay.Overlay
 import com.naver.maps.map.overlay.OverlayImage
 import android.annotation.SuppressLint
+import android.content.Intent
+import android.util.Log
+import android.widget.Toast
 import android.widget.ToggleButton
 import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
+import com.example.shareDay.ChatActivity
 import com.example.shareDay.R
+import com.example.shareDay.chats.UserInfo
 import com.google.android.gms.maps.CameraUpdate
 import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.GoogleMap
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.*
+import com.google.firebase.ktx.Firebase
 import com.naver.maps.map.*
 import com.naver.maps.map.util.FusedLocationSource
+import java.lang.Exception
 
 //지도 탭에 보이는 마커들 표시하는 코드
 
@@ -41,6 +52,10 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
     companion object {
         private const val permissionCode = 1000
     }
+
+    private var toiletisChecked: Boolean = true
+    private var helpyouisChecked: Boolean=true
+
 
     // 도와주세요 마커 변수 선언 및 초기화
     private val marker201 = Marker()
@@ -98,13 +113,9 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
 //        }
 
 
-
-
-
         //화장실 버튼 클릭 시 마커 등장
         toilet.setOnClickListener {
-            if(toilet.isChecked==true){
-
+            if(toiletisChecked){
                 //화장실 마커 세팅
                 setMarker(marker101, //서울특별시 서초구 방배천로 5-4 안심화장실145
                     37.477291446255194, 126.98217320405335 ,
@@ -636,6 +647,7 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
                 marker119.isVisible=false
                 marker120.isVisible=false
             }
+            toiletisChecked =! toiletisChecked
 
 
         }
@@ -668,10 +680,33 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
                 marker204.isVisible=true
                 marker205.isVisible=true
 
+
                 //정보창
                 val infoWindow = InfoWindow()
 
+                val userUID = Firebase.auth.currentUser?.uid
+                var userNick :String = "익명"
+                var db: DatabaseReference
+                db = FirebaseDatabase.getInstance().reference
+                db.addValueEventListener(object : ValueEventListener {
+                    override fun onDataChange(snapshot: DataSnapshot) {
+                        userNick = snapshot.child("Users").child(userUID.toString()).child("userNickname").value.toString()
+                        Log.e("nick", userNick)
+                    }
 
+                    override fun onCancelled(error: DatabaseError) {}
+                })
+
+                infoWindow.setOnClickListener { overlay ->
+                    Toast.makeText(this, "채팅방으로 이동합니다", Toast.LENGTH_SHORT).show()
+
+                    val intent = Intent(this, ChatActivity::class.java)
+                    intent.putExtra("chatName", "닮은살걀") //여기 바꿔주세요!!
+                    intent.putExtra("userName", userNick)
+                    ContextCompat.startActivity(this, intent, null)
+
+                    true
+                }
 
                 //마커 클릭하면 정보창 생성됨
                 //도와주세요 첫번째 마커
@@ -788,15 +823,10 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
 
         }
 
-
-
-
-
-
-
         //도와줄게요 버튼 클릭 시 마커 등장
         helpYouIcon.setOnClickListener {
-            if (helpMeIcon.isChecked == true) {
+
+            if (helpyouisChecked) {
                 setMarker(
                     marker301,
                     37.497453178180514, 127.02241766830957, //서초 진흥아파트
@@ -932,15 +962,23 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
                 marker304.onClickListener = listener9
                 marker305.onClickListener = listener10
             }
+
+
             else {
 
-                marker301.isVisible=false
-                marker302.isVisible=false
-                marker303.isVisible=false
-                marker304.isVisible=false
-                marker305.isVisible=false
+
+
+                    marker301.isVisible=false
+                    marker302.isVisible=false
+                    marker303.isVisible=false
+                    marker304.isVisible=false
+                    marker305.isVisible=false
+
+
 
             }
+
+            helpyouisChecked=!helpyouisChecked
         }
 
 
@@ -1041,6 +1079,8 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
     override fun onStart() {
         super.onStart()
         mapView!!.onStart()
+
+
     }
 
     override fun onResume() {

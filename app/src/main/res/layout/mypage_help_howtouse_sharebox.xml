@@ -55,11 +55,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <ImageView
                 android:layout_width="413dp"
-                android:layout_height="808dp"
-                android:src="@drawable/howtousebox_info_image"
-                />
+                android:layout_height="672dp"
+                android:src="@drawable/howtousebox_info_image" />
         </LinearLayout>
     </ScrollView>
 

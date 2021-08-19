@@ -11,11 +11,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.shareDay.helpme.dto.total
 import com.example.shareDay.helpme.activity.HelpMeLinerWriteActivity
 import com.example.shareDay.helpme.activity.HelpMePadWriteActivity
 import com.example.shareDay.helpme.activity.HelpMeTamponWriteActivity
-import com.example.shareDay.helpme.activity.HelpMeTotalWriteActivity
 import com.example.shareDay.helpme.adapter.HelpmeListLinerAdapter
 import com.example.shareDay.helpme.dto.liner
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -27,6 +25,13 @@ class HelpMeLinerFragment : Fragment() {
     private lateinit var userRecyclerView: RecyclerView
     private lateinit var userArrayList: ArrayList<liner>
     private lateinit var perView: View
+
+    //플로팅버튼 애니메이션을 위한 변수
+    lateinit var hmPadFab: FloatingActionButton
+    lateinit var hmTamponFab: FloatingActionButton
+    lateinit var hmLinerFab: FloatingActionButton
+    lateinit var fabMain: FloatingActionButton
+    private var isFabOpen = false
 
 
     override fun onCreateView(
@@ -43,6 +48,13 @@ class HelpMeLinerFragment : Fragment() {
         userRecyclerView.setHasFixedSize(true)
         userArrayList = arrayListOf()
         getUserData()
+
+
+        hmLinerFab = perView.findViewById(R.id.helpme_liner_fab) //liner
+
+        hmTamponFab = perView.findViewById(R.id.helpme_tampon_fab) //tampon
+        hmPadFab =perView.findViewById(R.id.helpme_pad_fab) //pad
+        fabMain = perView.findViewById(R.id.tog_btn) //main fab
 
         return perView
     }
@@ -72,5 +84,46 @@ class HelpMeLinerFragment : Fragment() {
                 TODO("Not yet implemented")
             }
         })
+    }
+
+    override fun onViewCreated(itemView: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(itemView, savedInstanceState)
+
+        //플로팅 버튼 클릭 시 애니메이션 동작 기능
+        fabMain.setOnClickListener {
+            toggleFab()
+        }
+        //pad 버튼 클릭 시 공구 글쓰기 화면으로 전환
+        hmPadFab.setOnClickListener {
+            val intent = Intent(activity, HelpMePadWriteActivity::class.java)
+            startActivity(intent)
+        }
+        //liner 버튼 클릭 시 공구 글쓰기 화면으로 전환
+        hmLinerFab.setOnClickListener {
+            val intent = Intent(activity, HelpMeLinerWriteActivity::class.java)
+            startActivity(intent)
+        }
+        //tampon 버튼 클릭 시 공구 글쓰기 화면으로 전환
+        hmTamponFab.setOnClickListener {
+            val intent = Intent(activity, HelpMeTamponWriteActivity::class.java)
+            startActivity(intent)
+        }
+    }
+
+    private fun toggleFab() {
+        //플로팅 액션 버튼 닫기/열기
+        if (isFabOpen) {
+            ObjectAnimator.ofFloat(hmPadFab, "translationY", 0f).apply { start() }
+            ObjectAnimator.ofFloat(hmTamponFab, "translationY", 0f).apply { start() }
+            ObjectAnimator.ofFloat(hmLinerFab, "translationY", 0f).apply { start() }
+            fabMain.setImageResource(R.drawable.x_icon)
+
+        } else {
+            ObjectAnimator.ofFloat(hmPadFab, "translationY", -400f).apply { start() }
+            ObjectAnimator.ofFloat(hmTamponFab, "translationY", -600f).apply { start() }
+            ObjectAnimator.ofFloat(hmLinerFab, "translationY", -800f).apply { start() }
+            fabMain.setImageResource(R.drawable.writing_icon)
+        }
+        isFabOpen = !isFabOpen
     }
 }

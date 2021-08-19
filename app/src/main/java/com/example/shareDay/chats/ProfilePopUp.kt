@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.widget.ImageButton
 import com.example.shareDay.R
 import android.content.Intent
-import android.graphics.Color
 import android.widget.TextView
 import androidx.navigation.NavController
 import androidx.navigation.NavDeepLinkBuilder
@@ -52,19 +51,16 @@ class ProfilePopUp : AppCompatActivity() {
         val profile_name : TextView = findViewById(R.id.profile_name)
 
         // 텍스트 제어
-        profile_name.text = USER_NAME
+        profile_name.setText(CHATROOM_NAME)
 
         // 클릭
         // 해결 버튼
-        //한 사람 당 한번만 클릭가능해야 함
-        //클릭 시 도움 + 5점 & 색채움
         btn_Good.setOnClickListener{
-            btn_Good.setBackgroundColor(Color.rgb(226, 52, 141))
+
         }
         // 미해결 버튼
-        // 토스트 메시지+색채움
         btn_bad.setOnClickListener{
-            btn_bad.setBackgroundColor(Color.rgb(226, 52, 141))
+
         }
         // 나가기 버튼
         btn_leave.setOnClickListener {

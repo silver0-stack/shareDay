@@ -4,7 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/shareDay/app/src/main/res/layout/activity_chat.xml" value="0.1358695652173913" />
-        <entry key="..\:/Users/Administrator/AndroidStudioProjects/shareDay/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/shareDay/app/src/main/res/layout/activity_main.xml" value="0.4331275720164609" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/shareDay/app/src/main/res/layout/activity_map.xml" value="0.1358695652173913" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/shareDay/app/src/main/res/layout/activity_profile_pop_up.xml" value="0.4466666666666667" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/shareDay/app/src/main/res/layout/activity_sign_in.xml" value="0.1358695652173913" />
@@ -12,10 +12,15 @@
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/shareDay/app/src/main/res/layout/chat_fragment.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/shareDay/app/src/main/res/layout/chat_list_item.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/shareDay/app/src/main/res/layout/fragment_detail.xml" value="0.24909420289855072" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/shareDay/app/src/main/res/layout/helpme_fragment.xml" value="0.22" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/shareDay/app/src/main/res/layout/helpme_liner_fragment.xml" value="0.21422101449275363" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/shareDay/app/src/main/res/layout/helpme_total_fragment.xml" value="0.19021739130434784" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/shareDay/app/src/main/res/layout/helpme_write_activity.xml" value="0.21927083333333333" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/shareDay/app/src/main/res/layout/item_point.xml" value="0.190625" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/shareDay/app/src/main/res/layout/msg_item.xml" value="0.16033434650455927" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/shareDay/app/src/main/res/layout/my_area.xml" value="0.190625" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/shareDay/app/src/main/res/layout/mypage.xml" value="0.18020833333333333" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/shareDay/app/src/main/res/layout/mypage_usehistory.xml" value="0.21422101449275363" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/shareDay/app/src/main/res/layout/splash_screen.xml" value="0.190625" />
         <entry key="..\:/Users/qmfps/AndroidStudioProjects/ShareDay2/app/src/main/res/drawable/border_bottom.xml" value="0.2015625" />
         <entry key="..\:/Users/qmfps/AndroidStudioProjects/ShareDay2/app/src/main/res/drawable/border_bottom_profile.xml" value="0.2015625" />
@@ -27,7 +32,6 @@
         <entry key="..\:/Users/qmfps/AndroidStudioProjects/ShareDay2/app/src/main/res/drawable/left_info.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/qmfps/AndroidStudioProjects/ShareDay2/app/src/main/res/drawable/left_loc.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/qmfps/AndroidStudioProjects/ShareDay2/app/src/main/res/layout/activity_main.xml" value="0.2" />
-        <entry key="..\:/Users/qmfps/AndroidStudioProjects/ShareDay2/app/src/main/res/layout/activity_map.xml" value="0.1640625" />
         <entry key="..\:/Users/qmfps/AndroidStudioProjects/ShareDay2/app/src/main/res/layout/activity_sign_in.xml" value="0.14375" />
         <entry key="..\:/Users/qmfps/AndroidStudioProjects/ShareDay2/app/src/main/res/layout/activity_sign_up.xml" value="0.14375" />
         <entry key="..\:/Users/qmfps/AndroidStudioProjects/ShareDay2/app/src/main/res/layout/chat_fragment.xml" value="0.4" />
@@ -49,49 +53,16 @@
         <entry key="..\:/Users/qmfps/AndroidStudioProjects/ShareDay2/app/src/main/res/layout/helpyou_total_fragment.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/qmfps/AndroidStudioProjects/ShareDay2/app/src/main/res/layout/helpyou_write_activity.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/qmfps/AndroidStudioProjects/ShareDay2/app/src/main/res/layout/helpyou_write_list.xml" value="0.25364583333333335" />
-        <entry key="..\:/Users/qmfps/AndroidStudioProjects/ShareDay2/app/src/main/res/layout/hm_liner_list.xml" value="0.209375" />
-        <entry key="..\:/Users/qmfps/AndroidStudioProjects/ShareDay2/app/src/main/res/layout/hm_pad_list.xml" value="0.209375" />
-        <entry key="..\:/Users/qmfps/AndroidStudioProjects/ShareDay2/app/src/main/res/layout/hm_tampon_list.xml" value="0.209375" />
-        <entry key="..\:/Users/qmfps/AndroidStudioProjects/ShareDay2/app/src/main/res/layout/hm_total_list.xml" value="0.209375" />
-        <entry key="..\:/Users/qmfps/AndroidStudioProjects/ShareDay2/app/src/main/res/layout/hy_liner_list.xml" value="0.209375" />
-        <entry key="..\:/Users/qmfps/AndroidStudioProjects/ShareDay2/app/src/main/res/layout/hy_pad_list.xml" value="0.209375" />
-        <entry key="..\:/Users/qmfps/AndroidStudioProjects/ShareDay2/app/src/main/res/layout/hy_tampon_list.xml" value="0.209375" />
-        <entry key="..\:/Users/qmfps/AndroidStudioProjects/ShareDay2/app/src/main/res/layout/mypage.xml" value="0.2" />
-        <entry key="..\:/Users/qmfps/AndroidStudioProjects/ShareDay2/app/src/main/res/layout/mypage_helphistory.xml" value="0.19010416666666666" />
-        <entry key="..\:/Users/qmfps/AndroidStudioProjects/ShareDay2/app/src/main/res/layout/mypage_usehistory.xml" value="0.19010416666666666" />
+        <entry key="..\:/Users/qmfps/AndroidStudioProjects/ShareDay2/app/src/main/res/layout/mypage.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/qmfps/AndroidStudioProjects/ShareDay2/app/src/main/res/layout/splash_screen.xml" value="0.14375" />
         <entry key="..\:/Users/qmfps/AndroidStudioProjects/ShareDay2/app/src/main/res/menu/main_menu.xml" value="0.25364583333333335" />
-        <entry key="..\:/Users/qmfps/AndroidStudioProjects/shareDay3/app/src/main/res/drawable/background_numofchat.xml" value="0.23697916666666666" />
-        <entry key="..\:/Users/qmfps/AndroidStudioProjects/shareDay3/app/src/main/res/drawable/background_rounding_purple.xml" value="0.22135416666666666" />
-        <entry key="..\:/Users/qmfps/AndroidStudioProjects/shareDay3/app/src/main/res/drawable/hm_fab_border.xml" value="0.22135416666666666" />
-        <entry key="..\:/Users/qmfps/AndroidStudioProjects/shareDay3/app/src/main/res/drawable/thumbsup_btn.xml" value="0.26564102564102565" />
-        <entry key="..\:/Users/qmfps/AndroidStudioProjects/shareDay3/app/src/main/res/drawable/toilet_info_background.xml" value="0.26564102564102565" />
-        <entry key="..\:/Users/qmfps/AndroidStudioProjects/shareDay3/app/src/main/res/layout/activity_profile_pop_up.xml" value="0.25364583333333335" />
-        <entry key="..\:/Users/qmfps/AndroidStudioProjects/shareDay3/app/src/main/res/layout/helpme_fragment.xml" value="0.2" />
-        <entry key="..\:/Users/qmfps/AndroidStudioProjects/shareDay3/app/src/main/res/layout/helpme_item_list.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/qmfps/AndroidStudioProjects/shareDay3/app/src/main/res/layout/helpme_item_mywriting.xml" value="0.25364583333333335" />
-        <entry key="..\:/Users/qmfps/AndroidStudioProjects/shareDay3/app/src/main/res/layout/helpme_liner_fragment.xml" value="0.41205053449951407" />
-        <entry key="..\:/Users/qmfps/AndroidStudioProjects/shareDay3/app/src/main/res/layout/helpme_pad_fragment.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/qmfps/AndroidStudioProjects/shareDay3/app/src/main/res/layout/helpme_tampon_fragment.xml" value="0.22083333333333333" />
-        <entry key="..\:/Users/qmfps/AndroidStudioProjects/shareDay3/app/src/main/res/layout/helpme_total_fragment.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/qmfps/AndroidStudioProjects/shareDay3/app/src/main/res/layout/helpme_write_activity.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/qmfps/AndroidStudioProjects/shareDay3/app/src/main/res/layout/helpyou_fragment.xml" value="0.1" />
-        <entry key="..\:/Users/qmfps/AndroidStudioProjects/shareDay3/app/src/main/res/layout/helpyou_item_mywriting.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/qmfps/AndroidStudioProjects/shareDay3/app/src/main/res/layout/helpyou_liner_fragment.xml" value="0.2361111111111111" />
-        <entry key="..\:/Users/qmfps/AndroidStudioProjects/shareDay3/app/src/main/res/layout/helpyou_pad_fragment.xml" value="0.25364583333333335" />
-        <entry key="..\:/Users/qmfps/AndroidStudioProjects/shareDay3/app/src/main/res/layout/helpyou_tampon_fragment.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/qmfps/AndroidStudioProjects/shareDay3/app/src/main/res/layout/helpyou_total_fragment.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/qmfps/AndroidStudioProjects/shareDay3/app/src/main/res/layout/helpyou_write_list.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/qmfps/AndroidStudioProjects/shareDay3/app/src/main/res/layout/hm_liner_list.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/qmfps/AndroidStudioProjects/shareDay3/app/src/main/res/layout/hm_pad_list.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/qmfps/AndroidStudioProjects/shareDay3/app/src/main/res/layout/hm_tampon_list.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/qmfps/AndroidStudioProjects/shareDay3/app/src/main/res/layout/hm_total_list.xml" value="0.4" />
-        <entry key="..\:/Users/qmfps/AndroidStudioProjects/shareDay3/app/src/main/res/layout/hy_liner_list.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/qmfps/AndroidStudioProjects/shareDay3/app/src/main/res/layout/hy_pad_list.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/qmfps/AndroidStudioProjects/shareDay3/app/src/main/res/layout/hy_tampon_list.xml" value="0.1" />
-        <entry key="..\:/Users/qmfps/AndroidStudioProjects/shareDay3/app/src/main/res/layout/hy_total_list.xml" value="0.264" />
-        <entry key="..\:/Users/qmfps/AndroidStudioProjects/shareDay3/app/src/main/res/layout/mypage.xml" value="0.24114583333333334" />
+        <entry key="app/src/main/res/drawable/helpme_info_background.xml" value="0.4066666666666667" />
         <entry key="app/src/main/res/drawable/ic_person4.xml" value="0.3111111111111111" />
+        <entry key="app/src/main/res/drawable/map_helpme_toggle.xml" value="0.4066666666666667" />
+        <entry key="app/src/main/res/drawable/map_helpyou_toggle.xml" value="0.4066666666666667" />
+        <entry key="app/src/main/res/drawable/map_restroom_button_toggle.xml" value="0.4066666666666667" />
+        <entry key="app/src/main/res/drawable/map_restroom_loc_marker.xml" value="0.4066666666666667" />
+        <entry key="app/src/main/res/drawable/toilet_info_background.xml" value="0.4066666666666667" />
         <entry key="app/src/main/res/layout/activity_chat.xml" value="0.3088768115942029" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.396875" />
         <entry key="app/src/main/res/layout/activity_map.xml" value="0.396875" />
@@ -99,21 +70,34 @@
         <entry key="app/src/main/res/layout/chat_fragment.xml" value="0.3088768115942029" />
         <entry key="app/src/main/res/layout/chat_list_item.xml" value="0.396875" />
         <entry key="app/src/main/res/layout/fragment_my_writing_helpme.xml" value="0.3088768115942029" />
+        <entry key="app/src/main/res/layout/helpme_fragment.xml" value="0.27717391304347827" />
+        <entry key="app/src/main/res/layout/helpme_info.xml" value="0.3179347826086957" />
+        <entry key="app/src/main/res/layout/helpme_item_list.xml" value="0.3179347826086957" />
         <entry key="app/src/main/res/layout/helpme_item_main.xml" value="0.3088768115942029" />
         <entry key="app/src/main/res/layout/helpme_item_mywriting.xml" value="0.45" />
+        <entry key="app/src/main/res/layout/helpme_liner_fragment.xml" value="0.27717391304347827" />
+        <entry key="app/src/main/res/layout/helpme_pad_fragment.xml" value="0.27717391304347827" />
+        <entry key="app/src/main/res/layout/helpme_tampon_fragment.xml" value="0.27717391304347827" />
+        <entry key="app/src/main/res/layout/helpme_total_fragment.xml" value="0.27717391304347827" />
         <entry key="app/src/main/res/layout/helpme_write_activity.xml" value="0.3088768115942029" />
         <entry key="app/src/main/res/layout/helpme_write_list.xml" value="0.3088768115942029" />
+        <entry key="app/src/main/res/layout/helpyou_fragment.xml" value="0.3179347826086957" />
         <entry key="app/src/main/res/layout/helpyou_info.xml" value="0.3088768115942029" />
         <entry key="app/src/main/res/layout/helpyou_item_main.xml" value="0.3088768115942029" />
         <entry key="app/src/main/res/layout/helpyou_item_mywriting.xml" value="0.3088768115942029" />
+        <entry key="app/src/main/res/layout/helpyou_liner_fragment.xml" value="0.30117753623188404" />
+        <entry key="app/src/main/res/layout/helpyou_pad_fragment.xml" value="0.2515625" />
+        <entry key="app/src/main/res/layout/helpyou_tampon_fragment.xml" value="0.2515625" />
+        <entry key="app/src/main/res/layout/helpyou_total_fragment.xml" value="0.2515625" />
         <entry key="app/src/main/res/layout/helpyou_write_activity.xml" value="0.3088768115942029" />
+        <entry key="app/src/main/res/layout/hy_total_list.xml" value="0.2515625" />
         <entry key="app/src/main/res/layout/item_main.xml" value="0.375" />
         <entry key="app/src/main/res/layout/item_point.xml" value="0.396875" />
         <entry key="app/src/main/res/layout/msg_item.xml" value="0.396875" />
         <entry key="app/src/main/res/layout/my_area.xml" value="0.396875" />
         <entry key="app/src/main/res/layout/mypage.xml" value="0.44350758853288363" />
-        <entry key="app/src/main/res/layout/mypage_alarm.xml" value="0.47080630213160335" />
-        <entry key="app/src/main/res/layout/mypage_help.xml" value="0.45" />
+        <entry key="app/src/main/res/layout/mypage_alarm.xml" value="0.3088768115942029" />
+        <entry key="app/src/main/res/layout/mypage_help.xml" value="0.375" />
         <entry key="app/src/main/res/layout/mypage_help_howtouse_chat.xml" value="0.21235899950956352" />
         <entry key="app/src/main/res/layout/mypage_help_howtouse_helpme.xml" value="0.22552083333333334" />
         <entry key="app/src/main/res/layout/mypage_help_howtouse_helpyou.xml" value="0.22552083333333334" />
@@ -122,16 +106,16 @@
         <entry key="app/src/main/res/layout/mypage_help_howtouse_sharebox.xml" value="0.22552083333333334" />
         <entry key="app/src/main/res/layout/mypage_helphistory.xml" value="0.3088768115942029" />
         <entry key="app/src/main/res/layout/mypage_helphistory_helpme_list.xml" value="0.3088768115942029" />
-        <entry key="app/src/main/res/layout/mypage_helphistory_helpyou_list.xml" value="0.2907608695652174" />
+        <entry key="app/src/main/res/layout/mypage_helphistory_helpyou_list.xml" value="0.27717391304347827" />
         <entry key="app/src/main/res/layout/mypage_mywriting.xml" value="0.25" />
         <entry key="app/src/main/res/layout/mypage_mywriting_helpme.xml" value="0.3088768115942029" />
         <entry key="app/src/main/res/layout/mypage_mywriting_helpyou.xml" value="0.3088768115942029" />
         <entry key="app/src/main/res/layout/mypage_notice.xml" value="0.3088768115942029" />
         <entry key="app/src/main/res/layout/mypage_usehistory.xml" value="0.3088768115942029" />
         <entry key="app/src/main/res/layout/mypage_usehistory_oliveyoung.xml" value="0.3088768115942029" />
-        <entry key="app/src/main/res/layout/mypage_userinfo_change.xml" value="0.2907608695652174" />
         <entry key="app/src/main/res/layout/mypage_userinfo_modification.xml" value="0.3088768115942029" />
         <entry key="app/src/main/res/layout/splash_screen.xml" value="0.396875" />
+        <entry key="app/src/main/res/layout/toilet_info.xml" value="0.45" />
         <entry key="app/src/main/res/layout/write_activity.xml" value="0.375" />
         <entry key="app/src/main/res/layout/write_list.xml" value="0.396875" />
         <entry key="app/src/main/res/menu/main_menu.xml" value="0.33697916666666666" />

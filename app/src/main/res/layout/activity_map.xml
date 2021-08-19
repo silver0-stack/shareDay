@@ -19,7 +19,7 @@
             android:layout_width="350dp"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="화랑로 621"
+            android:text="서운중학교"
             android:paddingStart="50dp"
             android:textColor="@color/black"
             android:textSize="15sp"
@@ -65,13 +65,13 @@
             android:id="@+id/toilet"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:checked="true"
+            android:checked="false"
             android:textOn=""
             android:textOff=""
             android:background="@drawable/map_restroom_button_toggle"/>
         <ToggleButton
             android:id="@+id/helpMeIcon"
-            android:checked="true"
+            android:checked="false"
             android:textOn=""
             android:textOff=""
             android:background="@drawable/map_helpme_toggle"
@@ -80,7 +80,7 @@
             android:layout_height="30dp" />
         <ToggleButton
             android:id="@+id/helpYouIcon"
-            android:checked="true"
+            android:checked="false"
             android:layout_marginTop="5dp"
             android:textOff=""
             android:textOn=""

@@ -79,11 +79,18 @@ class MainActivity : AppCompatActivity()  {
         mapBtn.setOnClickListener {
             val intent = Intent(this, MapActivity ::class.java)
             startActivity(intent)
+
+            markerShow()
         }
 
 //       mypageBtn.setOnClickListener{
 //            val intent= Intent(this@MainActivity,MyPageFragment::class.java)
 //            startActivity(intent)
 //        }
+    }
+
+    private fun markerShow() {
+
+
     }
 }
