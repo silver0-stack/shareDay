@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@drawable/toilet_info_background">
+
+    <LinearLayout
+        android:layout_width="200dp"
+        android:layout_height="80dp"
+        android:background="#28FFE8F4"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="127dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="8sp"
+            android:src="@drawable/barcode_image"/>
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

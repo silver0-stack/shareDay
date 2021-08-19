@@ -13,12 +13,11 @@ import com.naver.maps.map.overlay.Marker
 import com.naver.maps.map.overlay.Overlay
 import com.naver.maps.map.overlay.OverlayImage
 import android.annotation.SuppressLint
-import android.content.Intent
-import android.content.pm.PackageManager
 import android.widget.ToggleButton
 import androidx.core.app.ActivityCompat
-import com.example.shareDay.ChatActivity
 import com.example.shareDay.R
+import com.google.android.gms.maps.CameraUpdate
+import com.google.android.gms.maps.CameraUpdateFactory
 import com.naver.maps.map.*
 import com.naver.maps.map.util.FusedLocationSource
 
@@ -209,6 +208,411 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
                 marker119.isVisible=true
                 marker120.isVisible=true
 
+
+                //정보창
+                val infoWindow = InfoWindow()
+                //마커 클릭하면 정보창 생성됨
+                //화장실 첫번째 마커
+                val listener1 = Overlay.OnClickListener { overlay ->
+                    val marker = overlay as Marker
+                    val rootView = findViewById<View>(R.id.map_main) as ViewGroup
+                    val adapter = toiletAdapter1(this, rootView)
+                    infoWindow.adapter = adapter
+                    //인포창의 우선순위
+                    infoWindow.zIndex = 10
+                    //투명도 조정
+                    infoWindow.alpha = 0.9f
+                    if (marker101.infoWindow == null) {
+                        // 마커 정보 창이 열려있지 않을 경우 엶
+                        infoWindow.open(marker)
+                    } else {
+                        // 마커 정보 창이 열려있을 경우 닫음
+                        infoWindow.close()
+                    }
+                    true
+                }
+                //화장실 두번째 마커
+                val listener2 = Overlay.OnClickListener { overlay ->
+                    val marker = overlay as Marker
+                    val rootView = findViewById<View>(R.id.map_main) as ViewGroup
+                    val adapter = toiletAdapter1(this, rootView)
+                    infoWindow.adapter = adapter
+                    //인포창의 우선순위
+                    infoWindow.zIndex = 10
+                    //투명도 조정
+                    infoWindow.alpha = 0.9f
+                    if (marker102.infoWindow == null) {
+                        // 마커 정보 창이 열려있지 않을 경우 엶
+                        infoWindow.open(marker)
+                    } else {
+                        // 마커 정보 창이 열려있을 경우 닫음
+                        infoWindow.close()
+                    }
+                    true
+                }
+                //화장실 세번째 마커
+                val listener3 = Overlay.OnClickListener { overlay ->
+                    val marker = overlay as Marker
+                    val rootView = findViewById<View>(R.id.map_main) as ViewGroup
+                    val adapter = toiletAdapter1(this, rootView)
+                    infoWindow.adapter = adapter
+                    //인포창의 우선순위
+                    infoWindow.zIndex = 10
+                    //투명도 조정
+                    infoWindow.alpha = 0.9f
+                    if (marker103.infoWindow == null) {
+                        // 마커 정보 창이 열려있지 않을 경우 엶
+                        infoWindow.open(marker)
+                    } else {
+                        // 마커 정보 창이 열려있을 경우 닫음
+                        infoWindow.close()
+                    }
+                    true
+                }
+                //화장실 네번째 마커
+                val listener4 = Overlay.OnClickListener { overlay ->
+                    val marker = overlay as Marker
+                    val rootView = findViewById<View>(R.id.map_main) as ViewGroup
+                    val adapter = toiletAdapter1(this, rootView)
+                    infoWindow.adapter = adapter
+                    //인포창의 우선순위
+                    infoWindow.zIndex = 10
+                    //투명도 조정
+                    infoWindow.alpha = 0.9f
+                    if (marker104.infoWindow == null) {
+                        // 마커 정보 창이 열려있지 않을 경우 엶
+                        infoWindow.open(marker)
+                    } else {
+                        // 마커 정보 창이 열려있을 경우 닫음
+                        infoWindow.close()
+                    }
+                    true
+                }
+                //화장실 다섯번째 마커
+                val listener5 = Overlay.OnClickListener { overlay ->
+                    val marker = overlay as Marker
+                    val rootView = findViewById<View>(R.id.map_main) as ViewGroup
+                    val adapter = toiletAdapter1(this, rootView)
+                    infoWindow.adapter = adapter
+                    //인포창의 우선순위
+                    infoWindow.zIndex = 10
+                    //투명도 조정
+                    infoWindow.alpha = 0.9f
+                    if (marker105.infoWindow == null) {
+                        // 마커 정보 창이 열려있지 않을 경우 엶
+                        infoWindow.open(marker)
+                    } else {
+                        // 마커 정보 창이 열려있을 경우 닫음
+                        infoWindow.close()
+                    }
+                    true
+                }
+                //화장실 여섯번째 마커
+                val listener6 = Overlay.OnClickListener { overlay ->
+                    val marker = overlay as Marker
+                    val rootView = findViewById<View>(R.id.map_main) as ViewGroup
+                    val adapter = toiletAdapter1(this, rootView)
+                    infoWindow.adapter = adapter
+                    //인포창의 우선순위
+                    infoWindow.zIndex = 10
+                    //투명도 조정
+                    infoWindow.alpha = 0.9f
+                    if (marker106.infoWindow == null) {
+                        // 마커 정보 창이 열려있지 않을 경우 엶
+                        infoWindow.open(marker)
+                    } else {
+                        // 마커 정보 창이 열려있을 경우 닫음
+                        infoWindow.close()
+                    }
+                    true
+                }
+                //화장실 7번째 마커
+                val listener7 = Overlay.OnClickListener { overlay ->
+                    val marker = overlay as Marker
+                    val rootView = findViewById<View>(R.id.map_main) as ViewGroup
+                    val adapter = toiletAdapter1(this, rootView)
+                    infoWindow.adapter = adapter
+                    //인포창의 우선순위
+                    infoWindow.zIndex = 10
+                    //투명도 조정
+                    infoWindow.alpha = 0.9f
+                    if (marker107.infoWindow == null) {
+                        // 마커 정보 창이 열려있지 않을 경우 엶
+                        infoWindow.open(marker)
+                    } else {
+                        // 마커 정보 창이 열려있을 경우 닫음
+                        infoWindow.close()
+                    }
+                    true
+                }
+                //화장실 8번째 마커
+                val listener8 = Overlay.OnClickListener { overlay ->
+                    val marker = overlay as Marker
+                    val rootView = findViewById<View>(R.id.map_main) as ViewGroup
+                    val adapter = toiletAdapter1(this, rootView)
+                    infoWindow.adapter = adapter
+                    //인포창의 우선순위
+                    infoWindow.zIndex = 10
+                    //투명도 조정
+                    infoWindow.alpha = 0.9f
+                    if (marker108.infoWindow == null) {
+                        // 마커 정보 창이 열려있지 않을 경우 엶
+                        infoWindow.open(marker)
+                    } else {
+                        // 마커 정보 창이 열려있을 경우 닫음
+                        infoWindow.close()
+                    }
+                    true
+                }
+                //화장실 9번째 마커
+                val listener9 = Overlay.OnClickListener { overlay ->
+                    val marker = overlay as Marker
+                    val rootView = findViewById<View>(R.id.map_main) as ViewGroup
+                    val adapter = toiletAdapter1(this, rootView)
+                    infoWindow.adapter = adapter
+                    //인포창의 우선순위
+                    infoWindow.zIndex = 10
+                    //투명도 조정
+                    infoWindow.alpha = 0.9f
+                    if (marker109.infoWindow == null) {
+                        // 마커 정보 창이 열려있지 않을 경우 엶
+                        infoWindow.open(marker)
+                    } else {
+                        // 마커 정보 창이 열려있을 경우 닫음
+                        infoWindow.close()
+                    }
+                    true
+                }
+                //화장실 10번째 마커
+                val listener10 = Overlay.OnClickListener { overlay ->
+                    val marker = overlay as Marker
+                    val rootView = findViewById<View>(R.id.map_main) as ViewGroup
+                    val adapter = toiletAdapter1(this, rootView)
+                    infoWindow.adapter = adapter
+                    //인포창의 우선순위
+                    infoWindow.zIndex = 10
+                    //투명도 조정
+                    infoWindow.alpha = 0.9f
+                    if (marker110.infoWindow == null) {
+                        // 마커 정보 창이 열려있지 않을 경우 엶
+                        infoWindow.open(marker)
+                    } else {
+                        // 마커 정보 창이 열려있을 경우 닫음
+                        infoWindow.close()
+                    }
+                    true
+                }
+                //화장실 11번째 마커
+                val listener11 = Overlay.OnClickListener { overlay ->
+                    val marker = overlay as Marker
+                    val rootView = findViewById<View>(R.id.map_main) as ViewGroup
+                    val adapter = toiletAdapter1(this, rootView)
+                    infoWindow.adapter = adapter
+                    //인포창의 우선순위
+                    infoWindow.zIndex = 10
+                    //투명도 조정
+                    infoWindow.alpha = 0.9f
+                    if (marker111.infoWindow == null) {
+                        // 마커 정보 창이 열려있지 않을 경우 엶
+                        infoWindow.open(marker)
+                    } else {
+                        // 마커 정보 창이 열려있을 경우 닫음
+                        infoWindow.close()
+                    }
+                    true
+                }
+                //화장실 12번째 마커
+                val listener12 = Overlay.OnClickListener { overlay ->
+                    val marker = overlay as Marker
+                    val rootView = findViewById<View>(R.id.map_main) as ViewGroup
+                    val adapter = toiletAdapter1(this, rootView)
+                    infoWindow.adapter = adapter
+                    //인포창의 우선순위
+                    infoWindow.zIndex = 10
+                    //투명도 조정
+                    infoWindow.alpha = 0.9f
+                    if (marker112.infoWindow == null) {
+                        // 마커 정보 창이 열려있지 않을 경우 엶
+                        infoWindow.open(marker)
+                    } else {
+                        // 마커 정보 창이 열려있을 경우 닫음
+                        infoWindow.close()
+                    }
+                    true
+                }
+                //화장실 13번째 마커
+                val listener13 = Overlay.OnClickListener { overlay ->
+                    val marker = overlay as Marker
+                    val rootView = findViewById<View>(R.id.map_main) as ViewGroup
+                    val adapter = toiletAdapter1(this, rootView)
+                    infoWindow.adapter = adapter
+                    //인포창의 우선순위
+                    infoWindow.zIndex = 10
+                    //투명도 조정
+                    infoWindow.alpha = 0.9f
+                    if (marker113.infoWindow == null) {
+                        // 마커 정보 창이 열려있지 않을 경우 엶
+                        infoWindow.open(marker)
+                    } else {
+                        // 마커 정보 창이 열려있을 경우 닫음
+                        infoWindow.close()
+                    }
+                    true
+                }
+                //화장실 14번째 마커
+                val listener14 = Overlay.OnClickListener { overlay ->
+                    val marker = overlay as Marker
+                    val rootView = findViewById<View>(R.id.map_main) as ViewGroup
+                    val adapter = toiletAdapter1(this, rootView)
+                    infoWindow.adapter = adapter
+                    //인포창의 우선순위
+                    infoWindow.zIndex = 10
+                    //투명도 조정
+                    infoWindow.alpha = 0.9f
+                    if (marker114.infoWindow == null) {
+                        // 마커 정보 창이 열려있지 않을 경우 엶
+                        infoWindow.open(marker)
+                    } else {
+                        // 마커 정보 창이 열려있을 경우 닫음
+                        infoWindow.close()
+                    }
+                    true
+                }//화장실 15번째 마커
+                val listener15 = Overlay.OnClickListener { overlay ->
+                    val marker = overlay as Marker
+                    val rootView = findViewById<View>(R.id.map_main) as ViewGroup
+                    val adapter = toiletAdapter1(this, rootView)
+                    infoWindow.adapter = adapter
+                    //인포창의 우선순위
+                    infoWindow.zIndex = 10
+                    //투명도 조정
+                    infoWindow.alpha = 0.9f
+                    if (marker115.infoWindow == null) {
+                        // 마커 정보 창이 열려있지 않을 경우 엶
+                        infoWindow.open(marker)
+                    } else {
+                        // 마커 정보 창이 열려있을 경우 닫음
+                        infoWindow.close()
+                    }
+                    true
+                }
+                //화장실 16번째 마커
+                val listener16 = Overlay.OnClickListener { overlay ->
+                    val marker = overlay as Marker
+                    val rootView = findViewById<View>(R.id.map_main) as ViewGroup
+                    val adapter = toiletAdapter1(this, rootView)
+                    infoWindow.adapter = adapter
+                    //인포창의 우선순위
+                    infoWindow.zIndex = 10
+                    //투명도 조정
+                    infoWindow.alpha = 0.9f
+                    if (marker116.infoWindow == null) {
+                        // 마커 정보 창이 열려있지 않을 경우 엶
+                        infoWindow.open(marker)
+                    } else {
+                        // 마커 정보 창이 열려있을 경우 닫음
+                        infoWindow.close()
+                    }
+                    true
+                }
+                //화장실 17번째 마커
+                val listener17 = Overlay.OnClickListener { overlay ->
+                    val marker = overlay as Marker
+                    val rootView = findViewById<View>(R.id.map_main) as ViewGroup
+                    val adapter = toiletAdapter1(this, rootView)
+                    infoWindow.adapter = adapter
+                    //인포창의 우선순위
+                    infoWindow.zIndex = 10
+                    //투명도 조정
+                    infoWindow.alpha = 0.9f
+                    if (marker117.infoWindow == null) {
+                        // 마커 정보 창이 열려있지 않을 경우 엶
+                        infoWindow.open(marker)
+                    } else {
+                        // 마커 정보 창이 열려있을 경우 닫음
+                        infoWindow.close()
+                    }
+                    true
+                }
+                //화장실 18번째 마커
+                val listener18 = Overlay.OnClickListener { overlay ->
+                    val marker = overlay as Marker
+                    val rootView = findViewById<View>(R.id.map_main) as ViewGroup
+                    val adapter = toiletAdapter1(this, rootView)
+                    infoWindow.adapter = adapter
+                    //인포창의 우선순위
+                    infoWindow.zIndex = 10
+                    //투명도 조정
+                    infoWindow.alpha = 0.9f
+                    if (marker118.infoWindow == null) {
+                        // 마커 정보 창이 열려있지 않을 경우 엶
+                        infoWindow.open(marker)
+                    } else {
+                        // 마커 정보 창이 열려있을 경우 닫음
+                        infoWindow.close()
+                    }
+                    true
+                }
+                //화장실 19번째 마커
+                val listener19 = Overlay.OnClickListener { overlay ->
+                    val marker = overlay as Marker
+                    val rootView = findViewById<View>(R.id.map_main) as ViewGroup
+                    val adapter = toiletAdapter1(this, rootView)
+                    infoWindow.adapter = adapter
+                    //인포창의 우선순위
+                    infoWindow.zIndex = 10
+                    //투명도 조정
+                    infoWindow.alpha = 0.9f
+                    if (marker119.infoWindow == null) {
+                        // 마커 정보 창이 열려있지 않을 경우 엶
+                        infoWindow.open(marker)
+                    } else {
+                        // 마커 정보 창이 열려있을 경우 닫음
+                        infoWindow.close()
+                    }
+                    true
+                }
+                //화장실 20번째 마커
+                val listener20 = Overlay.OnClickListener { overlay ->
+                    val marker = overlay as Marker
+                    val rootView = findViewById<View>(R.id.map_main) as ViewGroup
+                    val adapter = toiletAdapter1(this, rootView)
+                    infoWindow.adapter = adapter
+                    //인포창의 우선순위
+                    infoWindow.zIndex = 10
+                    //투명도 조정
+                    infoWindow.alpha = 0.9f
+                    if (marker120.infoWindow == null) {
+                        // 마커 정보 창이 열려있지 않을 경우 엶
+                        infoWindow.open(marker)
+                    } else {
+                        // 마커 정보 창이 열려있을 경우 닫음
+                        infoWindow.close()
+                    }
+                    true
+                }
+
+                marker101.onClickListener = listener1
+                marker102.onClickListener = listener2
+                marker103.onClickListener = listener3
+                marker104.onClickListener = listener4
+                marker105.onClickListener = listener5
+                marker106.onClickListener = listener6
+                marker107.onClickListener = listener7
+                marker108.onClickListener = listener8
+                marker109.onClickListener = listener9
+                marker110.onClickListener = listener10
+                marker111.onClickListener = listener11
+                marker112.onClickListener = listener12
+                marker113.onClickListener = listener13
+                marker114.onClickListener = listener14
+                marker115.onClickListener = listener15
+                marker116.onClickListener = listener16
+                marker117.onClickListener = listener17
+                marker118.onClickListener = listener18
+                marker119.onClickListener = listener19
+                marker120.onClickListener = listener20
+
             }
             else{
                 marker101.isVisible=false
@@ -239,23 +643,23 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
         helpMeIcon.setOnClickListener {
             if (helpMeIcon.isChecked==true){
                 setMarker(marker201,
-                    37.62120135705168, 127.08070716149409, //길가
+                    37.4982590974842, 127.01920933407189, //서초 래미안 아파
                     R.drawable.helpme_loc_marker,
                     0)
                 setMarker(marker202,
-                    37.62562264167059, 127.08724171156216, //비선아파트
+                    37.49831906697348, 127.02744844290946, //강남
                     R.drawable.helpme_loc_marker,
                     10)
                 setMarker(marker203,
-                    37.62817890422706, 127.0904957588285, //서울여자대학교
+                    37.490042822154834, 127.01947389263562, //서초 현대 아파트
                     R.drawable.helpme_loc_marker,
                     10)
                 setMarker(marker204,
-                    37.6250568995319, 127.08097171811086, //공릉신선미소아파트
+                    37.49091247070365, 127.0259744739203, //서이 초등학교
                     R.drawable.helpme_loc_marker,
                     10)
                 setMarker(marker205,
-                    37.621243266207216, 127.0886438619974, //신내효성아파트
+                    37.48801384397798, 127.0294833911989, //서초 문화예술정보학교
                     R.drawable.helpme_loc_marker,
                     10)
                 marker201.isVisible=true
@@ -395,31 +799,31 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
             if (helpMeIcon.isChecked == true) {
                 setMarker(
                     marker301,
-                    37.61916575337751, 127.08821252361916,
+                    37.497453178180514, 127.02241766830957, //서초 진흥아파트
                     R.drawable.helpyou_loc_marker,
                     0
                 )
                 setMarker(
                     marker302,
-                    37.625118610035564, 127.08254850088396,
+                    37.495155681299806, 127.02844090763453,//에잇플러스에셋타워
                     R.drawable.helpyou_loc_marker,
                     10
                 )
                 setMarker(
                     marker303,
-                    37.62002851577837, 127.08292973330127,
+                    37.489997543439976, 127.01641373437249, //서울교육대학
                     R.drawable.helpyou_loc_marker,
                     10
                 )
                 setMarker(
                     marker304,
-                    37.62598130335246, 127.08325650384369,
+                    37.48518372599323, 127.02235975250443, //서일 초등학교
                     R.drawable.helpyou_loc_marker,
                     10
                 )
                 setMarker(
                     marker305,
-                    37.61903633817256, 127.07530508731159,
+                    37.48905931375081, 127.02569956157262,//서초 그림자이
                     R.drawable.helpyou_loc_marker,
                     10
                 )
@@ -570,6 +974,7 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
         marker.map = myMap
     }
 
+
     //지도 설정
     override fun onMapReady(myMap: NaverMap) {
 
@@ -602,8 +1007,20 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
             myMap.locationSource = fusedLocationProviderClient
             //권한 확인 결과는 onRequestPermissionsResult 콜백 메소드 호출
             ActivityCompat.requestPermissions(this, PERMISSIONS, permissionCode)
+
+            val cameraPosition = CameraPosition(
+                LatLng(37.4935288523304, 127.02440601960771),  // 위치 지정
+                14.0,  // 줌 레벨
+                0.0,  // 기울임 각도
+                0.0// 방향
+            )
+
+            myMap.cameraPosition = cameraPosition
+
+
         }
     }
+
 
     override fun onRequestPermissionsResult(
         requestCode: Int, permissions: Array<String?>,
@@ -656,3 +1073,5 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
         mapView!!.onLowMemory()
     }
 }
+
+
