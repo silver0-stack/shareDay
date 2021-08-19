@@ -57,7 +57,7 @@ class HelpmeListLinerAdapter(@NonNull private val userList: ArrayList<liner>) :
             //채팅아이콘 클릭 이벤트
             chatIcon.setOnClickListener {
                 val intent = Intent(parent.context, ChatActivity::class.java)
-                intent.putExtra("chatName", "달걀") //여기 바꿔주세요!!
+                intent.putExtra("chatName", "익명") //여기 바꿔주세요!!
                 intent.putExtra("userName", userNick)
                 ContextCompat.startActivity(parent.context, intent, null)
             }
