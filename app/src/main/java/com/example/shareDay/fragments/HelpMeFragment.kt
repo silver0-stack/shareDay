@@ -1,25 +1,16 @@
 package com.example.shareDay.fragments
 
-import android.animation.ObjectAnimator
 import com.example.shareDay.R
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import com.example.shareDay.adapters.HelpMeAdapter
-import com.example.shareDay.helpme.activity.HelpMeLinerWriteActivity
-import com.example.shareDay.helpme.activity.HelpMePadWriteActivity
-import com.example.shareDay.helpme.activity.HelpMeTamponWriteActivity
-import com.example.shareDay.helpme.activity.HelpMeTotalWriteActivity
 import com.example.shareDay.helpme.fragment.HelpMeLinerFragment
 import com.example.shareDay.helpme.fragment.HelpMePadFragment
 import com.example.shareDay.helpme.fragment.HelpMeTamponFragment
-import com.example.shareDay.helpme.fragment.HelpMeTotalFragment
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.tabs.TabLayout
 
 class HelpMeFragment : Fragment(R.layout.helpme_fragment) {
@@ -69,7 +60,6 @@ class HelpMeFragment : Fragment(R.layout.helpme_fragment) {
     private fun setUpViewPager() {
 
         val adapter = HelpMeAdapter(childFragmentManager)
-        adapter.addFragment(HelpMeTotalFragment(), "전체")
         adapter.addFragment(HelpMePadFragment(), "생리대")
         adapter.addFragment(HelpMeTamponFragment(), "탐폰")
         adapter.addFragment(HelpMeLinerFragment(), "팬티라이너")

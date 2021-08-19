@@ -12,7 +12,6 @@ import com.bumptech.glide.Glide
 import com.example.shareDay.ChatActivity
 import com.example.shareDay.R
 import com.example.shareDay.helpme.dto.tampon
-import com.example.shareDay.helpme.dto.total
 import com.example.shareDay.mapmenu.MapActivity
 import kotlinx.android.synthetic.main.helpyou_write_list.view.*
 

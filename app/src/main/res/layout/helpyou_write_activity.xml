@@ -96,59 +96,6 @@
             android:background="@drawable/edittext_background" />
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:orientation="vertical">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="글을 올릴 게시판을 선택해주세요" />
-
-        <RadioGroup
-            android:id="@+id/HyItemType"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <RadioButton
-                android:id="@+id/hm_item_total"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:buttonTint="#32B3B9"
-                android:text="전체"
-                android:textColor="#32B3B9" />
-
-            <RadioButton
-                android:id="@+id/hy_item_pad"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:buttonTint="#32B3B9"
-                android:text="생리대"
-                android:textColor="#32B3B9" />
-
-            <RadioButton
-                android:id="@+id/hy_item_tampon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:buttonTint="#32B3B9"
-                android:text="탐폰"
-                android:textColor="#32B3B9" />
-
-            <RadioButton
-                android:id="@+id/hy_item_pantyliner"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:buttonTint="#32B3B9"
-                android:text="팬티라이너"
-                android:textColor="#32B3B9" />
-
-
-        </RadioGroup>
-    </LinearLayout>
 
 
     <ImageButton

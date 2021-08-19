@@ -21,21 +21,6 @@
                     tools:listitem="@layout/hy_liner_list" />
 
 
-                <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/helpyou_total_fab"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_marginLeft="330dp"
-                    android:layout_marginTop="10dp"
-                    android:backgroundTint="#D8F3F5"
-                    android:src="@drawable/all_icon"
-                    android:layout_gravity="bottom|right"
-                    android:layout_marginBottom="70dp"
-                    android:layout_marginRight="20dp"
-                    app:elevation="6dp"
-                    app:fabCustomSize="48dp"
-                    app:fabSize="normal"
-                    app:tint="#00C3C9" />
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
                     android:id="@+id/helpyou_pad_fab"

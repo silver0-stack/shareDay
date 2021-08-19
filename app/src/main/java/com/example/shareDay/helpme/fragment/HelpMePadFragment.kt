@@ -11,12 +11,9 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.shareDay.R
-import com.example.shareDay.helpme.dto.total
 import com.example.shareDay.helpme.activity.HelpMeLinerWriteActivity
 import com.example.shareDay.helpme.activity.HelpMePadWriteActivity
 import com.example.shareDay.helpme.activity.HelpMeTamponWriteActivity
-import com.example.shareDay.helpme.activity.HelpMeTotalWriteActivity
-import com.example.shareDay.helpme.adapter.HelpmeListLinerAdapter
 import com.example.shareDay.helpme.adapter.HelpmeListPadAdapter
 import com.example.shareDay.helpme.dto.pad
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -30,7 +27,7 @@ class HelpMePadFragment: Fragment() {
     private lateinit var perView : View
 
     //플로팅버튼 애니메이션을 위한 변수
-    lateinit var hmTotalFab: FloatingActionButton
+
     lateinit var hmPadFab: FloatingActionButton
     lateinit var hmTamponFab: FloatingActionButton
     lateinit var hmLinerFab: FloatingActionButton
@@ -55,7 +52,6 @@ class HelpMePadFragment: Fragment() {
 
 
         hmLinerFab = perView.findViewById(R.id.helpme_liner_fab) //liner
-        hmTotalFab =perView.findViewById(R.id.helpme_total_fab) //total
         hmTamponFab = perView.findViewById(R.id.helpme_tampon_fab) //tampon
         hmPadFab =perView.findViewById(R.id.helpme_pad_fab) //pad
         fabMain = perView.findViewById(R.id.tog_btn) //main fab
@@ -94,11 +90,6 @@ class HelpMePadFragment: Fragment() {
         fabMain.setOnClickListener {
             toggleFab()
         }
-        //total 버튼 클릭 시 개인나눔 글쓰기 화면으로 전환
-        hmTotalFab.setOnClickListener {
-            val intent = Intent(activity, HelpMeTotalWriteActivity::class.java)
-            startActivity(intent)
-        }
         //pad 버튼 클릭 시 공구 글쓰기 화면으로 전환
         hmPadFab.setOnClickListener {
             val intent = Intent(activity, HelpMePadWriteActivity::class.java)
@@ -119,14 +110,12 @@ class HelpMePadFragment: Fragment() {
     private fun toggleFab() {
         //플로팅 액션 버튼 닫기/열기
         if (isFabOpen) {
-            ObjectAnimator.ofFloat(hmTotalFab, "translationY", 0f).apply { start() }
             ObjectAnimator.ofFloat(hmPadFab, "translationY", 0f).apply { start() }
             ObjectAnimator.ofFloat(hmTamponFab, "translationY", 0f).apply { start() }
             ObjectAnimator.ofFloat(hmLinerFab, "translationY", 0f).apply { start() }
             fabMain.setImageResource(R.drawable.x_icon)
 
         }else {
-            ObjectAnimator.ofFloat(hmTotalFab, "translationY", -200f).apply { start() }
             ObjectAnimator.ofFloat(hmPadFab, "translationY", -400f).apply { start() }
             ObjectAnimator.ofFloat(hmTamponFab, "translationY", -600f).apply { start() }
             ObjectAnimator.ofFloat(hmLinerFab, "translationY", -800f).apply { start() }
