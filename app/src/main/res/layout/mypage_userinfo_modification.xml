@@ -101,23 +101,26 @@
             android:layout_height="52dp"
             android:backgroundTint="@color/white"
             tools:ignore="RtlCompat" />
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="15dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="15dp">
+
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/mypage_logout_icon"/>
+                android:src="@drawable/mypage_logout_icon" />
 
             <TextView
+                android:id="@+id/logOut"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
+                android:text="로그아웃"
                 android:textColor="@color/black"
-                android:textStyle="bold"
-                android:text="로그아웃"/>
+                android:textStyle="bold" />
 
         </LinearLayout>
 
@@ -151,6 +154,7 @@
                 android:src="@drawable/mypage_leave_icon"/>
 
             <TextView
+                android:id="@+id/removeUser"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"

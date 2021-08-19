@@ -45,11 +45,11 @@ class ProfilePopUp : AppCompatActivity() {
         //CHATROOM_NAME = "테스트채팅방1"
 
         // id 참조
-        val btn_Good : ImageButton = findViewById(R.id.profile_Good)
-        val btn_bad : ImageButton = findViewById(R.id.profile_Bad)
-        val btn_leave : ImageButton = findViewById(R.id.profile_Leave)
-        val btn_close : ImageButton = findViewById(R.id.profileCloseBtn)
-        val profile_name : TextView = findViewById(R.id.profile_name)
+        val btn_Good: ImageButton = findViewById(R.id.profile_Good)
+        val btn_bad: ImageButton = findViewById(R.id.profile_Bad)
+        val btn_leave: ImageButton = findViewById(R.id.profile_Leave)
+        val btn_close: ImageButton = findViewById(R.id.profileCloseBtn)
+        val profile_name: TextView = findViewById(R.id.profile_name)
 
         // 텍스트 제어
         profile_name.setText(CHATROOM_NAME)
@@ -77,7 +77,7 @@ class ProfilePopUp : AppCompatActivity() {
 
         }
         // 닫기 버튼
-        btn_close.setOnClickListener{
+        btn_close.setOnClickListener {
             //지금 액티비티에서 1:1채팅창 액티비티로 이동하는 인텐트 설정
             val intent = Intent(this, ChatActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP //인텐트 플래그 설정

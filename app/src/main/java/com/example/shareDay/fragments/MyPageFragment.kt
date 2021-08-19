@@ -36,11 +36,6 @@ class MyPageFragment : Fragment() {
     private var storage: FirebaseStorage? = null
     var photoUri: Uri? = null
     lateinit var myPageView: View
-
-    //로그아웃 버튼, 회원탈퇴 버튼
-    //lateinit var signOut: Button
-    //lateinit var removeUser: Button
-
     lateinit var alarmIcon: ImageView
     lateinit var myPhoto: ImageView
     lateinit var myPhotoChange: ImageView
@@ -55,6 +50,7 @@ class MyPageFragment : Fragment() {
     lateinit var uid : String //uid
     lateinit var userName: TextView //유저네임
 
+    @SuppressLint("CutPasteId")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
@@ -66,31 +62,12 @@ class MyPageFragment : Fragment() {
             false
         )
 
-        //로그아웃 버튼 누르면 로그아웃 되면서 로그인 화면으로 이동
-        //해당 아이디로 재접속 가능
-        /* signOut = myPageView.findViewById(R.id.signOutBtn)
-          signOut.setOnClickListener {
-              signOut()
-              val intent = Intent(activity, SignInActivity::class.java)
-              startActivity(intent)
-          }
-
-          //회원탈퇴 버튼 누르면 로그아웃 되면서 로그인 화면으로 이동
-          //유저 정보 삭제로 인해 해당 아이디로 재접속 불가능
-          removeUser = myPageView.findViewById(R.id.removeUser)
-          removeUser.setOnClickListener {
-              removeAccess()
-              val intent = Intent(activity, LoginActivity::class.java)
-              startActivity(intent)
-          }*/
-
         userNameView = myPageView.findViewById(R.id.userName)
 
         //데이터베이스에서 유저 닉네임 받아오기
         val userUID = Firebase.auth.currentUser?.uid
         var userNick = ""
-        var db: DatabaseReference
-        db = FirebaseDatabase.getInstance().reference
+        val db: DatabaseReference = FirebaseDatabase.getInstance().reference
         db.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 userNick = snapshot.child("Users").child(userUID.toString()).child("userNickname").value.toString()
@@ -191,13 +168,6 @@ class MyPageFragment : Fragment() {
                     mAuth = FirebaseAuth.getInstance()
                     val user = mAuth!!.currentUser
 
-                    if (user != null) {
-                        userName = user.email.toString()
-                        uid = user.uid
-                    }
-                    val userName = userName
-                    val uid = uid
-                    val image1= image1
                     Toast.makeText(activity, "프로필 사진 설정이 완료되었습니다.", Toast.LENGTH_SHORT).show()
                 }
             } else {
@@ -205,20 +175,6 @@ class MyPageFragment : Fragment() {
             }
         }
 
-    }
-
-    //로그아웃
-    private fun signOut() {
-        FirebaseAuth.getInstance().signOut()
-    }
-
-    //회원탈퇴
-    private fun removeAccess() {
-        mAuth!!.currentUser!!.delete()
-        val intent = Intent(context, MainActivity::class.java)
-        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
-        startActivity(intent)
-        System.exit(0)
     }
 
 }
