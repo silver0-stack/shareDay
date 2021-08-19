@@ -19,8 +19,6 @@ class HelpYouFragment : Fragment() {
     lateinit var viewHomePager: ViewPager //게시물이 배치되는 화면
     lateinit var topTabLayout: TabLayout //상단메뉴탭
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -36,10 +34,8 @@ class HelpYouFragment : Fragment() {
         viewHomePager = myFragment.findViewById(R.id.hy_view_home)
         topTabLayout = myFragment.findViewById(R.id.hy_tab_layout)
 
-
         return myFragment
     }
-
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
@@ -56,8 +52,6 @@ class HelpYouFragment : Fragment() {
             }
         })
     }
-
-
 
     private fun setUpViewPager() {
 
