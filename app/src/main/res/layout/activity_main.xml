@@ -27,9 +27,10 @@
         android:id="@+id/bottomAppBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:fabCradleMargin="15dp"
-        app:fabCradleVerticalOffset="10dp"
-        app:fabCradleRoundedCornerRadius="0dp"
+        app:fabCradleMargin="10dp"
+        app:fabAlignmentMode="center"
+        app:fabCradleVerticalOffset="0dp"
+        app:fabCradleRoundedCornerRadius="5dp"
         android:layout_gravity="bottom">
         
         <com.google.android.material.bottomnavigation.BottomNavigationView

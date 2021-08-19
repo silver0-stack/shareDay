@@ -54,6 +54,7 @@
             android:background="#00000000"
             android:scaleType="centerCrop"
             android:src="@drawable/mypage_userhistory2" />
+            android:src="@drawable/mypage_userinfobackground" />
         <ImageButton
             android:id="@+id/mypage_oliveyoung_button"
             android:layout_width="70dp"
