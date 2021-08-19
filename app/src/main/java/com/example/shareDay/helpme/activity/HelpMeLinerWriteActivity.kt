@@ -24,7 +24,7 @@ class HelpMeLinerWriteActivity : AppCompatActivity(){
     private lateinit var database: DatabaseReference
     private var mAuth: FirebaseAuth? = null
 
-    lateinit var profileImg: ImageView //프사
+    //lateinit var profileImg: ImageView //프사
     lateinit var postName: TextView //이름
     lateinit var findMyLoc: ImageView //내 위치 설정 버튼
     lateinit var myLoc: TextView //내 위치 결과
@@ -54,7 +54,7 @@ class HelpMeLinerWriteActivity : AppCompatActivity(){
         database = Firebase.database.reference
 
         uploadBtn = findViewById(R.id.HmUploadBtn)
-        profileImg = findViewById(R.id.HmItemImg)
+        //profileImg = findViewById(R.id.HmItemImg)
         postName = findViewById(R.id.HmItemName)
         findMyLoc = findViewById(R.id.HmFindLoc)
         myLoc = findViewById(R.id.HmItemLoc)
@@ -128,11 +128,10 @@ class HelpMeLinerWriteActivity : AppCompatActivity(){
                 uid
             )
             database.child("helpme_liner").child(key).setValue(newPost).addOnSuccessListener {
-                Toast.makeText(this, "⭕업로드 성공⭕", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "업로드 성공", Toast.LENGTH_SHORT).show()
             }
         }
     }
-
 
     override fun onBackPressed() {
         super.onBackPressed()

@@ -59,7 +59,7 @@
                 android:layout_height="wrap_content"
                 android:text="[해결중]"
                 android:textSize="10dp"
-                android:textColor="#7D2F85"
+                android:textColor="#00C3C9"
                 android:paddingHorizontal="10dp"/>
         </LinearLayout>
 

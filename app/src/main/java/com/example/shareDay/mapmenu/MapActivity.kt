@@ -684,6 +684,7 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
                 //정보창
                 val infoWindow = InfoWindow()
 
+                //정보창 클릭 시 채팅방으로 이동
                 val userUID = Firebase.auth.currentUser?.uid
                 var userNick :String = "익명"
                 var db: DatabaseReference
@@ -701,7 +702,7 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
                     Toast.makeText(this, "채팅방으로 이동합니다", Toast.LENGTH_SHORT).show()
 
                     val intent = Intent(this, ChatActivity::class.java)
-                    intent.putExtra("chatName", "달걀") //여기 바꿔주세요!!
+                    intent.putExtra("chatName", "익명") //여기 바꿔주세요!!
                     intent.putExtra("userName", userNick)
                     ContextCompat.startActivity(this, intent, null)
 

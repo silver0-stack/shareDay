@@ -72,6 +72,7 @@ class HelpMePadFragment: Fragment() {
                     for (userSnapshot in snapshot.children) {
                         val user = userSnapshot.getValue(pad::class.java)
                         userArrayList.add(user!!)
+                        userArrayList.reverse()
                     }
                     userRecyclerView.adapter = HelpmeListPadAdapter(userArrayList)
                 }

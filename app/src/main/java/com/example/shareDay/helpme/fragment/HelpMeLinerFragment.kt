@@ -49,7 +49,6 @@ class HelpMeLinerFragment : Fragment() {
         userArrayList = arrayListOf()
         getUserData()
 
-
         hmLinerFab = perView.findViewById(R.id.helpme_liner_fab) //liner
 
         hmTamponFab = perView.findViewById(R.id.helpme_tampon_fab) //tampon
@@ -58,9 +57,6 @@ class HelpMeLinerFragment : Fragment() {
 
         return perView
     }
-
-
-
 
     private fun getUserData() {
 
@@ -74,12 +70,13 @@ class HelpMeLinerFragment : Fragment() {
                     for (userSnapshot in snapshot.children) {
                         val user = userSnapshot.getValue(liner::class.java)
                         userArrayList.add(user!!)
+                        userArrayList.reverse()
                     }
                     userRecyclerView.adapter = HelpmeListLinerAdapter(userArrayList)
+
                 }
                 userRecyclerView.adapter?.notifyDataSetChanged()
             }
-
             override fun onCancelled(error: DatabaseError) {
                 TODO("Not yet implemented")
             }

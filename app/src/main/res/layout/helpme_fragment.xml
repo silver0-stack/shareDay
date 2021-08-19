@@ -53,9 +53,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:theme="@style/TabTheme"
+                app:tabSelectedTextColor="#7D2F85"
+                app:tabIndicatorColor="#7D2F85"
                 app:layout_constraintTop_toBottomOf="@+id/hm_et_search"
                 app:tabIndicatorFullWidth="false"
-                app:tabIndicatorHeight="5dp" />
+                app:tabIndicatorHeight="4dp" />
 
         </LinearLayout>
 
