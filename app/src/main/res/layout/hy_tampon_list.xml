@@ -78,11 +78,6 @@
                 android:layout_marginHorizontal="10dp"
                 android:background="@drawable/help_startchat_icon" />
 
-            <ImageButton
-                android:id="@+id/HyTamponMap"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="@drawable/location_info_icon" />
 
 
         </LinearLayout>
