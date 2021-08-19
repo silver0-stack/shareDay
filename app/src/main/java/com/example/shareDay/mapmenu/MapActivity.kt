@@ -56,12 +56,28 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
     private val marker9 = Marker()
     private val marker10 = Marker()
 
-    //도와줄게요 마커 변수 선언 및 초기화
-    private val marker11 = Marker()
-    private val marker12 = Marker()
-    private val marker13 = Marker()
-    private val marker14 = Marker()
-    private val marker15 = Marker()
+    //화장실 마커 변수 선언 및 초기화
+    private val marker101 = Marker()
+    private val marker102 = Marker()
+    private val marker103 = Marker()
+    private val marker104 = Marker()
+    private val marker105 = Marker()
+    private val marker106 = Marker()
+    private val marker107 = Marker()
+    private val marker108 = Marker()
+    private val marker109 = Marker()
+    private val marker110 = Marker()
+    private val marker111 = Marker()
+    private val marker112 = Marker()
+    private val marker113 = Marker()
+    private val marker114 = Marker()
+    private val marker115 = Marker()
+    private val marker116 = Marker()
+    private val marker117 = Marker()
+    private val marker118 = Marker()
+    private val marker119 = Marker()
+    private val marker120 = Marker()
+
 
 
     private var mInfoWindow: InfoWindow? = null
@@ -83,26 +99,87 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
 
         //화장실 버튼 클릭 시 마커 등장
         toilet.setOnClickListener {
-            setMarker(marker11,
-                37.626067572147385, 127.08145926573985,
+            setMarker(marker101, //서울특별시 서초구 방배천로 5-4 안심화장실145
+                37.477291446255194, 126.98217320405335 ,
                 R.drawable.map_restroom_loc_marker,
                 0)
-            setMarker(marker12,
-                37.62317751353327, 127.07584970476171,
+            setMarker(marker102, //서울특별시 서초구 방배천로 17 안심화장실146
+                37.47806393170941, 126.98229438527598 ,
                 R.drawable.map_restroom_loc_marker,
                 10)
-            setMarker(marker13,
-                37.619295168405294, 127.07797371328742,
+            setMarker(marker103, //서울특별시 서초구 청두곶길 1 안심화장실177
+                37.477618097520924, 126.98501594662648 ,
                 R.drawable.map_restroom_loc_marker,
                 10)
-            setMarker(marker14,
-                37.62076185594893, 127.09060884092744,
+            setMarker(marker104,  //서울특별시 서초구 신반포로 15 안심화장실150
+                37.502538268739535, 126.98616338986513  ,
                 R.drawable.map_restroom_loc_marker,
                 10)
-            setMarker(marker15,
-                37.621969694552966, 127.08559835927709,
+            setMarker(marker105, //서울특별시 서초구 방배로23길 8 안심화장실 93
+                37.48756457136718, 126.99374220003516 ,
                 R.drawable.map_restroom_loc_marker,
                 10)
+            setMarker(marker106, //서울특별시 서초구 효령로31길 6 안심화장실141
+                37.48259083303174, 126.99707103071415 ,
+                R.drawable.map_restroom_loc_marker,
+                10)
+            setMarker(marker107, //서울특별시 서초구 서초중앙로 42 안심화장실92
+                37.486477751073075, 127.01609556935394  ,
+                R.drawable.map_restroom_loc_marker,
+                10)
+            setMarker(marker108, //서울특별시 서초구 반포대로 22 안심화장실70
+                37.48910732742018, 127.01004512852757  ,
+                R.drawable.map_restroom_loc_marker,
+                10)
+            setMarker(marker109, //서울특별시 서초구 서초대로52길 25 안심화장실34
+                37.49271737851727, 127.01476635401619  ,
+                R.drawable.map_restroom_loc_marker,
+                10)
+            setMarker(marker110, // 서울특별시 서초구 서초중앙로24길 27 안심화장실78
+                37.495413776978786, 127.0164456846983  ,
+                R.drawable.map_restroom_loc_marker,
+                10)
+            setMarker(marker111, //서울특별시 서초구 나루터로 64 안심화장실152
+                37.51493615633114, 127.01699052334422 ,
+                R.drawable.map_restroom_loc_marker,
+                10)
+            setMarker(marker112, // 서울특별시 서초구 강남대로 565 안심화장실153
+                37.51231654270945, 127.02003467732165   ,
+                R.drawable.map_restroom_loc_marker,
+                10)
+            setMarker(marker113, //서울특별시 서초구 서운로 226 안심화장실43
+                37.50298818564983, 127.02167120004185   ,
+                R.drawable.map_restroom_loc_marker,
+                10)
+            setMarker(marker114, //서울특별시 서초구 서초대로77길 3 안심화장실22
+                37.49793353312094, 127.02628239265644   ,
+                R.drawable.map_restroom_loc_marker,
+                10)
+            setMarker(marker115, //서울특별시 서초구 강남대로 220 안심화장실18
+                37.48369068597798, 127.03545138469354   ,
+                R.drawable.map_restroom_loc_marker,
+                10)
+            setMarker(marker116, //서울특별시 서초구 사임당로 178 안심화장실61
+                37.492330579223776, 127.02891372333504   ,
+                R.drawable.map_restroom_loc_marker,
+                10)
+            setMarker(marker117, //서울특별시 서초구 서운로11길 35 안심화장실57
+                37.4872429185319, 127.02668878469503    ,
+                R.drawable.map_restroom_loc_marker,
+                10)
+            setMarker(marker118, //서울특별시 서초구 강남대로 243 안심화장실38
+                37.484434531147066, 127.0331915386727   ,
+                R.drawable.map_restroom_loc_marker,
+                10)
+            setMarker(marker119, //서울특별시 서초구 남부순환로356길 32 안심화장실170
+                37.48346673159111, 127.03779800799103  ,
+                R.drawable.map_restroom_loc_marker,
+                10)
+            setMarker(marker120, //
+                37.48369068597798, 127.03545138469354   ,
+                R.drawable.map_restroom_loc_marker,
+                10)
+
         }
         //도와주세요 버튼 클릭 시 마커 등장
         helpMeIcon.setOnClickListener {
