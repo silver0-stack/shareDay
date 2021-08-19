@@ -15,6 +15,9 @@ import com.example.shareDay.helpme.activity.HelpMeLinerWriteActivity
 import com.example.shareDay.helpme.activity.HelpMePadWriteActivity
 import com.example.shareDay.helpme.activity.HelpMeTamponWriteActivity
 import com.example.shareDay.helpme.dto.liner2
+import com.example.shareDay.helpyou.activity.HelpYouLinerWriteActivity
+import com.example.shareDay.helpyou.activity.HelpYouPadWriteActivity
+import com.example.shareDay.helpyou.activity.HelpYouTamponWriteActivity
 import com.example.shareDay.helpyou.adapter.HelpYouLinerAdapter
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.database.*
@@ -28,9 +31,9 @@ class HelpYouLinerFragment: Fragment() {
 
 
     //플로팅버튼 애니메이션을 위한 변수
-    lateinit var hmPadFab: FloatingActionButton
-    lateinit var hmTamponFab: FloatingActionButton
-    lateinit var hmLinerFab: FloatingActionButton
+    lateinit var hyPadFab: FloatingActionButton
+    lateinit var hyTamponFab: FloatingActionButton
+    lateinit var hyLinerFab: FloatingActionButton
     lateinit var fabMain: FloatingActionButton
     private var isFabOpen = false
 
@@ -49,9 +52,9 @@ class HelpYouLinerFragment: Fragment() {
         getUserData()
 
 
-        hmLinerFab = perView.findViewById(R.id.helpyou_liner_fab) //liner
-        hmTamponFab = perView.findViewById(R.id.helpyou_tampon_fab) //tampon
-        hmPadFab =perView.findViewById(R.id.helpyou_pad_fab) //pad
+        hyLinerFab = perView.findViewById(R.id.helpyou_liner_fab) //liner
+        hyTamponFab = perView.findViewById(R.id.helpyou_tampon_fab) //tampon
+        hyPadFab =perView.findViewById(R.id.helpyou_pad_fab) //pad
         fabMain = perView.findViewById(R.id.tog_btn) //main fab
 
         return perView
@@ -90,18 +93,18 @@ class HelpYouLinerFragment: Fragment() {
             toggleFab()
         }
         //pad 버튼 클릭 시 공구 글쓰기 화면으로 전환
-        hmPadFab.setOnClickListener {
-            val intent = Intent(activity, HelpMePadWriteActivity::class.java)
+        hyPadFab.setOnClickListener {
+            val intent = Intent(activity, HelpYouPadWriteActivity::class.java)
             startActivity(intent)
         }
         //liner 버튼 클릭 시 공구 글쓰기 화면으로 전환
-        hmLinerFab.setOnClickListener {
-            val intent = Intent(activity, HelpMeLinerWriteActivity::class.java)
+        hyLinerFab.setOnClickListener {
+            val intent = Intent(activity, HelpYouLinerWriteActivity::class.java)
             startActivity(intent)
         }
         //tampon 버튼 클릭 시 공구 글쓰기 화면으로 전환
-        hmTamponFab.setOnClickListener {
-            val intent = Intent(activity, HelpMeTamponWriteActivity::class.java)
+        hyTamponFab.setOnClickListener {
+            val intent = Intent(activity, HelpYouTamponWriteActivity::class.java)
             startActivity(intent)
         }
     }
@@ -109,15 +112,15 @@ class HelpYouLinerFragment: Fragment() {
     private fun toggleFab() {
         //플로팅 액션 버튼 닫기/열기
         if (isFabOpen) {
-            ObjectAnimator.ofFloat(hmPadFab, "translationY", 0f).apply { start() }
-            ObjectAnimator.ofFloat(hmTamponFab, "translationY", 0f).apply { start() }
-            ObjectAnimator.ofFloat(hmLinerFab, "translationY", 0f).apply { start() }
+            ObjectAnimator.ofFloat(hyPadFab, "translationY", 0f).apply { start() }
+            ObjectAnimator.ofFloat(hyTamponFab, "translationY", 0f).apply { start() }
+            ObjectAnimator.ofFloat(hyLinerFab, "translationY", 0f).apply { start() }
             fabMain.setImageResource(R.drawable.x_icon)
 
         } else {
-            ObjectAnimator.ofFloat(hmPadFab, "translationY", -400f).apply { start() }
-            ObjectAnimator.ofFloat(hmTamponFab, "translationY", -600f).apply { start() }
-            ObjectAnimator.ofFloat(hmLinerFab, "translationY", -800f).apply { start() }
+            ObjectAnimator.ofFloat(hyPadFab, "translationY", -400f).apply { start() }
+            ObjectAnimator.ofFloat(hyTamponFab, "translationY", -600f).apply { start() }
+            ObjectAnimator.ofFloat(hyLinerFab, "translationY", -800f).apply { start() }
             fabMain.setImageResource(R.drawable.writing_icon)
         }
         isFabOpen = !isFabOpen

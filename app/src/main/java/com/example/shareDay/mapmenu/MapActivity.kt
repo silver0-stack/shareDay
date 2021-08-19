@@ -116,33 +116,6 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
         //화장실 버튼 클릭 시 마커 등장
         toilet.setOnClickListener {
             if(toiletisChecked){
-
-                marker101.isVisible=false
-                marker102.isVisible=false
-                marker103.isVisible=false
-                marker104.isVisible=false
-                marker105.isVisible=false
-                marker106.isVisible=false
-                marker107.isVisible=false
-                marker108.isVisible=false
-                marker109.isVisible=false
-                marker110.isVisible=false
-                marker111.isVisible=false
-                marker112.isVisible=false
-                marker113.isVisible=false
-                marker114.isVisible=false
-                marker115.isVisible=false
-                marker116.isVisible=false
-                marker117.isVisible=false
-                marker118.isVisible=false
-                marker119.isVisible=false
-                marker120.isVisible=false
-
-            }
-
-
-            else{
-
                 //화장실 마커 세팅
                 setMarker(marker101, //서울특별시 서초구 방배천로 5-4 안심화장실145
                     37.477291446255194, 126.98217320405335 ,
@@ -650,6 +623,29 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
                 marker118.onClickListener = listener18
                 marker119.onClickListener = listener19
                 marker120.onClickListener = listener20
+
+            }
+            else{
+                marker101.isVisible=false
+                marker102.isVisible=false
+                marker103.isVisible=false
+                marker104.isVisible=false
+                marker105.isVisible=false
+                marker106.isVisible=false
+                marker107.isVisible=false
+                marker108.isVisible=false
+                marker109.isVisible=false
+                marker110.isVisible=false
+                marker111.isVisible=false
+                marker112.isVisible=false
+                marker113.isVisible=false
+                marker114.isVisible=false
+                marker115.isVisible=false
+                marker116.isVisible=false
+                marker117.isVisible=false
+                marker118.isVisible=false
+                marker119.isVisible=false
+                marker120.isVisible=false
             }
             toiletisChecked =! toiletisChecked
 

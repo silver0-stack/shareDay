@@ -53,12 +53,12 @@ class HelpYouPadWriteActivity : AppCompatActivity(){
 
         //firebase
         database = Firebase.database.reference
-        uploadBtn = findViewById(R.id.HmUploadBtn)
-        profileImg = findViewById(R.id.HmItemImg)
-        name = findViewById(R.id.HmItemName)
-        findMyLoc = findViewById(R.id.HmFindLoc)
-        myLoc = findViewById(R.id.HmItemLoc)
-        contents = findViewById(R.id.HmItemContents)
+        uploadBtn = findViewById(R.id.HyUploadBtn)
+        profileImg = findViewById(R.id.HyItemImg)
+        name = findViewById(R.id.HyItemName)
+        findMyLoc = findViewById(R.id.HyFindLoc)
+        myLoc = findViewById(R.id.HyItemLoc)
+        contents = findViewById(R.id.HyItemContents)
 
         backBtn = findViewById(R.id.backBtn)
 
