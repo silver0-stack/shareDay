@@ -25,7 +25,7 @@ class HelpMeLinerWriteActivity : AppCompatActivity(){
     private var mAuth: FirebaseAuth? = null
 
     lateinit var profileImg: ImageView //프사
-    lateinit var name: TextView //이름
+    lateinit var postName: TextView //이름
     lateinit var findMyLoc: ImageView //내 위치 설정 버튼
     lateinit var myLoc: TextView //내 위치 결과
     lateinit var contents: EditText //내용
@@ -38,6 +38,10 @@ class HelpMeLinerWriteActivity : AppCompatActivity(){
     lateinit var uid: String
     lateinit var userName: String
 
+    val userUID = Firebase.auth.currentUser?.uid
+    var userNick :String = "익명"
+    lateinit var db: DatabaseReference
+
     //뒤로가기 버튼
     lateinit var backBtn: AppCompatImageView
 
@@ -48,9 +52,10 @@ class HelpMeLinerWriteActivity : AppCompatActivity(){
 
         //firebase
         database = Firebase.database.reference
+
         uploadBtn = findViewById(R.id.HmUploadBtn)
         profileImg = findViewById(R.id.HmItemImg)
-        name = findViewById(R.id.HmItemName)
+        postName = findViewById(R.id.HmItemName)
         findMyLoc = findViewById(R.id.HmFindLoc)
         myLoc = findViewById(R.id.HmItemLoc)
         contents = findViewById(R.id.HmItemContents)
@@ -69,6 +74,17 @@ class HelpMeLinerWriteActivity : AppCompatActivity(){
             myLoc.text = "카페 H CUBE"
         }
 
+        //누가 올렸는지 식별하기 위해 글 쓴 회원정보 갖고오기
+        db = FirebaseDatabase.getInstance().reference
+        db.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                userNick = snapshot.child("Users").child(userUID.toString()).child("userNickname").value.toString()
+                postName.setText(userNick)
+            }
+
+            override fun onCancelled(error: DatabaseError) {}
+        })
+
         //완료 버튼 이벤트
         uploadBtn.setOnClickListener {
             posting()
@@ -80,30 +96,14 @@ class HelpMeLinerWriteActivity : AppCompatActivity(){
         val myLocation = myLoc.text.toString().trim()
         val contents = contents.text.toString().trim()
 
-
-        //누가 올렸는지 식별하기 위해 글 쓴 회원정보 갖고오기
-        val userUID = Firebase.auth.currentUser?.uid
-        var userNick :String = "익명"
-        var db: DatabaseReference
-        db = FirebaseDatabase.getInstance().reference
-        db.addListenerForSingleValueEvent(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                userNick = snapshot.child("Users").child(userUID.toString()).child("userNickname").value.toString()
-                Log.e("nick", userNick)
-
-                //글 업로드
-                writeNewPost(
-                    myLocation,
-                    contents,
-                    userNick,
-                    userUID!!,
-                )
-            }
-            override fun onCancelled(error: DatabaseError) {}
-        })
-
+        //글 업로드
+        writeNewPost(
+            myLocation,
+            contents,
+            userNick,
+            userUID!!,
+        )
     }
-
 
     private fun writeNewPost(
         myLocation: String,

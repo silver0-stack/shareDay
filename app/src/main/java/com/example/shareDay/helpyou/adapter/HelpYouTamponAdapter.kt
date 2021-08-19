@@ -30,7 +30,6 @@ class HelpYouTamponAdapter(private val userList: ArrayList<tampon2>) :
         )
 
         chatIcon = itemView.findViewById(R.id.HyTamponStartChat)
-        mapIcon=itemView.findViewById(R.id.HyTamponMap)
 
         return MyViewHolder(itemView).apply {
             //채팅아이콘 클릭 이벤트

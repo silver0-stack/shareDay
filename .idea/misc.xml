@@ -16,6 +16,7 @@
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/shareDay/app/src/main/res/layout/helpme_liner_fragment.xml" value="0.21422101449275363" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/shareDay/app/src/main/res/layout/helpme_total_fragment.xml" value="0.19021739130434784" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/shareDay/app/src/main/res/layout/helpme_write_activity.xml" value="0.21927083333333333" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/shareDay/app/src/main/res/layout/helpyou_fragment.xml" value="0.24818840579710144" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/shareDay/app/src/main/res/layout/item_point.xml" value="0.190625" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/shareDay/app/src/main/res/layout/msg_item.xml" value="0.16033434650455927" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/shareDay/app/src/main/res/layout/my_area.xml" value="0.190625" />
@@ -90,6 +91,13 @@
         <entry key="app/src/main/res/layout/helpyou_tampon_fragment.xml" value="0.2515625" />
         <entry key="app/src/main/res/layout/helpyou_total_fragment.xml" value="0.2515625" />
         <entry key="app/src/main/res/layout/helpyou_write_activity.xml" value="0.3088768115942029" />
+        <entry key="app/src/main/res/layout/hm_liner_list.xml" value="0.27717391304347827" />
+        <entry key="app/src/main/res/layout/hm_pad_list.xml" value="0.27717391304347827" />
+        <entry key="app/src/main/res/layout/hm_tampon_list.xml" value="0.27717391304347827" />
+        <entry key="app/src/main/res/layout/hm_total_list.xml" value="0.27717391304347827" />
+        <entry key="app/src/main/res/layout/hy_liner_list.xml" value="0.27717391304347827" />
+        <entry key="app/src/main/res/layout/hy_pad_list.xml" value="0.27717391304347827" />
+        <entry key="app/src/main/res/layout/hy_tampon_list.xml" value="0.27717391304347827" />
         <entry key="app/src/main/res/layout/hy_total_list.xml" value="0.2515625" />
         <entry key="app/src/main/res/layout/item_main.xml" value="0.375" />
         <entry key="app/src/main/res/layout/item_point.xml" value="0.396875" />
