@@ -701,7 +701,7 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
                     Toast.makeText(this, "채팅방으로 이동합니다", Toast.LENGTH_SHORT).show()
 
                     val intent = Intent(this, ChatActivity::class.java)
-                    intent.putExtra("chatName", "닮은살걀") //여기 바꿔주세요!!
+                    intent.putExtra("chatName", "달걀") //여기 바꿔주세요!!
                     intent.putExtra("userName", userNick)
                     ContextCompat.startActivity(this, intent, null)
 
