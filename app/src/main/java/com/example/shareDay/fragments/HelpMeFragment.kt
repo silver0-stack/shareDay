@@ -64,6 +64,8 @@ class HelpMeFragment : Fragment(R.layout.helpme_fragment) {
         adapter.addFragment(HelpMeTamponFragment(), "탐폰")
         adapter.addFragment(HelpMeLinerFragment(), "팬티라이너")
 
+
+
         viewHomePager.adapter = adapter
         topTabLayout.setupWithViewPager(viewHomePager)
     }
