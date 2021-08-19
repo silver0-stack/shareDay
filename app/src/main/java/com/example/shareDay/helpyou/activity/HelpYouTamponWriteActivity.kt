@@ -37,11 +37,10 @@ class HelpYouTamponWriteActivity : AppCompatActivity() {
     lateinit var uploadBtn: ImageButton
     lateinit var uid: String
     lateinit var userName: String
-//    private lateinit var totalFragment: HelpMeTotalFragment
-//    private lateinit var padFragment: HelpMePadFragment
-//    private lateinit var linerFragment: HelpMeLinerFragment
-//    private lateinit var tamponFragment: HelpMeTamponFragment
 
+    val userUID = Firebase.auth.currentUser?.uid
+    var userNick :String = "익명"
+    lateinit var db: DatabaseReference
 
     //뒤로가기 버튼
     lateinit var backBtn: AppCompatImageView
@@ -69,6 +68,17 @@ class HelpYouTamponWriteActivity : AppCompatActivity() {
             onBackPressed()
         }
 
+        //누가 올렸는지 식별하기 위해 글 쓴 회원정보 갖고오기
+        db = FirebaseDatabase.getInstance().reference
+        db.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                userNick = snapshot.child("Users").child(userUID.toString()).child("userNickname").value.toString()
+                name.setText(userNick)
+            }
+
+            override fun onCancelled(error: DatabaseError) {}
+        })
+
         //내 위치 설정하기 버튼 이벤트 리스터
         findMyLoc.setOnClickListener {
             myLoc.text = "카페 H CUBE"
@@ -86,27 +96,13 @@ class HelpYouTamponWriteActivity : AppCompatActivity() {
         val myLocation = myLoc.text.toString().trim()
         val contents = contents.text.toString().trim()
 
-        //누가 올렸는지 식별하기 위해 글 쓴 회원정보 갖고오기
-        val userUID = Firebase.auth.currentUser?.uid
-        var userNick :String = "익명"
-        var db: DatabaseReference
-        db = FirebaseDatabase.getInstance().reference
-        db.addListenerForSingleValueEvent(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                userNick = snapshot.child("Users").child(userUID.toString()).child("userNickname").value.toString()
-                Log.e("nick", userNick)
-
-                //글 업로드
-                writeNewPost(
-                    myLocation,
-                    contents,
-                    userNick,
-                    userUID!!,
-                )
-            }
-            override fun onCancelled(error: DatabaseError) {}
-        })
-
+        //글 업로드
+        writeNewPost(
+            myLocation,
+            contents,
+            userNick,
+            userUID!!,
+        )
     }
 
     private fun writeNewPost(
