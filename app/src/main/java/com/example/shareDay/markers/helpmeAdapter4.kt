@@ -30,7 +30,7 @@ class helpmeAdapter4(private val mContext: Context, private val mParent: ViewGro
         startChat.setOnClickListener {
             context.startActivity(Intent(context, ChatActivity::class.java))
         }
-        infoContents.text = "탐폰 하나 필요합니다!"
+        infoContents.text = "주위에 생리대 살 곳이 없네요...여분 있으신 분계세요?"
         markUserImg.setImageResource(R.drawable.profile4_image)
         return view
     }

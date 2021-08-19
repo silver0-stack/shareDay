@@ -31,7 +31,7 @@ class helpmeAdapter3(private val mContext: Context, private val mParent: ViewGro
             context.startActivity(Intent(context, ChatActivity::class.java))
         }
 
-        infoContents.text = "탐폰 하나 필요합니다!"
+        infoContents.text = "라이너 하나 남은거 있으신분!"
         markUserImg.setImageResource(R.drawable.profile3_image)
         return view
     }

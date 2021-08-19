@@ -31,7 +31,7 @@ class helpyouAdapter2(private val mContext: Context, private val mParent: ViewGr
             context.startActivity(Intent(context, ChatActivity::class.java))
         }
 
-        infoContents.text = "탐폰 선착순 3명 나눔합니다!"
+        infoContents.text = "생리대 급하신분?"
         markUserImg.setImageResource(R.drawable.profile7_image)
         return view
     }

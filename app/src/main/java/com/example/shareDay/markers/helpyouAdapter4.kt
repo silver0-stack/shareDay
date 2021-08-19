@@ -31,7 +31,7 @@ class helpyouAdapter4(private val mContext: Context, private val mParent: ViewGr
         startChat.setOnClickListener {
             context.startActivity(Intent(context, ChatActivity::class.java))
         }
-        infoContents.text = "탐폰 선착순 3명 나눔합니다!"
+        infoContents.text = "팬티라이너 있어요!"
         markUserImg.setImageResource(R.drawable.profile9_image)
         return view
     }
