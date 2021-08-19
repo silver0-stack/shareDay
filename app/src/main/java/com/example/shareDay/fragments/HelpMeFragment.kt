@@ -19,9 +19,6 @@ class HelpMeFragment : Fragment(R.layout.helpme_fragment) {
     lateinit var viewHomePager: ViewPager //게시물이 배치되는 화면
     lateinit var topTabLayout: TabLayout //상단메뉴탭
 
-
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -69,8 +66,6 @@ class HelpMeFragment : Fragment(R.layout.helpme_fragment) {
         viewHomePager.adapter = adapter
         topTabLayout.setupWithViewPager(viewHomePager)
     }
-
-
 
     companion object {
 

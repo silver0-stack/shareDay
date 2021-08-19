@@ -133,7 +133,6 @@ class HelpMeLinerWriteActivity : AppCompatActivity(){
         }
     }
 
-
     override fun onBackPressed() {
         super.onBackPressed()
     }

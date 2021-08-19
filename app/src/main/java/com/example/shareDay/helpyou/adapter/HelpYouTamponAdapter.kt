@@ -1,12 +1,14 @@
 package com.example.shareDay.helpyou.adapter
 
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.shareDay.ChatActivity
@@ -14,13 +16,19 @@ import com.example.shareDay.R
 import com.example.shareDay.helpme.dto.tampon2
 
 import com.example.shareDay.mapmenu.MapActivity
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.*
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.helpyou_write_list.view.*
 
 class HelpYouTamponAdapter(private val userList: ArrayList<tampon2>) :
     RecyclerView.Adapter<HelpYouTamponAdapter.MyViewHolder>() {
 
     lateinit var chatIcon: ImageButton
-    lateinit var mapIcon: ImageButton
+
+    val userUID = Firebase.auth.currentUser?.uid
+    var userNick :String = "익명"
+    lateinit var db: DatabaseReference
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(
@@ -31,29 +39,23 @@ class HelpYouTamponAdapter(private val userList: ArrayList<tampon2>) :
 
         chatIcon = itemView.findViewById(R.id.HyTamponStartChat)
 
+        //닉네임 받아오기
+        db = FirebaseDatabase.getInstance().reference
+        db.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                userNick = snapshot.child("Users").child(userUID.toString()).child("userNickname").value.toString()
+                Log.e("nick", userNick)
+            }
+            override fun onCancelled(error: DatabaseError) {}
+        })
+
         return MyViewHolder(itemView).apply {
             //채팅아이콘 클릭 이벤트
             chatIcon.setOnClickListener {
-                val Img = userImg.text.toString()
                 val intent = Intent(parent.context, ChatActivity::class.java)
-                intent.putExtra("pofileImg", Img) /*1:1 채팅방으로 프사 송신*/
-                parent.context.startActivity(intent)
-            }
-            //지도아이콘 클릭 이벤트
-            mapIcon.setOnClickListener {
-                val Img = userImg.text.toString()
-                val Loc = userLocation.text.toString()
-                val Name = userName.text.toString()
-                val Contents = contents.text.toString()
-
-                val intent =
-                    Intent(parent.context, MapActivity::class.java) //일단은 지도로 인텐트 해놓음 //자세한건 다음
-                intent.putExtra("Img", Img) /*해당 위치 레이아웃에 이름,프사,내용,위치 송신*/
-                intent.putExtra("Loc", Loc)
-                intent.putExtra("Name", Name)
-                intent.putExtra("Contents", Contents)
-
-                parent.context.startActivity(intent)
+                intent.putExtra("chatName", "달걀") //여기 바꿔주세요!!
+                intent.putExtra("userName", userNick)
+                ContextCompat.startActivity(parent.context, intent, null)
             }
         }
     }

@@ -684,6 +684,7 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
                 //정보창
                 val infoWindow = InfoWindow()
 
+                //정보창 클릭 시 채팅방으로 이동
                 val userUID = Firebase.auth.currentUser?.uid
                 var userNick :String = "익명"
                 var db: DatabaseReference
