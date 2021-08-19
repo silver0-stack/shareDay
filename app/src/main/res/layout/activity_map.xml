@@ -51,6 +51,7 @@
         android:layout_width="40dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="350dp"
+        android:gravity="center_horizontal"
         android:layout_marginTop="30dp"
         android:orientation="vertical">
 
@@ -60,21 +61,33 @@
             android:layout_width="match_parent"
             android:layout_height="40dp" />
 
-        <ImageView
+        <ToggleButton
             android:id="@+id/toilet"
-            android:src="@drawable/map_restroom_button_icon"
-            android:layout_width="match_parent"
-            android:layout_height="40dp" />
-        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:checked="true"
+            android:textOn=""
+            android:textOff=""
+            android:background="@drawable/map_restroom_button_toggle"/>
+        <ToggleButton
             android:id="@+id/helpMeIcon"
-            android:src="@drawable/map_helpme_button_icon"
-            android:layout_width="match_parent"
-            android:layout_height="40dp" />
-        <ImageView
+            android:checked="true"
+            android:textOn=""
+            android:textOff=""
+            android:background="@drawable/map_helpme_toggle"
+            android:layout_marginTop="5dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp" />
+        <ToggleButton
             android:id="@+id/helpYouIcon"
-            android:src="@drawable/map_helpyou_button_icon"
-            android:layout_width="match_parent"
-            android:layout_height="40dp" />
+            android:checked="true"
+            android:layout_marginTop="5dp"
+            android:textOff=""
+            android:textOn=""
+            android:text=""
+            android:background="@drawable/map_helpyou_toggle"
+            android:layout_width="30dp"
+            android:layout_height="30dp" />
 
     </LinearLayout>
 
