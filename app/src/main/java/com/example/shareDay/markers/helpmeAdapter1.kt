@@ -31,16 +31,16 @@ class helpmeAdapter1(private val mContext: Context, private val mParent: ViewGro
 
 
         //채팅 이미지 누르면 1:1 채팅방으로 이동
-        startChat.setOnClickListener {
+        /*startChat.setOnClickListener {
             fun onClick(v:View){
                 //context.startActivity(Intent(context,ChatActivity::class.java))
 
                 Toast.makeText(context, "버튼 눌림", Toast.LENGTH_SHORT).show()
                 Log.d("tag", "Button Click")
             }
-        }
+        }*/
 
-        infoContents.text = "test : 탐폰 하나 필요합니다!"
+        infoContents.text = "탐폰 하나 필요합니다!"
         Log.d("tag", "Ready")
         markUserImg.setImageResource(R.drawable.profile1_image)
         return view

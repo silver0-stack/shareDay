@@ -34,18 +34,14 @@ class ChatFragment : Fragment(R.layout.chat_fragment), UserListAdapter.ClickList
                               savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.chat_fragment, container, false)
 
-        //유저 식별
-        val USER_UID = Firebase.auth.currentUser?.uid.toString()
-        val USER_Email = Firebase.auth.currentUser?.email
-
         initRecyclerView(view)
         buildDisplayData()
 
         chatBtn = view.findViewById(R.id.chatBtn)
         chatBtn.setOnClickListener{ view->
             //Log.d("btn", "click")
-            Toast.makeText(context, "버튼 : database 입력", Toast.LENGTH_SHORT).show()
-            val newChatRoom = Chat(USER_Email, "새로운 채팅방 입니다.")
+            //Toast.makeText(context, "버튼 : database 입력", Toast.LENGTH_SHORT).show()
+            //val newChatRoom = Chat(USER_Email, "새로운 채팅방 입니다.")
             //FirebaseDatabase.getInstance().getReference("chatRoom").child(USER_UID).setValue(newChatRoom)
         }
 
