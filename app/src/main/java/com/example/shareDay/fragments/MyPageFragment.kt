@@ -19,6 +19,7 @@ import com.example.shareDay.mypage.*
 import com.example.shareDay.user.SignInActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.storage.FirebaseStorage
+import kotlinx.android.synthetic.main.helpyou_write_list.view.*
 import kotlinx.android.synthetic.main.mypage.*
 import java.text.SimpleDateFormat
 import java.util.*
@@ -45,7 +46,7 @@ class MyPageFragment : Fragment() {
     lateinit var help: Button
     lateinit var image1: String //이미지 이름
     lateinit var uid : String //uid
-    lateinit var userName : String //유저네임
+    lateinit var userName: TextView //유저네임
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -76,6 +77,14 @@ class MyPageFragment : Fragment() {
               startActivity(intent)
           }*/
 
+
+        //현재 유저 이메일을 마이페이지 이름에 받음
+        userName = myPageView.findViewById(R.id.userName)
+        mAuth = FirebaseAuth.getInstance()
+        val user = mAuth!!.currentUser
+        if (user != null) {
+            userName.text= user.email
+        }
 
         //알람 리스너
         alarmIcon = myPageView.findViewById(R.id.alarmIcon)
