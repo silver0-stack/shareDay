@@ -130,7 +130,7 @@ class HelpMeTotalWriteActivity : AppCompatActivity(), RadioGroup.OnCheckedChange
                 userName,
                 uid
             )
-            database.child("helpme_total").child(key).setValue(newPost).addOnSuccessListener {
+            database.child("Board").child("helpme_total").setValue(newPost).addOnSuccessListener {
                 Toast.makeText(this, "⭕업로드 성공⭕", Toast.LENGTH_SHORT).show()
             }
         }

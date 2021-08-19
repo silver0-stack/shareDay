@@ -6,12 +6,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.shareDay.chats.Chat
 import com.example.shareDay.chats.UserInfo
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.*
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
+import org.w3c.dom.Text
 import java.util.ArrayList
 
 class ChatFragment : Fragment(R.layout.chat_fragment), UserListAdapter.ClickListener {
@@ -20,32 +26,27 @@ class ChatFragment : Fragment(R.layout.chat_fragment), UserListAdapter.ClickList
     val listData: ArrayList<UserInfo> = ArrayList()
 
     private lateinit var chatBtn: ImageButton
-
     private lateinit var db: DatabaseReference
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        arguments?.let{
-        }
-    }
+    var USER_NAME_ME: String? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.chat_fragment, container, false)
 
+        //유저 식별
+        val USER_UID = Firebase.auth.currentUser?.uid.toString()
+        val USER_Email = Firebase.auth.currentUser?.email
+
         initRecyclerView(view)
+        buildDisplayData()
 
         chatBtn = view.findViewById(R.id.chatBtn)
         chatBtn.setOnClickListener{ view->
             //Log.d("btn", "click")
-            Toast.makeText(context, "버튼 : database에 test 입력됨!", Toast.LENGTH_SHORT).show()
-            FirebaseDatabase.getInstance().getReference("chatRoom").push().setValue("test")
-
-            //아래는 fragment에서 activity로 넘어가는 코드
-            //val intent = Intent(activity, ChatActivity::class.java)
-            //intent.putExtra("", value)
-            //startActivity(intent)
+            Toast.makeText(context, "버튼 : database 입력", Toast.LENGTH_SHORT).show()
+            val newChatRoom = Chat(USER_Email, "새로운 채팅방 입니다.")
+            //FirebaseDatabase.getInstance().getReference("chatRoom").child(USER_UID).setValue(newChatRoom)
         }
 
         return view
@@ -56,8 +57,6 @@ class ChatFragment : Fragment(R.layout.chat_fragment), UserListAdapter.ClickList
         recyclerView.layoutManager = LinearLayoutManager(activity)
         adapter = UserListAdapter(listData, this)
         recyclerView.adapter = adapter
-
-        buildDisplayData()
     }
 
     private fun buildDisplayData(){
@@ -66,27 +65,23 @@ class ChatFragment : Fragment(R.layout.chat_fragment), UserListAdapter.ClickList
 
         db.addValueEventListener(object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
+                listData.clear() //기존 리스트 초기화
                 val chat_room = snapshot.child("chatRoom")
                 for(item in chat_room.children){
-                    //val id : String = item.key.toString()
-                    //val name : String? = item.child("name").value as String?
-                    //val about : String? = item.child("msg").value as String?
+                    val chatKey : String = item.key.toString()
+                    val chat_count = item.children.count()
+                    val lastMsg = item.children.last().child("msg").value
 
-                    //val users = UserInfo(name.toString(), id, about.toString())
-                    //listData.add(users)
-                    //listData.add(UserInfo(name,"",about))
-                    Log.e("snap", item.toString())
-                    //Log.e("snap", user_info.toString())
+                    val users = UserInfo(chatKey, "", lastMsg.toString(), chat_count)
+                    listData.add(users)
+                    //listData.add(UserInfo("","","",)) //위의 코드를 축약한 형태
                 }
+                adapter.notifyDataSetChanged() //저장 및 새로고침해서 반영시키기
+                Log.e("snap", listData.toString())
             }
+
             override fun onCancelled(error: DatabaseError) {}
         })
-
-        //예시 데이터
-        listData.add(UserInfo("second@naver.com", "","ttttttt"))
-        listData.add(UserInfo("test2", "", "eeeeeeeeeee"))
-        listData.add(UserInfo("test3", "","sssssssssst" ))
-        Log.e("snap", listData.toString())
     }
 
     override fun onItemClick() {}

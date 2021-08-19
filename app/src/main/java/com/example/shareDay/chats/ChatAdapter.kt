@@ -7,16 +7,13 @@ import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
-import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.shareDay.chats.Chat
 import com.example.shareDay.chats.ProfilePopUp
-import org.w3c.dom.Text
 
 //1:1채팅방 Activity에 recyclerView를 연결하는 Adapter
 class ChatAdapter(chatData: MutableList<Chat>?, userName: String, chatName: String) :

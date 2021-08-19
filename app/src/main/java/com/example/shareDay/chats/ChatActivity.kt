@@ -12,13 +12,13 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ChildEventListener
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
-import java.util.ArrayList
 import android.content.Intent
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import kotlinx.android.synthetic.main.activity_sign_in.*
-import org.w3c.dom.Text
+import java.text.SimpleDateFormat
+import java.time.LocalDate
+import java.time.LocalDateTime
+import java.util.*
 
 
 class ChatActivity : AppCompatActivity() { //1:1 채팅방
@@ -40,7 +40,6 @@ class ChatActivity : AppCompatActivity() { //1:1 채팅방
     var USER_NAME: String? = null
 
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chat)
@@ -52,9 +51,6 @@ class ChatActivity : AppCompatActivity() { //1:1 채팅방
         val intent = intent
         CHAT_NAME = intent.getStringExtra("chatName")
         USER_NAME = intent.getStringExtra("userName")
-
-        //임시로 다른 값 넣어둠
-        USER_NAME = user?.email
 
         // xml ID 참조 및 클릭리스너와 텍스트 제어
         chatText = findViewById<EditText>(R.id.chatText)
@@ -68,6 +64,9 @@ class ChatActivity : AppCompatActivity() { //1:1 채팅방
                 val chat = Chat()
                 chat.name = USER_NAME
                 chat.msg = msg
+                //val currentDateTime = Calendar.getInstance().time
+                //var dateFormat = SimpleDateFormat("yyyy.MM.dd HH:mm:ss", Locale.KOREA).format(currentDateTime)
+                //chat.cTime =
 
                 //메시지를 파이어베이스에 보냄.
                 myRef!!.push().setValue(chat)
