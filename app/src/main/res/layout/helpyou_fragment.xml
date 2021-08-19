@@ -26,31 +26,90 @@
 
     </androidx.appcompat.widget.Toolbar>
 
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal"/>
+
 
         <TextView
-            android:layout_width="270dp"
+            android:layout_width="240dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
+            android:layout_marginTop="15sp"
             android:text="SHARE DAY"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold" />
 
-        <ImageButton
-            android:id="@+id/helpYouWriteBtn"
-            android:layout_width="100dp"
-            android:layout_height="40dp"
-            android:layout_marginEnd="16dp"
-            android:background="@drawable/write"
-            android:contentDescription="TODO" />
 
-    </LinearLayout>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/helpme_total_fab"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="330dp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="#EDB5F3"
+            android:src="@drawable/all_icon"
+            app:elevation="6dp"
+            app:fabCustomSize="48dp"
+            app:fabSize="normal"
+            app:tint="#7D2F85" />
 
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/helpme_pad_fab"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="330dp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="#EDB5F3"
+            android:src="@drawable/pad_icon"
+            app:elevation="6dp"
+            app:fabCustomSize="48dp"
+            app:tint="#7D2F85" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/helpme_tampon_fab"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="330dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/tam_icon"
+            android:backgroundTint="#EDB5F3"
+            app:elevation="6dp"
+            app:fabCustomSize="48dp"
+            app:tint="#7D2F85" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/helpme_liner_fab"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="330dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/panty_icon"
+            android:backgroundTint="#EDB5F3"
+            app:elevation="6dp"
+            app:fabCustomSize="48dp"
+            app:tint="#7D2F85" />
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/tog_btn"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="330dp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="#7D2F85"
+            android:src="@drawable/writing_icon"
+            app:fabCustomSize="48dp"
+            app:tint="@color/white" />
+
+    </FrameLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

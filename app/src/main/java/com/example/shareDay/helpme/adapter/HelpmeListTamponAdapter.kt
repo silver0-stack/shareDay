@@ -24,13 +24,13 @@ class HelpmeListTamponAdapter(private val userList: ArrayList<tampon>) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(
-            R.layout.helpme_item_list,
+            R.layout.hm_tampon_list,
             parent,
             false
         )
 
-        chatIcon = itemView.findViewById(R.id.startChat)
-        mapIcon=itemView.findViewById(R.id.checkLoc)
+        chatIcon = itemView.findViewById(R.id.HmTamponStartChat)
+        mapIcon=itemView.findViewById(R.id.HmTamponMap)
 
         return MyViewHolder(itemView).apply {
             //채팅아이콘 클릭 이벤트
@@ -84,10 +84,10 @@ class HelpmeListTamponAdapter(private val userList: ArrayList<tampon>) :
     }
 
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val userImg = itemView.findViewById<ImageView>(R.id.HmItemImg)
-        val userName = itemView.findViewById<TextView>(R.id.HmItemName)
-        val userLocation = itemView.findViewById<TextView>(R.id.HmItemLoc)
-        val contents = itemView.findViewById<TextView>(R.id.HmItemContents)
+        val userImg = itemView.findViewById<ImageView>(R.id.HmTamponImg)
+        val userName = itemView.findViewById<TextView>(R.id.HmTamponName)
+        val userLocation = itemView.findViewById<TextView>(R.id.HmTamponLoc)
+        val contents = itemView.findViewById<TextView>(R.id.HmTamponContents)
     }
 
 }

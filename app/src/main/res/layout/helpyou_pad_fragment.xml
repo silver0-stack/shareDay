@@ -7,10 +7,7 @@
     android:background="#FFFFFF"
     android:orientation="vertical">
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:ignore="ExtraText,UselessParent">
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/helpyou_pad_recycler"
@@ -18,79 +15,7 @@
             android:layout_height="match_parent"
             android:clickable="true"
             android:focusable="true"
-            tools:listitem="@layout/hy_total_list" />
+            tools:listitem="@layout/hy_pad_list" />
 
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/helpyou_total_fab"
-            app:borderWidth="0dp"
-            app:fabSize="normal"
-            app:layout_constraintBottom_toBottomOf="@+id/fab_btn"
-            app:layout_constraintEnd_toEndOf="@+id/fab_btn"
-            app:layout_constraintStart_toStartOf="@+id/fab_btn"
-            app:layout_constraintTop_toTopOf="@+id/fab_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|right"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="76dp"
-            android:backgroundTint="@color/white"
-            android:src="@drawable/helpme_color_icon" />
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/helpyou_pad_fab"
-            app:borderWidth="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:tint="@android:color/white"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|right"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="76dp"
-            android:backgroundTint="@color/purple_200"
-            android:src="@drawable/ic_baseline_create_24" />
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/helpyou_tampon_fab"
-            app:borderWidth="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:tint="@android:color/white"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|right"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="76dp"
-            android:backgroundTint="@color/purple_200"
-            android:src="@drawable/ic_baseline_create_24" />
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/helpyou_liner_fab"
-            app:borderWidth="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:tint="@android:color/white"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|right"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="76dp"
-            android:backgroundTint="@color/purple_200"
-            android:src="@drawable/ic_baseline_create_24" />
-
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/tog_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|right"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="76dp"
-            android:backgroundTint="@color/white"
-            android:src="@drawable/writing_icon"
-            app:borderWidth="0dp"
-            app:fabSize="normal" />
-
-    </FrameLayout>
 </LinearLayout>

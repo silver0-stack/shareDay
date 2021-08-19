@@ -24,13 +24,13 @@ class HelpYouPadAdapter(private val userList: ArrayList<pad2>) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(
-            R.layout.hy_total_list,
+            R.layout.hy_pad_list,
             parent,
             false
         )
 
-        chatIcon = itemView.findViewById(R.id.startChat)
-        mapIcon=itemView.findViewById(R.id.checkLoc)
+        chatIcon = itemView.findViewById(R.id.HyPadStartChat)
+        mapIcon=itemView.findViewById(R.id.HyPadMap)
 
         return MyViewHolder(itemView).apply {
             //채팅아이콘 클릭 이벤트
@@ -83,10 +83,10 @@ class HelpYouPadAdapter(private val userList: ArrayList<pad2>) :
     }
 
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val userImg = itemView.findViewById<ImageView>(R.id.HmItemImg)
-        val userName = itemView.findViewById<TextView>(R.id.HmItemName)
-        val userLocation = itemView.findViewById<TextView>(R.id.HmItemLoc)
-        val contents = itemView.findViewById<TextView>(R.id.HmItemContents)
+        val userImg = itemView.findViewById<ImageView>(R.id.HyPadImg)
+        val userName = itemView.findViewById<TextView>(R.id.HyPadName)
+        val userLocation = itemView.findViewById<TextView>(R.id.HyPadLoc)
+        val contents = itemView.findViewById<TextView>(R.id.HyPadContents)
     }
 
 }

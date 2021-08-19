@@ -29,15 +29,6 @@ class HelpYouPadFragment: Fragment() {
     private lateinit var userArrayList : ArrayList<pad2>
     private lateinit var perView : View
 
-    //플로팅버튼 애니메이션을 위한 변수
-    lateinit var hyTotalFab: FloatingActionButton
-    lateinit var hyPadFab: FloatingActionButton
-    lateinit var hyTamponFab: FloatingActionButton
-    lateinit var hyLinerFab: FloatingActionButton
-    lateinit var fabMain: FloatingActionButton
-    private var isFabOpen = false
-
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -46,13 +37,6 @@ class HelpYouPadFragment: Fragment() {
         // Inflate the layout for this fragment
         //helpme_liner_fragment의 리사이클러뷰 쭉 있는 xml
         perView = inflater.inflate(R.layout.helpyou_pad_fragment, container, false)
-
-        hyLinerFab = perView.findViewById(R.id.helpyou_liner_fab) //liner
-        hyTotalFab = perView.findViewById(R.id.helpyou_total_fab) //total
-        hyTamponFab = perView.findViewById(R.id.helpyou_tampon_fab) //tampon
-        hyPadFab = perView.findViewById(R.id.helpyou_pad_fab) //pad
-        fabMain = perView.findViewById(R.id.tog_btn) //main fab
-
         userRecyclerView = perView.findViewById(R.id.helpyou_pad_recycler)
         userRecyclerView.layoutManager = LinearLayoutManager(activity);
         userRecyclerView.setHasFixedSize(true)
@@ -60,55 +44,6 @@ class HelpYouPadFragment: Fragment() {
         getUserData()
 
         return perView
-    }
-
-    override fun onViewCreated(itemView: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(itemView, savedInstanceState)
-
-        //플로팅 버튼 클릭 시 애니메이션 동작 기능
-        fabMain.setOnClickListener {
-            toggleFab()
-        }
-        //total 버튼 클릭 시 개인나눔 글쓰기 화면으로 전환
-        hyTotalFab.setOnClickListener {
-            val intent = Intent(activity, HelpYouTotalWriteActivity::class.java)
-            startActivity(intent)
-        }
-        //pad 버튼 클릭 시 공구 글쓰기 화면으로 전환
-        hyPadFab.setOnClickListener {
-            val intent = Intent(activity, HelpYouPadWriteActivity::class.java)
-            startActivity(intent)
-        }
-        //liner 버튼 클릭 시 공구 글쓰기 화면으로 전환
-        hyLinerFab.setOnClickListener {
-            val intent = Intent(activity, HelpYouLinerWriteActivity::class.java)
-            startActivity(intent)
-        }
-        //tampon 버튼 클릭 시 공구 글쓰기 화면으로 전환
-        hyTamponFab.setOnClickListener {
-            val intent = Intent(activity, HelpYouTamponWriteActivity::class.java)
-            startActivity(intent)
-        }
-    }
-
-
-    private fun toggleFab() {
-        //플로팅 액션 버튼 닫기/열기
-        if (isFabOpen) {
-            ObjectAnimator.ofFloat(hyTamponFab, "translationY", 0f).apply { start() }
-            ObjectAnimator.ofFloat(hyLinerFab, "translationY", 0f).apply { start() }
-            ObjectAnimator.ofFloat(hyPadFab, "translationY", 0f).apply { start() }
-            ObjectAnimator.ofFloat(hyTotalFab, "translationY", 0f).apply { start() }
-            fabMain.setImageResource(R.drawable.x_icon)
-
-        } else {
-            ObjectAnimator.ofFloat(hyTamponFab, "translationY", -200f).apply { start() }
-            ObjectAnimator.ofFloat(hyLinerFab, "translationY", -400f).apply { start() }
-            ObjectAnimator.ofFloat(hyPadFab, "translationY", -600f).apply { start() }
-            ObjectAnimator.ofFloat(hyTotalFab, "translationY", -800f).apply { start() }
-            fabMain.setImageResource(R.drawable.writing_icon)
-        }
-        isFabOpen = !isFabOpen
     }
 
     private fun getUserData(){

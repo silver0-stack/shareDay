@@ -1,5 +1,6 @@
 package com.example.shareDay.fragments
 
+import android.animation.ObjectAnimator
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,10 +11,15 @@ import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import com.example.shareDay.R
 import com.example.shareDay.adapters.HelpYouAdapter
+import com.example.shareDay.helpme.activity.HelpMeLinerWriteActivity
+import com.example.shareDay.helpme.activity.HelpMePadWriteActivity
+import com.example.shareDay.helpme.activity.HelpMeTamponWriteActivity
+import com.example.shareDay.helpme.activity.HelpMeTotalWriteActivity
 import com.example.shareDay.helpyou.fragment.HelpYouLinerFragment
 import com.example.shareDay.helpyou.fragment.HelpYouPadFragment
 import com.example.shareDay.helpyou.fragment.HelpYouTamponFragment
 import com.example.shareDay.helpyou.fragment.HelpYouTotalFragment
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.tabs.TabLayout
 
 class HelpYouFragment : Fragment() {
@@ -21,7 +27,14 @@ class HelpYouFragment : Fragment() {
     lateinit var myFragment: View
     lateinit var viewHomePager: ViewPager //게시물이 배치되는 화면
     lateinit var topTabLayout: TabLayout //상단메뉴탭
-    lateinit var helpYouWriteBtn: ImageButton
+
+    //플로팅버튼 애니메이션을 위한 변수
+    lateinit var hmTotalFab: FloatingActionButton
+    lateinit var hmPadFab: FloatingActionButton
+    lateinit var hmTamponFab: FloatingActionButton
+    lateinit var hmLinerFab: FloatingActionButton
+    lateinit var fabMain: FloatingActionButton
+    private var isFabOpen = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,14 +50,43 @@ class HelpYouFragment : Fragment() {
         myFragment = inflater.inflate(R.layout.helpyou_fragment, container, false)
         viewHomePager = myFragment.findViewById(R.id.hy_view_home)
         topTabLayout = myFragment.findViewById(R.id.hy_tab_layout)
-        helpYouWriteBtn=myFragment.findViewById(R.id.helpYouWriteBtn)
 
-//        helpYouWriteBtn.setOnClickListener{
-//            val intent= Intent(context, HelpYouTamponWriteActivity::class.java)
-//            startActivity(intent)
-//        }
+        hmLinerFab = myFragment.findViewById(R.id.helpme_liner_fab) //liner
+        hmTotalFab =myFragment.findViewById(R.id.helpme_total_fab) //total
+        hmTamponFab = myFragment.findViewById(R.id.helpme_tampon_fab) //tampon
+        hmPadFab =myFragment.findViewById(R.id.helpme_pad_fab) //pad
+        fabMain = myFragment.findViewById(R.id.tog_btn) //main fab
 
         return myFragment
+    }
+
+    override fun onViewCreated(itemView: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(itemView, savedInstanceState)
+
+        //플로팅 버튼 클릭 시 애니메이션 동작 기능
+        fabMain.setOnClickListener {
+            toggleFab()
+        }
+        //total 버튼 클릭 시 개인나눔 글쓰기 화면으로 전환
+        hmTotalFab.setOnClickListener {
+            val intent = Intent(activity, HelpMeTotalWriteActivity::class.java)
+            startActivity(intent)
+        }
+        //pad 버튼 클릭 시 공구 글쓰기 화면으로 전환
+        hmPadFab.setOnClickListener {
+            val intent = Intent(activity, HelpMePadWriteActivity::class.java)
+            startActivity(intent)
+        }
+        //liner 버튼 클릭 시 공구 글쓰기 화면으로 전환
+        hmLinerFab.setOnClickListener {
+            val intent = Intent(activity, HelpMeLinerWriteActivity::class.java)
+            startActivity(intent)
+        }
+        //tampon 버튼 클릭 시 공구 글쓰기 화면으로 전환
+        hmTamponFab.setOnClickListener {
+            val intent = Intent(activity, HelpMeTamponWriteActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -61,6 +103,25 @@ class HelpYouFragment : Fragment() {
             override fun onTabSelected(tab: TabLayout.Tab?) {
             }
         })
+    }
+
+    private fun toggleFab() {
+        //플로팅 액션 버튼 닫기/열기
+        if (isFabOpen) {
+            ObjectAnimator.ofFloat(hmTotalFab, "translationY", 0f).apply { start() }
+            ObjectAnimator.ofFloat(hmPadFab, "translationY", 0f).apply { start() }
+            ObjectAnimator.ofFloat(hmTamponFab, "translationY", 0f).apply { start() }
+            ObjectAnimator.ofFloat(hmLinerFab, "translationY", 0f).apply { start() }
+            fabMain.setImageResource(R.drawable.x_icon)
+
+        } else {
+            ObjectAnimator.ofFloat(hmTotalFab, "translationY", 200f).apply { start() }
+            ObjectAnimator.ofFloat(hmPadFab, "translationY", 400f).apply { start() }
+            ObjectAnimator.ofFloat(hmTamponFab, "translationY", 600f).apply { start() }
+            ObjectAnimator.ofFloat(hmLinerFab, "translationY", 800f).apply { start() }
+            fabMain.setImageResource(R.drawable.writing_icon)
+        }
+        isFabOpen = !isFabOpen
     }
 
     private fun setUpViewPager() {

@@ -1,6 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/box_green"
+    android:layout_marginHorizontal="20dp"
+    android:layout_marginVertical="10dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#3353C0C7"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="10dp"
+                android:id="@+id/HyTamponImg"
+                android:scaleType="fitXY"
+                android:background="@drawable/background_rounding_green"
+                android:src="@drawable/profile1_image"/>
+
+            <TextView
+                android:id="@+id/HyTamponName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="슈니슈니"
+                android:textColor="#000000"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="도움지수"
+                android:textSize="10dp"
+                android:textColor="#767676"
+                android:paddingLeft="10dp"/>
+
+            <TextView
+                android:id="@+id/HyTamponHelpSc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="70S"
+                android:textSize="10dp"
+                android:textColor="#000000"
+                android:paddingHorizontal="5dp"/>
+
+            <TextView
+                android:id="@+id/HyTamponResolvedOrNot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="[해결중]"
+                android:textSize="10dp"
+                android:textColor="#7D2F85"
+                android:paddingHorizontal="10dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:gravity="right"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <ImageButton
+                android:id="@+id/HyTamponStartChat"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginHorizontal="10dp"
+                android:background="@drawable/help_startchat_icon" />
+
+            <ImageButton
+                android:id="@+id/HyTamponMap"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/location_info_icon" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/HyTamponContents"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="탐폰 가져가세요~"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:gravity="center"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="right"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/HyTamponTimestamp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="15dp"
+                android:text="3분전"
+                android:textColor="#767676" />
+            <TextView
+                android:id="@+id/HyTamponLoc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="종로 1가 1번 출구"
+                android:textColor="#767676"
+                android:gravity="right"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

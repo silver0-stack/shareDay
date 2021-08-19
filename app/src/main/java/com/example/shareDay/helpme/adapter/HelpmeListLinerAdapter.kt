@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.shareDay.ChatActivity
 import com.example.shareDay.R
+
 import com.example.shareDay.helpme.dto.liner
 
 import com.example.shareDay.helpme.dto.total
@@ -27,13 +28,13 @@ class HelpmeListLinerAdapter(@NonNull private val userList: ArrayList<liner>) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(
-            R.layout.helpme_item_list,
+            R.layout.hm_liner_list,
             parent,
             false
         )
 
-        chatIcon = itemView.findViewById(R.id.startChat)
-        mapIcon = itemView.findViewById(R.id.checkLoc)
+        chatIcon = itemView.findViewById(R.id.HmLinerStartChat)
+        mapIcon = itemView.findViewById(R.id.HmLinerMap)
 
         return MyViewHolder(itemView).apply {
             //채팅아이콘 클릭 이벤트
@@ -88,10 +89,10 @@ class HelpmeListLinerAdapter(@NonNull private val userList: ArrayList<liner>) :
     }
 
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val userImg = itemView.findViewById<ImageView>(R.id.HmItemImg)
-        val userName = itemView.findViewById<TextView>(R.id.HmItemName)
-        val userLocation = itemView.findViewById<TextView>(R.id.HmItemLoc)
-        val contents = itemView.findViewById<TextView>(R.id.HmItemContents)
+        val userImg = itemView.findViewById<ImageView>(R.id.HmLinerImg)
+        val userName = itemView.findViewById<TextView>(R.id.HmLinerName)
+        val userLocation = itemView.findViewById<TextView>(R.id.HmLinerLoc)
+        val contents = itemView.findViewById<TextView>(R.id.HmLinerContents)
     }
 
 }

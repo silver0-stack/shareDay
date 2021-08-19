@@ -24,12 +24,13 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_margin="10dp"
-                android:id="@+id/profile_img"
+                android:id="@+id/HyTotalImg"
                 android:scaleType="fitXY"
                 android:background="@drawable/background_rounding_green"
                 android:src="@drawable/profile1_image"/>
 
             <TextView
+                android:id="@+id/HyTotalName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="슈니슈니"
@@ -44,6 +45,7 @@
                 android:paddingLeft="10dp"/>
 
             <TextView
+                android:id="@+id/HyTotalHelpSc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="70S"
@@ -52,6 +54,7 @@
                 android:paddingHorizontal="5dp"/>
 
             <TextView
+                android:id="@+id/HyTotalResolvedOrNot"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="[해결중]"
@@ -65,19 +68,18 @@
             android:layout_height="wrap_content"
             android:layout_weight="3"
             android:gravity="right"
-
             android:orientation="horizontal"
             android:padding="10dp">
 
             <ImageButton
-                android:id="@+id/startChat"
+                android:id="@+id/HyTotalStartChat"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginHorizontal="10dp"
                 android:background="@drawable/help_startchat_icon" />
 
             <ImageButton
-                android:id="@+id/checkLoc"
+                android:id="@+id/HyTotalMap"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:background="@drawable/location_info_icon" />
@@ -93,6 +95,7 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/HyTotalContents"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
@@ -109,12 +112,14 @@
             android:padding="10dp">
 
             <TextView
+                android:id="@+id/HyTotalTimestamp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingHorizontal="15dp"
                 android:text="3분전"
                 android:textColor="#767676" />
             <TextView
+                android:id="@+id/HyTotalLoc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="종로 1가 1번 출구"
