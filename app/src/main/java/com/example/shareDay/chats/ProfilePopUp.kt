@@ -51,7 +51,7 @@ class ProfilePopUp : AppCompatActivity() {
         val profile_name : TextView = findViewById(R.id.profile_name)
 
         // 텍스트 제어
-        profile_name.setText(USER_NAME)
+        profile_name.setText(CHATROOM_NAME)
 
         // 클릭
         // 해결 버튼

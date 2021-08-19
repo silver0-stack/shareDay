@@ -13,11 +13,21 @@ import com.naver.maps.map.overlay.Marker
 import com.naver.maps.map.overlay.Overlay
 import com.naver.maps.map.overlay.OverlayImage
 import android.annotation.SuppressLint
+import android.content.Intent
+import android.util.Log
+import android.widget.Toast
 import android.widget.ToggleButton
 import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
+import com.example.shareDay.ChatActivity
 import com.example.shareDay.R
+import com.example.shareDay.chats.UserInfo
 import com.google.android.gms.maps.CameraUpdate
 import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.GoogleMap
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.*
+import com.google.firebase.ktx.Firebase
 import com.naver.maps.map.*
 import com.naver.maps.map.util.FusedLocationSource
 
@@ -96,10 +106,6 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
 //            val intent = Intent(this, MyAreaSettingActivity::class.java)
 //            startActivity(intent)
 //        }
-
-
-
-
 
         //화장실 버튼 클릭 시 마커 등장
         toilet.setOnClickListener {
@@ -668,10 +674,33 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
                 marker204.isVisible=true
                 marker205.isVisible=true
 
+
                 //정보창
                 val infoWindow = InfoWindow()
 
+                val userUID = Firebase.auth.currentUser?.uid
+                var userNick :String = "익명"
+                var db: DatabaseReference
+                db = FirebaseDatabase.getInstance().reference
+                db.addValueEventListener(object : ValueEventListener {
+                    override fun onDataChange(snapshot: DataSnapshot) {
+                        userNick = snapshot.child("Users").child(userUID.toString()).child("userNickname").value.toString()
+                        Log.e("nick", userNick)
+                    }
 
+                    override fun onCancelled(error: DatabaseError) {}
+                })
+
+                infoWindow.setOnClickListener { overlay ->
+                    Toast.makeText(this, "채팅방으로 이동합니다", Toast.LENGTH_SHORT).show()
+
+                    val intent = Intent(this, ChatActivity::class.java)
+                    intent.putExtra("chatName", "닮은살걀") //여기 바꿔주세요!!
+                    intent.putExtra("userName", userNick)
+                    ContextCompat.startActivity(this, intent, null)
+
+                    true
+                }
 
                 //마커 클릭하면 정보창 생성됨
                 //도와주세요 첫번째 마커
@@ -787,12 +816,6 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
             }
 
         }
-
-
-
-
-
-
 
         //도와줄게요 버튼 클릭 시 마커 등장
         helpYouIcon.setOnClickListener {
@@ -1041,6 +1064,8 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
     override fun onStart() {
         super.onStart()
         mapView!!.onStart()
+
+
     }
 
     override fun onResume() {
