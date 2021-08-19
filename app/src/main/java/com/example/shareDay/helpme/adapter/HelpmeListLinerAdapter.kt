@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.shareDay.ChatActivity
 import com.example.shareDay.R
+import com.example.shareDay.UserListAdapter
 
 import com.example.shareDay.helpme.dto.liner
 
