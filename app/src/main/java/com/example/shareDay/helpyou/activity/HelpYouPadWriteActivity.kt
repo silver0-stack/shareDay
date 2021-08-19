@@ -13,7 +13,8 @@ import com.example.shareDay.helpme.dto.pad2_PostingData
 import com.example.shareDay.helpme.dto.total_PostingData
 import com.example.shareDay.helpme.fragment.HelpMeTamponFragment
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DatabaseReference
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.*
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
@@ -94,22 +95,25 @@ class HelpYouPadWriteActivity : AppCompatActivity(), RadioGroup.OnCheckedChangeL
         boardType.setOnCheckedChangeListener(this);
 
         //누가 올렸는지 식별하기 위해 글 쓴 회원정보 갖고오기
-        mAuth = FirebaseAuth.getInstance()
-        val user = mAuth!!.currentUser
-        if (user != null) {
-            userName = user.email.toString()
-            uid = user.uid
-        }
-        val userName = userName
-        val uid = uid
+        val userUID = Firebase.auth.currentUser?.uid
+        var userNick :String = "익명"
+        var db: DatabaseReference
+        db = FirebaseDatabase.getInstance().reference
+        db.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                userNick = snapshot.child("Users").child(userUID.toString()).child("userNickname").value.toString()
+                Log.e("nick", userNick)
 
-        //글 업로드
-        writeNewPost(
-            myLocation,
-            contents,
-            userName,
-            uid,
-        )
+                //글 업로드
+                writeNewPost(
+                    myLocation,
+                    contents,
+                    userNick,
+                    userUID!!,
+                )
+            }
+            override fun onCancelled(error: DatabaseError) {}
+        })
 
     }
 
