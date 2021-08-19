@@ -30,6 +30,7 @@ import com.google.firebase.database.*
 import com.google.firebase.ktx.Firebase
 import com.naver.maps.map.*
 import com.naver.maps.map.util.FusedLocationSource
+import java.lang.Exception
 
 //지도 탭에 보이는 마커들 표시하는 코드
 
@@ -51,6 +52,10 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
     companion object {
         private const val permissionCode = 1000
     }
+
+    private var toiletisChecked: Boolean = true
+    private var helpyouisChecked: Boolean=true
+
 
     // 도와주세요 마커 변수 선언 및 초기화
     private val marker201 = Marker()
@@ -107,9 +112,36 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
 //            startActivity(intent)
 //        }
 
+
         //화장실 버튼 클릭 시 마커 등장
         toilet.setOnClickListener {
-            if(toilet.isChecked==true){
+            if(toiletisChecked){
+
+                marker101.isVisible=false
+                marker102.isVisible=false
+                marker103.isVisible=false
+                marker104.isVisible=false
+                marker105.isVisible=false
+                marker106.isVisible=false
+                marker107.isVisible=false
+                marker108.isVisible=false
+                marker109.isVisible=false
+                marker110.isVisible=false
+                marker111.isVisible=false
+                marker112.isVisible=false
+                marker113.isVisible=false
+                marker114.isVisible=false
+                marker115.isVisible=false
+                marker116.isVisible=false
+                marker117.isVisible=false
+                marker118.isVisible=false
+                marker119.isVisible=false
+                marker120.isVisible=false
+
+            }
+
+
+            else{
 
                 //화장실 마커 세팅
                 setMarker(marker101, //서울특별시 서초구 방배천로 5-4 안심화장실145
@@ -618,30 +650,8 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
                 marker118.onClickListener = listener18
                 marker119.onClickListener = listener19
                 marker120.onClickListener = listener20
-
             }
-            else{
-                marker101.isVisible=false
-                marker102.isVisible=false
-                marker103.isVisible=false
-                marker104.isVisible=false
-                marker105.isVisible=false
-                marker106.isVisible=false
-                marker107.isVisible=false
-                marker108.isVisible=false
-                marker109.isVisible=false
-                marker110.isVisible=false
-                marker111.isVisible=false
-                marker112.isVisible=false
-                marker113.isVisible=false
-                marker114.isVisible=false
-                marker115.isVisible=false
-                marker116.isVisible=false
-                marker117.isVisible=false
-                marker118.isVisible=false
-                marker119.isVisible=false
-                marker120.isVisible=false
-            }
+            toiletisChecked =! toiletisChecked
 
 
         }
@@ -819,7 +829,8 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
 
         //도와줄게요 버튼 클릭 시 마커 등장
         helpYouIcon.setOnClickListener {
-            if (helpMeIcon.isChecked == true) {
+
+            if (helpyouisChecked) {
                 setMarker(
                     marker301,
                     37.497453178180514, 127.02241766830957, //서초 진흥아파트
@@ -955,15 +966,23 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
                 marker304.onClickListener = listener9
                 marker305.onClickListener = listener10
             }
+
+
             else {
 
-                marker301.isVisible=false
-                marker302.isVisible=false
-                marker303.isVisible=false
-                marker304.isVisible=false
-                marker305.isVisible=false
+
+
+                    marker301.isVisible=false
+                    marker302.isVisible=false
+                    marker303.isVisible=false
+                    marker304.isVisible=false
+                    marker305.isVisible=false
+
+
 
             }
+
+            helpyouisChecked=!helpyouisChecked
         }
 
 
