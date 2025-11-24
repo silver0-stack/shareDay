@@ -38,11 +38,8 @@ ShareDay는 생리대가 긴급히 필요한 사용자(**HelpMe**)와 제공 가
 
 ---
 
-## 📱 시연 이미지 (예시 공간)
-아래 영역에 앱 스크린샷 또는 GIF 삽입  
-```bash
-예: `/assets/screens/login.png`, `/assets/screens/map.gif`
-```
+## 📱 시연 이미지 (예시 공간) 
+<img width="365" height="532" alt="image" src="https://github.com/user-attachments/assets/65824d61-ceff-4ff8-9fab-64d8d6c8f019" />
 
 ---
 
@@ -117,16 +114,6 @@ Chat    → sender, receiver, message, timestamp
 | 보도자료 | • [중앙일보](https://www.joongang.co.kr/article/25000985)  <br>• [서울여대](https://www.swu.ac.kr/front/boardview.do?bbsConfigFK=16&pkid=490074)  <br>• [대학저널](https://m.dhnews.co.kr/news/view/179523626813262)  <br>• [한국대학신문](https://news.unn.net/news/articleView.html?idxno=514385) |
 
 
----
-
-## 👩‍💻 기여자 역할
-
-| 역할 | 기여 |
-|------|------|
-| Android 개발 | Kotlin UI, Fragment/Navigation, RecyclerView/Adapter |
-| 서버 연동 | Firebase Auth·Realtime Database |
-| 지도 | Naver Maps 마커 및 위치 표시 |
-| UX/UI | HelpMe·HelpYou 모듈 UX 설계 |
 
 ---
 
