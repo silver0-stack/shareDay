@@ -114,7 +114,7 @@ Chat    → sender, receiver, message, timestamp
 | 해커톤 | 2021 제2회 여대 연합 IT 해커톤 |
 | 수상 | 장려상 |
 | GitHub | [https://github.com/silver0-stack/shareDay](https://github.com/silver0-stack/shareDay) |
-| 보도자료 | • [중앙일보](https://www.joongang.co.kr/article/25000985)  <br>• [서울여대](https://www.swu.ac.kr/front/boardview.do?bbsConfigFK=16&pkid=4900)  <br>• [대학저널](https://m.dhnews.co.kr/news/view/179523626813262)  <br>• [한국대학신문](https://news.unn.net/news/articleView.html?idxno=514385) |
+| 보도자료 | • [중앙일보](https://www.joongang.co.kr/article/25000985)  <br>• [서울여대](https://www.swu.ac.kr/front/boardview.do?bbsConfigFK=16&pkid=490074)  <br>• [대학저널](https://m.dhnews.co.kr/news/view/179523626813262)  <br>• [한국대학신문](https://news.unn.net/news/articleView.html?idxno=514385) |
 
 
 ---
