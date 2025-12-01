@@ -1,7 +1,7 @@
 ![쉐어데이_표지](https://user-images.githubusercontent.com/76518850/132691070-f56bf087-275a-459b-bbc2-20603ca5e312.png)
 >***🙌본 프로젝트는 개발만 완료된 상태이며 실제 출시되지는 않았습니다. README는 출시되었다고 가정하고 읽어주시면 감사하겠습니다.***
 <h1 align="center">ShareDay 🌸</h1>
-<p align="center"><b>여성을 위한 생리대 나눔 매칭 Android 앱</b></p>
+<p align="center"><b>여성을 위한 위생용품 나눔 매칭 Android 앱</b></p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Platform-Android-green?logo=android">
@@ -12,13 +12,13 @@
 </p>
 
 <p align="center">
-사용자가 생리대가 긴급히 필요할 때, 가까운 도움 제공자와 연결해주는 매칭 플랫폼
+사용자가 위생용품이 긴급히 필요할 때, 가까운 도움 제공자와 연결해주는 매칭 플랫폼
 </p>
 
 ---
 
 ## ✨ 프로젝트 개요
-ShareDay는 생리대가 긴급히 필요한 사용자(**HelpMe**)와 제공 가능한 사용자(**HelpYou**)를 매칭하는 안드로이드 앱입니다.  
+ShareDay는 위생용품이 긴급히 필요한 사용자(**HelpMe**)와 제공 가능한 사용자(**HelpYou**)를 매칭하는 안드로이드 앱입니다.  
 도움을 주고받은 내역은 **포인트 시스템**으로 보상되며 여성안심화장실 정보를 지도 기반으로 확인할 수 있습니다.
 
 > 📍 2021 제2회 여대 연합 IT 해커톤 「Light it up」 장려상 수상작
@@ -29,8 +29,8 @@ ShareDay는 생리대가 긴급히 필요한 사용자(**HelpMe**)와 제공 가
 
 | 기능 | 설명 |
 |------|------|
-| HelpMe | 생리대 요청 게시 및 매칭 |
-| HelpYou | 생리대 제공 등록 및 포인트 지급 |
+| HelpMe | 위생용품 요청 게시 및 매칭 |
+| HelpYou | 위생용품 제공 등록 및 포인트 지급 |
 | Chat | HelpMe–HelpYou 1:1 채팅 |
 | Map | 여성안심화장실 위치를 지도에 마커 표시 |
 | MyPage | 포인트·사용이력·설정 관리 |
@@ -118,7 +118,7 @@ Chat    → sender, receiver, message, timestamp
 ---
 
 ## 💡 프로젝트 의의
-ShareDay는 단순한 생리대 나눔 서비스가 아니라 **여성의 생리용품 접근성 문제를 기술로 해결하는 커뮤니티 플랫폼**을 목표로 합니다.
+ShareDay는 단순한 위생용품 나눔 서비스가 아니라 **여성의 위생용품 접근성 문제를 기술로 해결하는 커뮤니티 플랫폼**을 목표로 합니다.
 
 ---
 
