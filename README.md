@@ -1,5 +1,5 @@
 ![쉐어데이_표지](https://user-images.githubusercontent.com/76518850/132691070-f56bf087-275a-459b-bbc2-20603ca5e312.png)
->***🙌본 프로젝트는 개발만 완료된 상태이며 실제 출시되지는 않았습니다. README는 출시되었다고 가정하고 읽어주시면 감사하겠습니다.***
+
 <h1 align="center">ShareDay 🌸</h1>
 <p align="center"><b>여성을 위한 위생용품 나눔 매칭 Android 앱</b></p>
 
@@ -12,29 +12,31 @@
 </p>
 
 <p align="center">
-사용자가 위생용품이 긴급히 필요할 때, 가까운 도움 제공자와 연결해주는 매칭 플랫폼
+위생용품이 긴급히 필요한 사용자를, 가까운 제공자와 안전하게 연결해주는 매칭 플랫폼
 </p>
 
 ---
 
-## ✨ 프로젝트 개요
-ShareDay는 위생용품이 긴급히 필요한 사용자(**HelpMe**)와 제공 가능한 사용자(**HelpYou**)를 매칭하는 안드로이드 앱입니다.  
-도움을 주고받은 내역은 **포인트 시스템**으로 보상되며 여성안심화장실 정보를 지도 기반으로 확인할 수 있습니다.
+## ✨ 프로젝트 소
+ShareDay는 **HelpMe(요청자)** 와 **HelpYou(제공자)**를 연결하여  
+생리대 접근성이 어려운 상황의 여성을 돕는 커뮤니티 앱입니다.  
+목록·지도·채팅 기반으로 실시간 연결을 지원하며, 거래 완료 시 **포인트로 보상**합니다.
 
-> 📍 2021 제2회 여대 연합 IT 해커톤 「Light it up」 장려상 수상작
+> 🏆 제2회 여대 연합 IT 해커톤 「Light it up」 장려상 수상작
 
 ---
 
 ## 🧩 핵심 기능
 
-| 기능 | 설명 |
-|------|------|
-| HelpMe | 위생용품 요청 게시 및 매칭 |
-| HelpYou | 위생용품 제공 등록 및 포인트 지급 |
-| Chat | HelpMe–HelpYou 1:1 채팅 |
-| Map | 여성안심화장실 위치를 지도에 마커 표시 |
-| MyPage | 포인트·사용이력·설정 관리 |
-| Auth | Firebase 기반 이메일/Google 회원가입 & 로그인 |
+| 기능 | 상세 |
+|------|-----|
+| HelpMe | 생리대 요청 게시 및 실시간 매칭 |
+| HelpYou | 제공 등록, 거래 완료 시 포인트 적립 |
+| 지도 기반 탐색 | 네이버 지도 기반 위치 기반 매칭 & 여성안심화장실 안내 |
+| 1:1 채팅 | Firebase 실시간 채팅 |
+| 포인트 | 거래 신뢰도 기반 보상 |
+| 마이페이지 | 정보 수정, 거래 내역, 포인트 조회 |
+| 인증 | Firebase 로그인/회원가입 |
 
 ---
 
@@ -45,62 +47,69 @@ ShareDay는 위생용품이 긴급히 필요한 사용자(**HelpMe**)와 제공 
 
 ## 🛠 기술 스택
 
-| 구분 | 사용 기술 |
-|------|----------|
-| 언어 | Kotlin |
-| 백엔드/DB | Firebase Authentication / Realtime Database |
+| 분야 | 기술 |
+|------|------|
+| 언어 | Kotlin (주 개발), Java (일부 Activity 유지보수) |
+| 데이터 | Firebase Realtime Database · Cloud Storage |
+| 인증/Auth | Firebase Authentication |
 | 지도 | Naver Maps API |
-| UI | Fragment · RecyclerView · DataBinding |
-| 아키텍처 | Multi-module UX 구조 (HelpMe / HelpYou) |
-| 지원 버전 | Target SDK 36 · Min SDK 23 |
+| UI | RecyclerView · Fragment · DataBinding |
+| 아키텍처 | HelpMe / HelpYou 기능 모듈화 |
+| SDK | Min 23 / Target 36 |
 
+### 📍 추가 지도 기능
+- 현재 위치 기반 게시글 필터링 (기본 반경 5km)
+- 여성안심화장실 공공데이터 마커 표시
+- 마커 재사용으로 렌더링 성능 최적화
+
+  
 ---
 
 ## 🔧 프로젝트 구조
 ```bash
 (MainActivity)
-- HelpMe  
-  · HelpMePadFragment  
-  · HelpMeTamponFragment  
-  · HelpMeLinerFragment  
-- HelpYou  
-  · HelpYouPadFragment  
-  · HelpYouTamponFragment  
-  · HelpYouLinerFragment  
-- Map  
-- Chat  
-- MyPage  
+├─ HelpMe (요청)
+│  ├─ Pad
+│  ├─ Tampon
+│  └─ Liner
+├─ HelpYou (제공)
+│  ├─ Pad
+│  ├─ Tampon
+│  └─ Liner
+├─ Map
+├─ Chat
+└─ MyPage
 ```
+
 ---
 
-## 🗂 데이터 모델 구조
-```bash
-HelpMe  → pad, tampon, liner  
-HelpYou → pad2, tampon2, liner2  
-User    → uid, email, name, point, history  
-Chat    → sender, receiver, message, timestamp  
-```
----
 
-## 🔄 사용자 흐름
+## Firebase 데이터 구조
 ```bash
-회원가입 / 로그인  
-↓  
-게시글 등록 (HelpMe / HelpYou)  
-↓  
-매칭 → 1:1 채팅  
-↓  
-거래 완료 → 포인트 적립  
+Users/{uid}
+ ├ email, name, userType, point
+ ├ profileImageUrl
+ └ location(lat, lng)
+
+Posts/{postId}
+ ├ userId, itemType, quantity
+ ├ description, location
+ └ status(active/matched/completed)
+
+Chats/{chatRoomId}
+ ├ participants
+ └ messages/{msgId}
+       ├ content, sender, isRead
+       └ timestamp
+
 ```
----
 
 ## 🚀 설치 및 실행
 
 ```bash
-1) `git clone https://github.com/silver0-stack/shareDay.git`  
-2) Android Studio로 열기  
-3) Gradle Sync 후 앱 실행  
-※ Naver Map API 키 등록 필수
+git clone https://github.com/silver0-stack/shareDay.git
+# Android Studio → Gradle Sync → 실행
+# 네이버 지도 API 키 등록 필수
 ```
 ---
 
@@ -118,12 +127,13 @@ Chat    → sender, receiver, message, timestamp
 ---
 
 ## 💡 프로젝트 의의
-ShareDay는 단순한 위생용품 나눔 서비스가 아니라 **여성의 위생용품 접근성 문제를 기술로 해결하는 커뮤니티 플랫폼**을 목표로 합니다.
+ShareDay는 단순한 나눔 앱이 아니라 
+**여성의 위생용품 접근성 문제를 해결하는 기술 기반 안정망 구축**이 목표입니다.
 
 ---
 
 ## 🗂 라이선스
-학습·연구 목적 공개. **상업적 이용 제한**
+학습·연구 목적 사용 권장.
 
 
 
